@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 321}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -87,10 +87,10 @@ MonoBehaviour:
     y: 30
     width: 1280
     height: 587
-  m_MinSize: {x: 683, y: 221}
-  m_MaxSize: {x: 12008, y: 4021}
+  m_MinSize: {x: 679, y: 221}
+  m_MaxSize: {x: 12004, y: 4021}
   vertical: 0
-  controlID: 26
+  controlID: 9
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -137,7 +137,7 @@ MonoBehaviour:
   - {fileID: 12}
   - {fileID: 10}
   m_Selected: 1
-  m_LastSelected: 2
+  m_LastSelected: 0
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -182,8 +182,8 @@ MonoBehaviour:
     y: 0
     width: 275
     height: 587
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -260,19 +260,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/HoloToolkit-Examples/UX/Animations
+    - Assets/Scripts/models
   m_ViewMode: 1
   m_StartGridSize: 32
   m_LastFolders:
-  - Assets/HoloToolkit-Examples/UX/Animations
+  - Assets/Scripts/models
   m_LastFoldersGridSize: 32
   m_LastProjectPath: C:\Users\homer\Desktop\Unity Apps\RemoteController
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 08770000
-    m_LastClickedID: 30472
-    m_ExpandedIDs: 00000000883a0000263c00006a3c00002c3e00007c4000000c4100008e41000096410000e84100002242000090450000fa450000
+    m_SelectedIDs: dc400000
+    m_LastClickedID: 16604
+    m_ExpandedIDs: 00000000703b0000d43d0000363e0000b24000000c440000f0440000d8450000e0450000664600006a460000b6460000c04b0000a46a0000cc6a0000286b000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -300,7 +300,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000883a0000263c00006a3c00002c3e00007c4000000c4100008e41000096410000e84100002242000090450000fa450000
+    m_ExpandedIDs: 00000000703b0000d43d0000363e0000b24000000c440000f0440000d8450000e045000066460000b6460000c04b00006c4c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -325,9 +325,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: c06b0000
+    m_LastClickedInstanceID: 27584
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 5c3b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -382,7 +382,7 @@ MonoBehaviour:
     width: 395
     height: 566
   m_PersistentViewDataDictionary: {fileID: 0}
-  m_ScrollPosition: {x: 0, y: 0}
+  m_ScrollPosition: {x: 0, y: 78.95508}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 141
@@ -490,7 +490,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 92
-    width: 676
+    width: 606
     height: 566
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
@@ -572,9 +572,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 98fbffff00000000
+    m_SelectedIDs: f26c0000
+    m_LastClickedID: 27890
+    m_ExpandedIDs: 1ae0ffff98fbffff00000000c06b0000dc6b0000f26c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

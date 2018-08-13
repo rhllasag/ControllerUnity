@@ -10,6 +10,7 @@ public class JoyStickButton : MonoBehaviour, IInputHandler, IInputClickHandler, 
     public float y;
     public void OnInputClicked(InputClickedEventData eventData)
     {
+        Debug.Log("Click");
         SocketConnection.getInstance().emitData(x, y);
     }
     public void OnInputDown(InputEventData eventData)
@@ -39,6 +40,7 @@ public class JoyStickButton : MonoBehaviour, IInputHandler, IInputClickHandler, 
 
     public void OnManipulationUpdated(ManipulationEventData eventData)
     {
+        Debug.Log("Click");
         SocketConnection.getInstance().emitData(x,y);
     }
 
