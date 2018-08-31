@@ -747,6 +747,9 @@
      <Compile Include="Assets\HoloToolkit-Examples\UX\Scripts\Widgets\TextureThemeWidget.cs" />
      <Compile Include="Assets\Scripts\JoyStickButton.cs" />
      <Compile Include="Assets\Scripts\models\SocketConnection.cs" />
+     <Compile Include="Assets\Scripts\services\SocketClient.cs" />
+     <Compile Include="Assets\Scripts\services\StreamingConnection.cs" />
+     <Compile Include="Assets\Scripts\services\USStatusTextManager.cs" />
      <Compile Include="Assets\Scripts\SocketExample.cs" />
      <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFConstant.cginc" />
      <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\UnlitConfigurable.shader" />
