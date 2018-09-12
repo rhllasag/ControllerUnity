@@ -23,13 +23,13 @@ public class SocketClient: MonoBehaviour
     System.Net.Sockets.NetworkStream stream;
     private Thread exchangeThread;
 #endif
-
-    private Byte[] bytes = new Byte[256];
-    private StreamWriter writer;
-    private StreamReader reader;
+    byte[] bytes = null;
+    private BinaryWriter writer;
+    private BinaryReader reader;
+    const int SEND_RECEIVE_COUNT = 4;
     void Start()
     {
-        Connect("192.168.1.3", "8080");
+        Connect("192.168.137.70", "8080");
     }
     public void Connect(string host, string port)
     {
@@ -91,9 +91,9 @@ public class SocketClient: MonoBehaviour
 
             client = new System.Net.Sockets.TcpClient(host, Int32.Parse(port));
             stream = client.GetStream();
-            reader = new StreamReader(stream);
-            writer = new StreamWriter(stream) { AutoFlush = true };
-
+            reader = new BinaryReader(stream);
+            writer = new BinaryWriter(stream);
+            writer.Flush();
             RestartExchange();
             
             Debug.Log("Connected!");
@@ -133,35 +133,80 @@ public class SocketClient: MonoBehaviour
 
     public void ExchangePackets()
     {
-        while (!exchangeStopRequested)
+                
+        while (!exchangeStopRequested) 
         {
             if (writer == null || reader == null) continue;
             exchanging = true;
-
-            writer.Write("X\n");
-            Debug.Log("Sent data!");
+            
             string received = null;
 
+            //writer.Write("X\n");
 #if UNITY_EDITOR
-            byte[] bytes = new byte[client.SendBufferSize];
-            int recv = 0;
-            while (true)
-            {
-                recv = stream.Read(bytes, 0, client.SendBufferSize);
-                received += Encoding.UTF8.GetString(bytes, 0, recv);
-                if (received.EndsWith("\n")) break;
-            }
+            //byte[] msg = new byte[client.SendBufferSize];
+            //int count=0;
+            //Debug.Log("Size:" + reader.ReadUInt32());
+            //while (true)
+            //{
+            //    count += reader.Read(msg, 0, msg.Length);
+            //    received += Encoding.UTF8.GetString(msg, 0, count);
+            //    Debug.Log("Count:" + count);
+            //    Debug.Log(received.Length);
+            //    //if (received.EndsWith("\n"))
+            //    //{
+            //    //    break;
+            //    //}
+
+            //}
+            Debug.Log("int:"+readImageByteSize(SEND_RECEIVE_COUNT));
+
 #else
             received = reader.ReadLine();
 #endif
 
             lastPacket = received;
-            Debug.Log("Read data: " + received);
-
+            
             exchanging = false;
-        }
-    }
 
+
+        }
+        
+
+    }
+    private int readImageByteSize(int size)
+    {
+        bool disconnected = false;
+        byte[] imageBytesCount = new byte[size];
+        var total = 0;
+        do
+        {
+            var read = stream.Read(imageBytesCount, total, size - total);
+            Debug.LogFormat("Client recieved {0} bytes", total);
+            if (read == 0)
+            {
+                disconnected = true;
+                break;
+            }
+            total += read;
+        } while (total != size);
+
+        int byteLength;
+
+        if (disconnected)
+        {
+            byteLength = -1;
+        }
+        else
+        {
+            byteLength = frameByteArrayToByteLength(imageBytesCount);
+        }
+        return byteLength;
+    }
+    int frameByteArrayToByteLength(byte[] frameBytesLength)
+    {
+        int byteLength = BitConverter.ToInt32(frameBytesLength, 0);
+        return byteLength;
+    }
     private void ReportDataToTrackingManager(string data)
     {
         if (data == null)
@@ -176,6 +221,7 @@ public class SocketClient: MonoBehaviour
     public void StopExchange()
     {
         exchangeStopRequested = true;
+        Debug.Log("StopedRequest");
 
 #if UNITY_EDITOR
         if (exchangeThread != null)
@@ -185,7 +231,7 @@ public class SocketClient: MonoBehaviour
             client.Close();
             writer.Close();
             reader.Close();
-
+            
             stream = null;
             exchangeThread = null;
         }
@@ -195,7 +241,6 @@ public class SocketClient: MonoBehaviour
             socket.Dispose();
             writer.Dispose();
             reader.Dispose();
-
             socket = null;
             exchangeTask = null;
         }

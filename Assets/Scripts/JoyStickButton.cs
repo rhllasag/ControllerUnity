@@ -51,7 +51,8 @@ public class JoyStickButton : MonoBehaviour, IInputHandler, IInputClickHandler, 
 
 
     void Start () {
-		
+        //Debug.Log("Init");
+            
 	}
 	
 	// Update is called once per frame
