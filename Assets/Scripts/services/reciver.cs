@@ -8,14 +8,14 @@ using System;
 
 public class reciver : MonoBehaviour
 {
-    public RawImage image;
+    //public RawImage image;
     public bool enableLog = false;
 
-    const int port = 8010;
-    public string IP = "192.168.1.165";
+    const int port = 8080;
+    public string IP = "192.168.137.232";
     TcpClient client;
 
-    Texture2D tex;
+    //Texture2D tex;
 
     private bool stop = false;
 
@@ -27,15 +27,15 @@ public class reciver : MonoBehaviour
     {
         Application.runInBackground = true;
 
-        tex = new Texture2D(0, 0);
-        client = new TcpClient();
+        //tex = new Texture2D(0, 0);
+        client = new System.Net.Sockets.TcpClient(IP, Int32.Parse(port+""));
 
         //Connect to server from another Thread
         Loom.RunAsync(() =>
         {
             LOGWARNING("Connecting to server...");
             // if on desktop
-            client.Connect(IPAddress.Loopback, port);
+            //client.Connect(IPAddress.Loopback, port);
 
             // if using the IPAD
             //client.Connect(IPAddress.Parse(IP), port);
@@ -58,7 +58,7 @@ public class reciver : MonoBehaviour
                 LOGWARNING("Received Image byte Length: " + imageSize);
 
                 //Read Image Bytes and Display it
-                readFrameByteArray(imageSize);
+               // readFrameByteArray(imageSize);
             }
         });
     }
@@ -159,8 +159,8 @@ public class reciver : MonoBehaviour
 
     void displayReceivedImage(byte[] receivedImageBytes)
     {
-        tex.LoadImage(receivedImageBytes);
-        image.texture = tex;
+        //tex.LoadImage(receivedImageBytes);
+        //image.texture = tex;
     }
 
 

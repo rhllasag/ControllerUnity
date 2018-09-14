@@ -24,12 +24,12 @@ public class SocketClient: MonoBehaviour
     private Thread exchangeThread;
 #endif
     byte[] bytes = null;
-    private BinaryWriter writer;
-    private BinaryReader reader;
+    private StreamWriter writer;
+    private StreamReader reader;
     const int SEND_RECEIVE_COUNT = 4;
     void Start()
     {
-        Connect("192.168.137.70", "8080");
+        Connect("192.168.137.232", "8080");
     }
     public void Connect(string host, string port)
     {
@@ -91,8 +91,8 @@ public class SocketClient: MonoBehaviour
 
             client = new System.Net.Sockets.TcpClient(host, Int32.Parse(port));
             stream = client.GetStream();
-            reader = new BinaryReader(stream);
-            writer = new BinaryWriter(stream);
+            reader = new StreamReader(stream);
+            writer = new StreamWriter(stream) { AutoFlush=true};
             writer.Flush();
             RestartExchange();
             
@@ -158,8 +158,13 @@ public class SocketClient: MonoBehaviour
             //    //}
 
             //}
-            Debug.Log("int:"+readImageByteSize(SEND_RECEIVE_COUNT));
-
+            if (stream.CanRead)
+            {
+                Debug.Log("frameByteArrayToByteLength:" + readImageByteSize(SEND_RECEIVE_COUNT));
+            }
+            else {
+                Debug.Log("Socket Closed");
+            }
 #else
             received = reader.ReadLine();
 #endif
@@ -176,7 +181,7 @@ public class SocketClient: MonoBehaviour
     private int readImageByteSize(int size)
     {
         bool disconnected = false;
-        byte[] imageBytesCount = new byte[size];
+        byte[] imageBytesCount = new byte[4];
         var total = 0;
         do
         {
