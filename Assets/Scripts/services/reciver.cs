@@ -164,10 +164,6 @@ public class reciver : MonoBehaviour
         if (tex.LoadImage(receivedImageBytes))
         {
             image.texture = tex;
-            Debug.Log("Display image");
-        }
-        else {
-            Debug.Log("No image");
         }
     }
 
