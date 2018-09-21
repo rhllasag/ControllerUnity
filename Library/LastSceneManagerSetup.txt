@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/MotionControllerTest.unity
+- path: Assets/HoloToolkit-Examples/UX/Scenes/ProgressExample.unity
   isLoaded: 1
   isActive: 1

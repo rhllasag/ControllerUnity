@@ -11,7 +11,7 @@ public class reciver : MonoBehaviour
     public RawImage image;
     public bool enableLog = false;
 
-    const int port = 8080;
+    const int port = 9191;
     public string IP = "192.168.137.243";
     TcpClient client;
 

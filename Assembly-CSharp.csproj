@@ -745,6 +745,7 @@
      <Compile Include="Assets\HoloToolkit-Examples\UX\Scripts\Widgets\ScaleThemeWidget.cs" />
      <Compile Include="Assets\HoloToolkit-Examples\UX\Scripts\Widgets\TextMeshColorThemeWidget.cs" />
      <Compile Include="Assets\HoloToolkit-Examples\UX\Scripts\Widgets\TextureThemeWidget.cs" />
+     <Compile Include="Assets\JoystickAppear.cs" />
      <Compile Include="Assets\Scripts\JoyStickButton.cs" />
      <Compile Include="Assets\Scripts\models\SocketConnection.cs" />
      <Compile Include="Assets\Scripts\services\Connecting.cs" />
