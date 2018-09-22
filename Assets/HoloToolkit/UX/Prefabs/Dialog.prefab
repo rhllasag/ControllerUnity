@@ -1312,9 +1312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77a98cf320fe9340a55eecfe4567ca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonState: 4
-  ButtonPressFilter: 1
-  RequireGaze: 1
+  buttonState: 4
+  buttonPressFilter: 1
+  requireGaze: 1
   MainCollider: {fileID: 65237055271978074}
   MainRenderer: {fileID: 0}
 --- !u!114 &114342815534720882
@@ -1417,9 +1417,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77a98cf320fe9340a55eecfe4567ca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonState: 4
-  ButtonPressFilter: 1
-  RequireGaze: 1
+  buttonState: 4
+  buttonPressFilter: 1
+  requireGaze: 1
   MainCollider: {fileID: 65834266951014818}
   MainRenderer: {fileID: 0}
 --- !u!114 &114434856811837186
@@ -1551,7 +1551,6 @@ MonoBehaviour:
   maxCharsPerLine: 45
   titleText: {fileID: 0}
   messageText: {fileID: 0}
-  oneButtonSet: []
   twoButtonSet: []
 --- !u!114 &114620752412838946
 MonoBehaviour:
@@ -1591,9 +1590,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77a98cf320fe9340a55eecfe4567ca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonState: 4
-  ButtonPressFilter: 1
-  RequireGaze: 1
+  buttonState: 4
+  buttonPressFilter: 1
+  requireGaze: 1
   MainCollider: {fileID: 65816696277222256}
   MainRenderer: {fileID: 0}
 --- !u!114 &114904804653078220
