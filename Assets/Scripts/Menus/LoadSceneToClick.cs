@@ -31,12 +31,18 @@ public class LoadSceneToClick : MonoBehaviour, IInputHandler, IInputClickHandler
             else
             {
                 gOToEnable.SetActive(true);
-                gOToDissable1.SetActive(false);
-                gOToDissable2.SetActive(false);
-                gOToDissable3.SetActive(false);
-                gOToDissable4.SetActive(false);
-                gOToDissable5.SetActive(false);
-                gOToDissable6.SetActive(false);
+                if(gOToDissable1!=null)
+                    gOToDissable1.SetActive(false);
+                if (gOToDissable2 != null)
+                    gOToDissable2.SetActive(false);
+                if (gOToDissable3 != null)
+                    gOToDissable3.SetActive(false);
+                if (gOToDissable4 != null)
+                    gOToDissable4.SetActive(false);
+                if (gOToDissable5 != null)
+                    gOToDissable5.SetActive(false);
+                if (gOToDissable6 != null)
+                    gOToDissable6.SetActive(false);
             }
         }
     }
