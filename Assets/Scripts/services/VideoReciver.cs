@@ -11,7 +11,7 @@ public class VideoReciver : MonoBehaviour
     public RawImage image;
     public bool enableLog = false;
 
-    const int port = 9191;
+    const int port = 8080;
     public string IP = "192.168.137.243";
     TcpClient client;
 
@@ -38,7 +38,7 @@ public class VideoReciver : MonoBehaviour
             {
                 //Read Image Count
                 int imageSize = readImageByteSize(SEND_RECEIVE_COUNT);
-                LOGWARNING("Received Image byte Length: " + imageSize);
+                //LOGWARNING("Received Image byte Length: " + imageSize);
 
                 //Read Image Bytes and Display it
                 readFrameByteArray(imageSize);

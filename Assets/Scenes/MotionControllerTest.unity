@@ -2705,7 +2705,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 219976240}
-  m_Text: Status
+  m_Text: 0%
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -4372,7 +4372,7 @@ GameObject:
   - component: {fileID: 481099160}
   - component: {fileID: 481099159}
   m_Layer: 0
-  m_Name: GPSState
+  m_Name: BatteryLevelState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4385,7 +4385,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 481099157}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3, y: 0.24549958, z: -0.004999995}
+  m_LocalPosition: {x: 1.3, y: 0.27, z: -0.004999995}
   m_LocalScale: {x: 0.15, y: 0.08, z: 65}
   m_Children: []
   m_Father: {fileID: 1896526721}
@@ -4398,7 +4398,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 481099157}
-  m_Text: 100%
+  m_Text: 0%
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -6067,6 +6067,9 @@ GameObject:
   m_Component:
   - component: {fileID: 613472660}
   - component: {fileID: 613472662}
+  - component: {fileID: 613472663}
+  - component: {fileID: 613472661}
+  - component: {fileID: 613472664}
   m_Layer: 0
   m_Name: SceneContent
   m_TagString: Untagged
@@ -6092,6 +6095,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &613472661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 613472659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 527bca769bcf4fe48afdf89b356a677d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &613472662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6104,8 +6118,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1254028349}
-  enableLog: 0
-  IP: 192.168.1.3
+  enableLog: 1
+  IP: 192.168.137.124
+--- !u!114 &613472663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 613472659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c3ccd9962934d41ab5ba9ae1d97045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battery: {fileID: 481099157}
+  remoteController: {fileID: 1573839690}
+  gpsSignalState: {fileID: 1557786478}
+  visualNavigationState: {fileID: 1690030058}
+  systemSatus: {fileID: 219976240}
+--- !u!114 &613472664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 613472659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 235aa4d3ae748b14795448fd17de8442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &637663323
 GameObject:
   m_ObjectHideFlags: 0
@@ -14085,7 +14126,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1557786478}
-  m_Text: 100%
+  m_Text: 0%
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -14602,7 +14643,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1573839690}
-  m_Text: 100%
+  m_Text: 0%
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -15407,7 +15448,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1690030058}
-  m_Text: 100%
+  m_Text: 0%
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1

@@ -51,7 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ChangeCamera.cs" />
      <Compile Include="Assets\HoloToolkit\Boundary\Scripts\BoundaryManager.cs" />
      <Compile Include="Assets\HoloToolkit\Boundary\Scripts\SceneContentAdjuster.cs" />
      <Compile Include="Assets\HoloToolkit\Common\Scripts\CalibrationSpace.cs" />
@@ -746,10 +745,14 @@
      <Compile Include="Assets\HoloToolkit-Examples\UX\Scripts\Widgets\ScaleThemeWidget.cs" />
      <Compile Include="Assets\HoloToolkit-Examples\UX\Scripts\Widgets\TextMeshColorThemeWidget.cs" />
      <Compile Include="Assets\HoloToolkit-Examples\UX\Scripts\Widgets\TextureThemeWidget.cs" />
+     <Compile Include="Assets\Scripts\ChangeCamera.cs" />
      <Compile Include="Assets\Scripts\Menus\LoadSceneToClick.cs" />
+     <Compile Include="Assets\Scripts\models\MeshComponents.cs" />
      <Compile Include="Assets\Scripts\RemoteControl\JoyStickButton.cs" />
+     <Compile Include="Assets\Scripts\RemoteControl\PeriodicalInfoController.cs" />
      <Compile Include="Assets\Scripts\ScreenActions\ScreenButtonActions.cs" />
      <Compile Include="Assets\Scripts\services\Loop.cs" />
+     <Compile Include="Assets\Scripts\services\Observer.cs" />
      <Compile Include="Assets\Scripts\services\SocketClient.cs" />
      <Compile Include="Assets\Scripts\services\SocketConnection.cs" />
      <Compile Include="Assets\Scripts\services\USStatusTextManager.cs" />
