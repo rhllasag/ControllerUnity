@@ -2705,7 +2705,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 219976240}
-  m_Text: 0%
+  m_Text: System.Collections.Generic.Dictionary`2[System.String,System.Object]
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -4398,7 +4398,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 481099157}
-  m_Text: 0%
+  m_Text: System.Collections.Generic.Dictionary`2[System.String,System.Object]
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -6112,7 +6112,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 613472659}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 813e1f755de03a649ac438b2ec608e5f, type: 3}
   m_Name: 
@@ -14126,7 +14126,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1557786478}
-  m_Text: 0%
+  m_Text: System.Collections.Generic.Dictionary`2[System.String,System.Object]
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -14643,7 +14643,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1573839690}
-  m_Text: 0%
+  m_Text: System.Collections.Generic.Dictionary`2[System.String,System.Object]
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -15448,7 +15448,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1690030058}
-  m_Text: 0%
+  m_Text: System.Collections.Generic.Dictionary`2[System.String,System.Object]
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1

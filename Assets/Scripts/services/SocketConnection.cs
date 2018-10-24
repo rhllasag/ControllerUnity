@@ -4,8 +4,17 @@ using UnityEngine;
 using BestHTTP;
 using BestHTTP.SocketIO;
 using System;
+using System.IO;
+using Newtonsoft.Json.Linq;
+
 namespace ObserverPattern
 {
+    [Serializable]
+    public class parseJSONBatteryLevel
+    {
+        public string title;
+        public int level;
+    }
     public class SocketConnection
     {
         List<Observer> observers = new List<Observer>();
@@ -42,8 +51,21 @@ namespace ObserverPattern
         }
         void BatteryLevelChanged(Socket socket, Packet packet, params object[] args)
         {
-            //PeriodicalInfo.getInstance().setBatteryLevel(args[0].ToString());
-            Notify(args[0].ToString());
+            JObject json = JObject.Parse(args[0].ToString());
+            var value = GetJArrayValue(json, "batteryLevel");
+            Notify(value);
+            Debug.Log(value);
+        }
+        public string GetJArrayValue(JObject yourJArray, string key)
+        {
+            foreach (KeyValuePair<string, JToken> keyValuePair in yourJArray)
+            {
+                if (key == keyValuePair.Key)
+                {
+                    return keyValuePair.Value.ToString();
+                }
+            }
+            return null;
         }
         void OnServerConnect(Socket socket, Packet packet, params object[] args)
         {
