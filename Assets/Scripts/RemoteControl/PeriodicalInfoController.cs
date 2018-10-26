@@ -12,14 +12,16 @@ namespace ObserverPattern
         public GameObject gpsSignalState;
         public GameObject visualNavigationState;
         public GameObject systemSatus;
+        public GameObject flightSwitchMode;
         void Start()
         {
             //Create MeshObject that can observe events and give them an event to do
-            MeshObject batteryLevelMesh = new MeshObject(battery, new JumpLittle() );
-            MeshObject remoteControllerMesh = new MeshObject(remoteController, new JumpLittle());
-            MeshObject gpsSignalStateMesh = new MeshObject(gpsSignalState, new JumpLittle());
-            MeshObject visualNavigationStateMesh = new MeshObject(visualNavigationState, new JumpLittle());
-            MeshObject systemStatusMesh = new MeshObject(systemSatus, new JumpLittle());
+            MeshObject batteryLevelMesh = new MeshObject(battery, new BatteryLevel() );
+            MeshObject remoteControllerMesh = new MeshObject(remoteController, new RCControl());
+            MeshObject gpsSignalStateMesh = new MeshObject(gpsSignalState, new GPSSignal());
+            MeshObject visualNavigationStateMesh = new MeshObject(visualNavigationState, new VisualNavigation());
+            MeshObject systemStatusMesh = new MeshObject(systemSatus, new SystemStatus());
+            MeshObject flightSwitchModeMesh = new MeshObject(flightSwitchMode, new FlightSwitchMode());
 
             //Add the MeshObject to the list of objects waiting for something to happen
             SocketConnection.getInstance().AddObserver(batteryLevelMesh);
@@ -27,6 +29,7 @@ namespace ObserverPattern
             SocketConnection.getInstance().AddObserver(gpsSignalStateMesh);
             SocketConnection.getInstance().AddObserver(visualNavigationStateMesh);
             SocketConnection.getInstance().AddObserver(systemStatusMesh);
+            SocketConnection.getInstance().AddObserver(flightSwitchModeMesh);
         }
 
 

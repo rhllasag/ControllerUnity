@@ -5,7 +5,7 @@ using BestHTTP;
 using BestHTTP.SocketIO;
 using System;
 using System.IO;
-using Newtonsoft.Json.Linq;
+
 
 namespace ObserverPattern
 {
@@ -19,6 +19,7 @@ namespace ObserverPattern
     {
         List<Observer> observers = new List<Observer>();
         public static SocketConnection instance = null;
+        
         private string serverURL = "http://192.168.140.110:8080/socket.io/";
         SocketManager manager;
         private SocketConnection()
@@ -33,7 +34,12 @@ namespace ObserverPattern
             manager.Socket.On("reconnecting", OnReconnecting);
             manager.Socket.On("reconnect_attempt", OnReconnectAttempt);
             manager.Socket.On("reconnect_failed", OnReconnectFailed);
-            manager.Socket.On("batteryLevelChanged", BatteryLevelChanged);
+            manager.Socket.On("batteryLevelChanged", OnBatteryLevelChanged);
+            manager.Socket.On("systemStatusChanged", OnSystemStatusChanged);
+            manager.Socket.On("rcConnectionStatusChanged", OnRCConnectionStatusChanged);
+            manager.Socket.On("gpsSignalStatusChanged", OnGPSSignalStatusChanged);
+            manager.Socket.On("flightModeSwitchChanged",OnFlightModeSwitchChanged);
+            //manager.Socket.On("rcConnectionStatusChanged", OnRCConnectionStatusChanged);
             manager.Open();
         }
         public static SocketConnection getInstance()
@@ -49,23 +55,29 @@ namespace ObserverPattern
         {
             manager.Socket.Emit("newJoystickPossition", "x: " + x + "  y:" + y);
         }
-        void BatteryLevelChanged(Socket socket, Packet packet, params object[] args)
+        void OnBatteryLevelChanged(Socket socket, Packet packet, params object[] args)
         {
-            JObject json = JObject.Parse(args[0].ToString());
-            var value = GetJArrayValue(json, "batteryLevel");
-            Notify(value);
-            Debug.Log(value);
+            Notify(args[0].ToString(), "batteryLevelChanged");
         }
-        public string GetJArrayValue(JObject yourJArray, string key)
+        void OnSystemStatusChanged(Socket socket, Packet packet, params object[] args)
         {
-            foreach (KeyValuePair<string, JToken> keyValuePair in yourJArray)
-            {
-                if (key == keyValuePair.Key)
-                {
-                    return keyValuePair.Value.ToString();
-                }
-            }
-            return null;
+            Notify(args[0].ToString(), "systemStatusChanged");
+        }
+        void OnAirlinkWifiLevelChanged(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "rcConnectionStatusChanged");
+        }
+        void OnGPSSignalStatusChanged(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "gpsSignalStatusChanged");
+        }
+        void OnRCConnectionStatusChanged(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "rcConnectionStatusChanged");
+        }
+        void OnFlightModeSwitchChanged(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "fightModeSwitchChanged");
         }
         void OnServerConnect(Socket socket, Packet packet, params object[] args)
         {
@@ -122,13 +134,13 @@ namespace ObserverPattern
         public void RemoveObserver(Observer observer)
         {
         }
-        public void Notify(string data)
+        public void Notify(string data,string component)
         {
             for (int i = 0; i < observers.Count; i++)
             {
                 //Notify all observers even though some may not be interested in what has happened
                 //Each observer should check if it is interested in this event
-                observers[i].OnNotify(data);
+                observers[i].OnNotify(data,component);
             }
         }
     }
