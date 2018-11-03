@@ -35,10 +35,12 @@ namespace ObserverPattern
             manager.Socket.On("reconnect_attempt", OnReconnectAttempt);
             manager.Socket.On("reconnect_failed", OnReconnectFailed);
             manager.Socket.On("batteryLevelChanged", OnBatteryLevelChanged);
-            manager.Socket.On("systemStatusChanged", OnSystemStatusChanged);
             manager.Socket.On("rcConnectionStatusChanged", OnRCConnectionStatusChanged);
+            manager.Socket.On("flightAssistantStateChanged", OnFlightAssistantStateChanged);
             manager.Socket.On("gpsSignalStatusChanged", OnGPSSignalStatusChanged);
             manager.Socket.On("flightModeSwitchChanged",OnFlightModeSwitchChanged);
+            manager.Socket.On("systemStatusChanged", OnSystemStatusChanged);
+
             //manager.Socket.On("rcConnectionStatusChanged", OnRCConnectionStatusChanged);
             manager.Open();
         }
@@ -51,6 +53,10 @@ namespace ObserverPattern
             }
             return instance;
         }
+        public void emitMainScreenEvent(string screen_event)
+        {
+            manager.Socket.Emit(screen_event);
+        }
         public void emitData(float x, float y)
         {
             manager.Socket.Emit("newJoystickPossition", "x: " + x + "  y:" + y);
@@ -58,10 +64,6 @@ namespace ObserverPattern
         void OnBatteryLevelChanged(Socket socket, Packet packet, params object[] args)
         {
             Notify(args[0].ToString(), "batteryLevelChanged");
-        }
-        void OnSystemStatusChanged(Socket socket, Packet packet, params object[] args)
-        {
-            Notify(args[0].ToString(), "systemStatusChanged");
         }
         void OnAirlinkWifiLevelChanged(Socket socket, Packet packet, params object[] args)
         {
@@ -71,6 +73,10 @@ namespace ObserverPattern
         {
             Notify(args[0].ToString(), "gpsSignalStatusChanged");
         }
+        void OnFlightAssistantStateChanged(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "flightAssistantStateChanged");
+        }
         void OnRCConnectionStatusChanged(Socket socket, Packet packet, params object[] args)
         {
             Notify(args[0].ToString(), "rcConnectionStatusChanged");
@@ -78,6 +84,10 @@ namespace ObserverPattern
         void OnFlightModeSwitchChanged(Socket socket, Packet packet, params object[] args)
         {
             Notify(args[0].ToString(), "fightModeSwitchChanged");
+        }
+        void OnSystemStatusChanged(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "systemStatusChanged");
         }
         void OnServerConnect(Socket socket, Packet packet, params object[] args)
         {

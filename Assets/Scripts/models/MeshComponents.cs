@@ -24,18 +24,18 @@ namespace ObserverPattern
             return "rc";
         }
     }
-    public class GPSSignal : MeshEvents
-    {
-        public override string Description()
-        {
-            return "gps";
-        }
-    }
     public class VisualNavigation : MeshEvents
     {
         public override string Description()
         {
             return "navigation";
+        }
+    }
+    public class GPSSignal : MeshEvents
+    {
+        public override string Description()
+        {
+            return "gps";
         }
     }
     public class FlightSwitchMode : MeshEvents
