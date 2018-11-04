@@ -754,6 +754,15 @@
      <Compile Include="Assets\Scripts\Maps\WorldCoordinate.cs" />
      <Compile Include="Assets\Scripts\Menus\LoadSceneToClick.cs" />
      <Compile Include="Assets\Scripts\models\MeshComponents.cs" />
+     <Compile Include="Assets\Scripts\Panels\BatteryPanel\BatteryPanelController.cs" />
+     <Compile Include="Assets\Scripts\Panels\BatteryPanel\BatteryPanelMeshEvents.cs" />
+     <Compile Include="Assets\Scripts\Panels\BatteryPanel\BatteryPanelObserver.cs" />
+     <Compile Include="Assets\Scripts\Panels\SystemPanel\SystemPanelController.cs" />
+     <Compile Include="Assets\Scripts\Panels\SystemPanel\SystemPanelMeshEvents.cs" />
+     <Compile Include="Assets\Scripts\Panels\SystemPanel\SystemPanelObserver.cs" />
+     <Compile Include="Assets\Scripts\Panels\VisualNavigationPanel\VisualNavigationPanelController.cs" />
+     <Compile Include="Assets\Scripts\Panels\VisualNavigationPanel\VisualNavigationPanelMeshEvents.cs" />
+     <Compile Include="Assets\Scripts\Panels\VisualNavigationPanel\VisualNavigationPanelObserver.cs" />
      <Compile Include="Assets\Scripts\RemoteControl\JoyStickButton.cs" />
      <Compile Include="Assets\Scripts\RemoteControl\PeriodicalInfoController.cs" />
      <Compile Include="Assets\Scripts\ScreenActions\AbleConfigurationPanels.cs" />
