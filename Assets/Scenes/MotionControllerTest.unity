@@ -771,14 +771,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 45417372}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: -0.3, z: -5.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1670155848}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1001 &47264690
 Prefab:
   m_ObjectHideFlags: 0
@@ -4447,7 +4447,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 481099157}
-  m_Text: 79%
+  m_Text: 14%
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -4576,7 +4576,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 503394457}
-  m_Text: '[00]'
+  m_Text: '[0]'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -6214,7 +6214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1254028349}
   enableLog: 1
-  IP: 192.168.137.124
+  IP: 10.9.9.100
 --- !u!114 &613472663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6620,7 +6620,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 669184309}
-  m_Text: Mod
+  m_Text: Atti
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -14667,7 +14667,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1573839690}
-  m_Text: 00%
+  m_Text: 43%
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -15434,7 +15434,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1690030058}
-  m_Text: NoN
+  m_Text: True
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -16488,7 +16488,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1853924185}
-  m_Text: 00:00:00
+  m_Text: 00:00
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1

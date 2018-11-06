@@ -111,7 +111,7 @@ public class VideoReciver : MonoBehaviour
         do
         {
             var read = serverStream.Read(imageBytes, total, size - total);
-            //Debug.LogFormat("Client recieved {0} bytes", total);
+            Debug.LogFormat("Client recieved {0} bytes", total);
             if (read == 0)
             {
                 disconnected = true;
