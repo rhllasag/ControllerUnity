@@ -95,6 +95,20 @@ namespace ObserverPattern
                 var value = GetJArrayValue(json, "systemStatus");
                 boxObj.GetComponent<TextMesh>().text = "sys";
             }
+            if (messegsEvent.Description().CompareTo("batteryNAircraft") == 0 && component.CompareTo("batteryANeededRTHChanged") == 0)
+            {
+                json = JObject.Parse(data);
+                var value = GetJArrayValue(json, "batteryNeededRTH");
+                boxObj.GetComponent<TextMesh>().text = "["+value+"]";
+            }
+            if (messegsEvent.Description().CompareTo("flightTime") == 0 && component.CompareTo("flightTimeChanged") == 0)
+            {
+                json = JObject.Parse(data);
+                var value = GetJArrayValue(json, "flightTime");
+                boxObj.GetComponent<TextMesh>().text = value;
+            }
+
+
         }
         public string GetJArrayValue(JObject yourJArray, string key)
         {

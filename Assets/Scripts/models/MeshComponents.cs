@@ -52,5 +52,19 @@ namespace ObserverPattern
             return "system";
         }
     }
-    
+    public class BatteryARTH : MeshEvents
+    {
+        public override string Description()
+        {
+            return "batteryNAircraft";
+        }
+    }
+    public class FlightTime : MeshEvents
+    {
+        public override string Description()
+        {
+            return "flightTime";
+        }
+    }
+
 }

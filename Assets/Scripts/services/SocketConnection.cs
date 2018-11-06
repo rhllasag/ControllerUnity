@@ -20,13 +20,13 @@ namespace ObserverPattern
         List<Observer> observers = new List<Observer>();
         public static SocketConnection instance = null;
         
-        private string serverURL = "http://192.168.140.110:8080/socket.io/";
+        private string serverURL = "http://10.9.9.102:8080/socket.io/";
         SocketManager manager;
         private SocketConnection()
         {
             SocketOptions options = new SocketOptions();
             options.AutoConnect = true;
-            manager = new SocketManager(new Uri("http://192.168.140.110:8080/socket.io/"), options);
+            manager = new SocketManager(new Uri("http://10.9.9.102:8080/socket.io/"), options);
             manager.Socket.On(SocketIOEventTypes.Connect, OnServerConnect);
             manager.Socket.On(SocketIOEventTypes.Disconnect, OnServerDisconnect);
             manager.Socket.On(SocketIOEventTypes.Error, OnError);
@@ -40,6 +40,8 @@ namespace ObserverPattern
             manager.Socket.On("gpsSignalStatusChanged", OnGPSSignalStatusChanged);
             manager.Socket.On("flightModeSwitchChanged",OnFlightModeSwitchChanged);
             manager.Socket.On("systemStatusChanged", OnSystemStatusChanged);
+            manager.Socket.On("batteryANeededRTHChanged", OnAircraftBatteryNeededRTHChanged);
+            manager.Socket.On("flightTimeChanged", OnFlightTimeChanged);
 
             //manager.Socket.On("rcConnectionStatusChanged", OnRCConnectionStatusChanged);
             manager.Open();
@@ -88,6 +90,14 @@ namespace ObserverPattern
         void OnSystemStatusChanged(Socket socket, Packet packet, params object[] args)
         {
             Notify(args[0].ToString(), "systemStatusChanged");
+        }
+        void OnAircraftBatteryNeededRTHChanged(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "batteryANeededRTHChanged");
+        }
+        void OnFlightTimeChanged(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "flightTimeChanged");
         }
         void OnServerConnect(Socket socket, Packet packet, params object[] args)
         {
