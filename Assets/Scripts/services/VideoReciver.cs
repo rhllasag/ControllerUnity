@@ -136,7 +136,7 @@ public class VideoReciver : MonoBehaviour
         //Wait until old Image is displayed
         while (!readyToReadAgain)
         {
-            System.Threading.Thread.Sleep(1);
+            System.Threading.Thread.Sleep(0);
         }
     }
 
@@ -154,6 +154,8 @@ public class VideoReciver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!stop) {
+        }
 
 
     }

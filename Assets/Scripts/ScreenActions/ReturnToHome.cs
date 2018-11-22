@@ -8,7 +8,7 @@ public class ReturnToHome : MonoBehaviour, IInputHandler, IInputClickHandler, IM
 {
     public void OnInputClicked(InputClickedEventData eventData)
     {
-        SocketConnection.getInstance().emitMainScreenEvent("newReturnToHomeEvent");
+        SocketConnection.getInstance().emitMainScreenEvent("newReturnToHome");
 
     }
 
@@ -34,7 +34,7 @@ public class ReturnToHome : MonoBehaviour, IInputHandler, IInputClickHandler, IM
 
     public void OnManipulationUpdated(ManipulationEventData eventData)
     {
-        SocketConnection.getInstance().emitMainScreenEvent("newReturnToHomeEvent");
+        SocketConnection.getInstance().emitMainScreenEvent("newReturnToHome");
 
     }
 
@@ -45,6 +45,9 @@ public class ReturnToHome : MonoBehaviour, IInputHandler, IInputClickHandler, IM
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SocketConnection.getInstance().emitMainScreenEvent("newReturnToHome");
+        }
+    }
 }

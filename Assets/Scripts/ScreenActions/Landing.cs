@@ -8,7 +8,7 @@ public class Landing : MonoBehaviour,IInputHandler, IInputClickHandler, IManipul
 {
     public void OnInputClicked(InputClickedEventData eventData)
     {
-        SocketConnection.getInstance().emitMainScreenEvent("newLandingEvent");
+        SocketConnection.getInstance().emitMainScreenEvent("newLanding");
     }
 
     public void OnInputDown(InputEventData eventData)
@@ -33,7 +33,7 @@ public class Landing : MonoBehaviour,IInputHandler, IInputClickHandler, IManipul
 
     public void OnManipulationUpdated(ManipulationEventData eventData)
     {
-        SocketConnection.getInstance().emitMainScreenEvent("newLandingEvent");
+        SocketConnection.getInstance().emitMainScreenEvent("newLanding");
     }
 
     // Use this for initialization
@@ -43,6 +43,9 @@ public class Landing : MonoBehaviour,IInputHandler, IInputClickHandler, IManipul
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            SocketConnection.getInstance().emitMainScreenEvent("newLanding");
+        }
+    }
 }

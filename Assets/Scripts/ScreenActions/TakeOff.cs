@@ -9,7 +9,7 @@ namespace ObserverPattern
     {
         public void OnInputClicked(InputClickedEventData eventData)
         {
-            SocketConnection.getInstance().emitMainScreenEvent("newTakeOffEvent");
+            SocketConnection.getInstance().emitMainScreenEvent("newTakeOff");
         }
 
         public void OnInputDown(InputEventData eventData)
@@ -34,7 +34,7 @@ namespace ObserverPattern
 
         public void OnManipulationUpdated(ManipulationEventData eventData)
         {
-            SocketConnection.getInstance().emitMainScreenEvent("newTakeOffEvent");
+            SocketConnection.getInstance().emitMainScreenEvent("newTakeOff");
         }
 
         // Use this for initialization
@@ -46,7 +46,10 @@ namespace ObserverPattern
         // Update is called once per frame
         void Update()
         {
-
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                SocketConnection.getInstance().emitMainScreenEvent("newTakeOff");
+            }
         }
     }
 }
