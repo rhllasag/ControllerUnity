@@ -66,5 +66,25 @@ namespace ObserverPattern
             return "flightTime";
         }
     }
-
+    public class Hight : MeshEvents
+    {
+        public override string Description()
+        {
+            return "hight";
+        }
+    }
+    public class HomeLocation : MeshEvents
+    {
+        public override string Description()
+        {
+            return "homeLocation";
+        }
+    }
+    public class Coordinates : MeshEvents
+    {
+        public override string Description()
+        {
+            return "coordinates";
+        }
+    }
 }

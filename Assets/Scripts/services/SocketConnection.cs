@@ -20,13 +20,13 @@ namespace ObserverPattern
         List<Observer> observers = new List<Observer>();
         public static SocketConnection instance = null;
         
-        private string serverURL = "http://10.254.0.149:8080/socket.io/";
+        private string serverURL = "http://192.168.140.110:8080/socket.io/";
         SocketManager manager;
         private SocketConnection()
         {
             SocketOptions options = new SocketOptions();
             options.AutoConnect = true;
-            manager = new SocketManager(new Uri("http://10.254.0.149:8080/socket.io/"), options);
+            manager = new SocketManager(new Uri("http://192.168.140.110:8080/socket.io/"), options);
             manager.Socket.On(SocketIOEventTypes.Connect, OnServerConnect);
             manager.Socket.On(SocketIOEventTypes.Disconnect, OnServerDisconnect);
             manager.Socket.On(SocketIOEventTypes.Error, OnError);
@@ -40,9 +40,10 @@ namespace ObserverPattern
             manager.Socket.On("gpsSignalStatusChanged", OnGPSSignalStatusChanged);
             manager.Socket.On("flightModeSwitchChanged",OnFlightModeSwitchChanged);
             manager.Socket.On("systemStatusChanged", OnSystemStatusChanged);
-            manager.Socket.On("batteryANeededRTHChanged", OnAircraftBatteryNeededRTHChanged);
-            manager.Socket.On("flightTimeChanged", OnFlightTimeChanged);
 
+            manager.Socket.On("flightTimeChanged", OnFlightTimeChanged);
+            manager.Socket.On("homeLocationChanged", OnHomeLocationChanged);
+            manager.Socket.On("coordinatesChanged", OnCoordinatesChanged);
             //manager.Socket.On("rcConnectionStatusChanged", OnRCConnectionStatusChanged);
             manager.Open();
         }
@@ -66,6 +67,7 @@ namespace ObserverPattern
         void OnBatteryLevelChanged(Socket socket, Packet packet, params object[] args)
         {
             Notify(args[0].ToString(), "batteryLevelChanged");
+            Notify(args[0].ToString(), "batteryANeededRTHChanged");
         }
         void OnAirlinkWifiLevelChanged(Socket socket, Packet packet, params object[] args)
         {
@@ -91,9 +93,17 @@ namespace ObserverPattern
         {
             Notify(args[0].ToString(), "systemStatusChanged");
         }
-        void OnAircraftBatteryNeededRTHChanged(Socket socket, Packet packet, params object[] args)
+        void OnHightChanged(Socket socket, Packet packet, params object[] args)
         {
-            Notify(args[0].ToString(), "batteryANeededRTHChanged");
+            Notify(args[0].ToString(), "hightChanged");
+        }
+        void OnHomeLocationChanged(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "homeLocationChanged");
+        }
+        void OnCoordinatesChanged(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "coordinatesChanged");
         }
         void OnFlightTimeChanged(Socket socket, Packet packet, params object[] args)
         {

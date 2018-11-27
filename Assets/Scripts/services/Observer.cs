@@ -98,8 +98,8 @@ namespace ObserverPattern
             if (messegsEvent.Description().CompareTo("batteryNAircraft") == 0 && component.CompareTo("batteryANeededRTHChanged") == 0)
             {
                 json = JObject.Parse(data);
-                var value = GetJArrayValue(json, "batteryNeededRTH");
-                boxObj.GetComponent<TextMesh>().text = "["+value+"]";
+                int value = int.Parse(GetJArrayValue(json, "batteryLevel"));
+                boxObj.GetComponent<TextMesh>().text = "["+((value*20)/100)+"min]";
             }
             if (messegsEvent.Description().CompareTo("flightTime") == 0 && component.CompareTo("flightTimeChanged") == 0)
             {
@@ -107,7 +107,24 @@ namespace ObserverPattern
                 var value = GetJArrayValue(json, "flightTime");
                 boxObj.GetComponent<TextMesh>().text = value;
             }
-
+            if (messegsEvent.Description().CompareTo("hight") == 0 && component.CompareTo("coordinatesChanged") == 0)
+            {
+                json = JObject.Parse(data);
+                var value = "m: "+GetJArrayValue(json, "hight")+"    Km: "+ GetJArrayValue(json, "distance");
+                boxObj.GetComponent<TextMesh>().text = value;
+            }
+            if (messegsEvent.Description().CompareTo("homeLocation") == 0 && component.CompareTo("homeLocationChanged") == 0)
+            {
+                json = JObject.Parse(data);
+                var value = "(" + GetJArrayValue(json, "latitude") + ":" + GetJArrayValue(json, "longitude") + ")";
+                boxObj.GetComponent<TextMesh>().text = value;
+            }
+            if (messegsEvent.Description().CompareTo("coordinates") == 0 && component.CompareTo("coordinatesChanged") == 0)
+            {
+                json = JObject.Parse(data);
+                var value = "(" + GetJArrayValue(json, "latitude") + " : " + GetJArrayValue(json, "longitude") + ")";
+                boxObj.GetComponent<TextMesh>().text = value;
+            }
 
         }
         public string GetJArrayValue(JObject yourJArray, string key)

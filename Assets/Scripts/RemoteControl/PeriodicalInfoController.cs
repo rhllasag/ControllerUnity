@@ -19,8 +19,11 @@ namespace ObserverPattern
         public GameObject rth;
         //BatteryNeeded to RTH
         public GameObject batteryNAircraft;
-        //Flight Time
+        //Flight Data
         public GameObject flighTime;
+        public GameObject hight;
+        public GameObject homeLocation;
+        public GameObject coordinates;
         void Start()
         {
             //Create MeshObject that can observe events and give them an event to do
@@ -32,6 +35,9 @@ namespace ObserverPattern
             MeshObject flightSwitchModeMesh = new MeshObject(landing,takeOff,rth,flightSwitchMode, new FlightSwitchMode());
             MeshObject batteryNAircraftMesh = new MeshObject(batteryNAircraft, new BatteryARTH());
             MeshObject flightTimeMesh = new MeshObject(flighTime, new FlightTime());
+            MeshObject hightMesh = new MeshObject(hight, new Hight());
+            MeshObject homeLocationMesh = new MeshObject(homeLocation, new HomeLocation());
+            MeshObject coodinatesMesh = new MeshObject(coordinates, new Coordinates());
             //Add the MeshObject to the list of objects waiting for something to happen
             SocketConnection.getInstance().AddObserver(batteryLevelMesh);
             SocketConnection.getInstance().AddObserver(remoteControllerMesh);
@@ -41,8 +47,12 @@ namespace ObserverPattern
             SocketConnection.getInstance().AddObserver(flightSwitchModeMesh);
             SocketConnection.getInstance().AddObserver(batteryNAircraftMesh);
             SocketConnection.getInstance().AddObserver(flightTimeMesh);
+            SocketConnection.getInstance().AddObserver(hightMesh);
+            SocketConnection.getInstance().AddObserver(homeLocationMesh);
+            SocketConnection.getInstance().AddObserver(coodinatesMesh);
+
         }
-        
+
 
 
         void Update()
