@@ -6,8 +6,6 @@ using HoloToolkit.Examples.InteractiveElements;
 
 public class SystemPanelController : MonoBehaviour {
 
-    public GameObject uAVHomeButton;
-    public GameObject pilotHomeButton;
     public GameObject intelligentFlighModesToggle;
     public GameObject sliderAltitudeRTH;
     public GameObject beginnerModeToggle;
