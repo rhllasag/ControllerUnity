@@ -757,9 +757,11 @@
      <Compile Include="Assets\Scripts\Panels\BatteryPanel\BatteryPanelController.cs" />
      <Compile Include="Assets\Scripts\Panels\BatteryPanel\BatteryPanelMeshEvents.cs" />
      <Compile Include="Assets\Scripts\Panels\BatteryPanel\BatteryPanelObserver.cs" />
+     <Compile Include="Assets\Scripts\Panels\SystemPanel\SetHomeLocation.cs" />
      <Compile Include="Assets\Scripts\Panels\SystemPanel\SystemPanelController.cs" />
      <Compile Include="Assets\Scripts\Panels\SystemPanel\SystemPanelMeshEvents.cs" />
      <Compile Include="Assets\Scripts\Panels\SystemPanel\SystemPanelObserver.cs" />
+     <Compile Include="Assets\Scripts\Panels\ToggleEvent.cs" />
      <Compile Include="Assets\Scripts\Panels\VisualNavigationPanel\VisualNavigationPanelController.cs" />
      <Compile Include="Assets\Scripts\Panels\VisualNavigationPanel\VisualNavigationPanelMeshEvents.cs" />
      <Compile Include="Assets\Scripts\Panels\VisualNavigationPanel\VisualNavigationPanelObserver.cs" />
@@ -778,8 +780,7 @@
      <Compile Include="Assets\Scripts\services\SocketConnection.cs" />
      <Compile Include="Assets\Scripts\services\USStatusTextManager.cs" />
      <Compile Include="Assets\Scripts\services\VideoReciver.cs" />
-     <Compile Include="Assets\Scripts\SetHomeLocation.cs" />
-     <Compile Include="Assets\Scripts\ToggleEvent.cs" />
+     <Compile Include="Assets\SliderEvents.cs" />
      <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFConstant.cginc" />
      <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\UnlitConfigurable.shader" />
      <None Include="Assets\HoloToolkit\UX\Shaders\HUXButtonShader.shader" />

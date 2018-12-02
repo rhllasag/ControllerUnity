@@ -20,13 +20,13 @@ namespace ObserverPattern
         List<Observer> observers = new List<Observer>();
         public static SocketConnection instance = null;
         
-        private string serverURL = "http://10.9.9.194:8080/socket.io/";
+        private string serverURL = "http://localhost:8080/socket.io/";
         SocketManager manager;
         private SocketConnection()
         {
             SocketOptions options = new SocketOptions();
             options.AutoConnect = true;
-            manager = new SocketManager(new Uri("http://10.9.9.194:8080/socket.io/"), options);
+            manager = new SocketManager(new Uri("http://localhost:8080/socket.io/"), options);
             manager.Socket.On(SocketIOEventTypes.Connect, OnServerConnect);
             manager.Socket.On(SocketIOEventTypes.Disconnect, OnServerDisconnect);
             manager.Socket.On(SocketIOEventTypes.Error, OnError);
