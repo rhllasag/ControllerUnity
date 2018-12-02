@@ -232,12 +232,10 @@
      <Compile Include="Assets\Mapbox\Unity\Editor\TreeViewWithTreeModel.cs" />
      <Compile Include="Assets\Mapbox\Unity\Editor\UnitTests\MapboxUnitTests_CircularBuffer.cs" />
      <Compile Include="Assets\Mapbox\Unity\Editor\VectorSubLayerTreeView.cs" />
-     <Compile Include="Assets\MapboxAR\Unity\Ar\Editor\Tests\MapboxUnitTests_AverageHeadingAlignmentStrategy.cs" />
      <Compile Include="Assets\ThirdPartyAssets\WoLfulus\LineEnding\Editor\Enums.cs" />
      <Compile Include="Assets\ThirdPartyAssets\WoLfulus\LineEnding\Editor\FileMonitor.cs" />
      <Compile Include="Assets\ThirdPartyAssets\WoLfulus\LineEnding\Editor\LogEntries.cs" />
      <Compile Include="Assets\ThirdPartyAssets\WoLfulus\LineEnding\Editor\LogEntry.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Editor\UnityARBuildPostprocessor.cs" />
  <Reference Include="UnityEngine.CoreModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/MetroSupport/Tools/UnityEngine.CoreModule.dll</HintPath>
  </Reference>
@@ -448,6 +446,24 @@
  <Reference Include="Newtonsoft.Json">
  <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/JsonNet/Newtonsoft.Json.dll</HintPath>
  </Reference>
+ <Reference Include="Mapbox.VectorTile.ExtensionMethods">
+ <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.ExtensionMethods.dll</HintPath>
+ </Reference>
+ <Reference Include="Mapbox.VectorTile.Geometry">
+ <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.Geometry.dll</HintPath>
+ </Reference>
+ <Reference Include="Mapbox.VectorTile.PbfReader">
+ <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.PbfReader.dll</HintPath>
+ </Reference>
+ <Reference Include="Mapbox.VectorTile.VectorTileReader">
+ <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.VectorTileReader.dll</HintPath>
+ </Reference>
+ <Reference Include="Mapbox.IO.Compression">
+ <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.IO.Compression/net35/Mapbox.IO.Compression.dll</HintPath>
+ </Reference>
+ <Reference Include="Mapbox.Json">
+ <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.Json/Net35/Mapbox.Json.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Users/homer/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -465,24 +481,6 @@
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/Users/homer/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
- </Reference>
- <Reference Include="Mapbox.VectorTile.PbfReader">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.PbfReader.dll</HintPath>
- </Reference>
- <Reference Include="Mapbox.IO.Compression">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.IO.Compression/net35/Mapbox.IO.Compression.dll</HintPath>
- </Reference>
- <Reference Include="Mapbox.VectorTile.VectorTileReader">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.VectorTileReader.dll</HintPath>
- </Reference>
- <Reference Include="Mapbox.Json">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.Json/Net35/Mapbox.Json.dll</HintPath>
- </Reference>
- <Reference Include="Mapbox.VectorTile.Geometry">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.Geometry.dll</HintPath>
- </Reference>
- <Reference Include="Mapbox.VectorTile.ExtensionMethods">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.ExtensionMethods.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

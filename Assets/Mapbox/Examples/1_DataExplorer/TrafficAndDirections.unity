@@ -153,7 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd961b1c9541a4cee99686069ecce852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initializeOnStart: 1
   _options:
     locationOptions:
       latitudeLongitude: 40.7648, -73.9808
@@ -182,6 +181,7 @@ MonoBehaviour:
       unityTileSize: 100
     loadingTexture: {fileID: 2800000, guid: e2896a92727704803a9c422b043eae89, type: 3}
     tileMaterial: {fileID: 2100000, guid: b9f23e9bce724fa4daac57ecded470b8, type: 2}
+  _initializeOnStart: 1
   _imagery:
     _layerProperty:
       sourceType: 2
@@ -368,7 +368,7 @@ MonoBehaviour:
           texturingType: 0
           materials:
           - Materials:
-            - {fileID: 2100000, guid: aaa94592a6eb9c8418d32b37b10f288d, type: 2}
+            - {fileID: 0}
           - Materials:
             - {fileID: 0}
           atlasInfo: {fileID: 11400000, guid: 414754d7155df47beb52ca117a774f21, type: 2}
@@ -393,9 +393,9 @@ MonoBehaviour:
         buildingsWithUniqueIds: 0
         moveFeaturePositionTo: 0
         MeshModifiers:
-        - {fileID: 11400000, guid: 62d6f0f3c3cfa094096bb93eb5a17a16, type: 2}
+        - {fileID: 0}
         GoModifiers:
-        - {fileID: 11400000, guid: 9bbd80c71d8a3c64389371070b58d88f, type: 2}
+        - {fileID: 0}
         presetFeatureType: 4
         _maskValue: 0
         selectedTypes: 
@@ -436,7 +436,7 @@ MonoBehaviour:
           texturingType: 0
           materials:
           - Materials:
-            - {fileID: 2100000, guid: 8d222a6659da43e45b6274794e67d47a, type: 2}
+            - {fileID: 0}
           - Materials:
             - {fileID: 0}
           atlasInfo: {fileID: 11400000, guid: 414754d7155df47beb52ca117a774f21, type: 2}
@@ -461,9 +461,9 @@ MonoBehaviour:
         buildingsWithUniqueIds: 0
         moveFeaturePositionTo: 0
         MeshModifiers:
-        - {fileID: 11400000, guid: 62d6f0f3c3cfa094096bb93eb5a17a16, type: 2}
+        - {fileID: 0}
         GoModifiers:
-        - {fileID: 11400000, guid: 323094f51a4b9694284270dbce39e58b, type: 2}
+        - {fileID: 0}
         presetFeatureType: 4
         _maskValue: 0
         selectedTypes: 
@@ -504,7 +504,7 @@ MonoBehaviour:
           texturingType: 0
           materials:
           - Materials:
-            - {fileID: 2100000, guid: bdad3ccf6401a414188827874d8999aa, type: 2}
+            - {fileID: 0}
           - Materials:
             - {fileID: 0}
           atlasInfo: {fileID: 11400000, guid: 414754d7155df47beb52ca117a774f21, type: 2}
@@ -529,9 +529,9 @@ MonoBehaviour:
         buildingsWithUniqueIds: 0
         moveFeaturePositionTo: 0
         MeshModifiers:
-        - {fileID: 11400000, guid: 62d6f0f3c3cfa094096bb93eb5a17a16, type: 2}
+        - {fileID: 0}
         GoModifiers:
-        - {fileID: 11400000, guid: fef7a9bd4475d2242b8651958b86df9d, type: 2}
+        - {fileID: 0}
         presetFeatureType: 4
         _maskValue: 0
         selectedTypes: 
@@ -572,7 +572,7 @@ MonoBehaviour:
           texturingType: 0
           materials:
           - Materials:
-            - {fileID: 2100000, guid: 0de83c8715792fe43aceecafcdbd8b24, type: 2}
+            - {fileID: 0}
           - Materials:
             - {fileID: 0}
           atlasInfo: {fileID: 11400000, guid: 414754d7155df47beb52ca117a774f21, type: 2}
@@ -597,9 +597,9 @@ MonoBehaviour:
         buildingsWithUniqueIds: 0
         moveFeaturePositionTo: 0
         MeshModifiers:
-        - {fileID: 11400000, guid: 62d6f0f3c3cfa094096bb93eb5a17a16, type: 2}
+        - {fileID: 0}
         GoModifiers:
-        - {fileID: 11400000, guid: b8a01f6fb6a5da1448922c6c4a57b630, type: 2}
+        - {fileID: 0}
         presetFeatureType: 4
         _maskValue: 0
         selectedTypes: 
@@ -832,7 +832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _map: {fileID: 110210642}
   MeshModifiers:
-  - {fileID: 11400000, guid: 72a54fd58e79618408c60d91df61d553, type: 2}
+  - {fileID: 0}
   _material: {fileID: 2100000, guid: 49b5d148287c83443bd632e6d5b5bd6f, type: 2}
   _waypoints:
   - {fileID: 1684020941}
@@ -1021,10 +1021,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Materials:
-  - {fileID: 2100000, guid: 8350bd50898372246a4e57e5734f4942, type: 2}
-  - {fileID: 2100000, guid: 345209cc13279414db9639b2843ac3c1, type: 2}
-  - {fileID: 2100000, guid: 5df7ad3e02d78284cbc17810cb387d54, type: 2}
-  - {fileID: 2100000, guid: 46e6f9799c66fb648be2fb26a721be4c, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   Speed: 0.2
 --- !u!4 &1279735269
 Transform:

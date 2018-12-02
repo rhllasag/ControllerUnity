@@ -908,13 +908,6 @@
      <Compile Include="Assets\Mapbox\Core\Plugins\Android\UniAndroidPermission\UniAndroidPermission.cs" />
      <Compile Include="Assets\Mapbox\Core\probe-extractor-cs\Probe.cs" />
      <Compile Include="Assets\Mapbox\Core\probe-extractor-cs\ProbeExtractor.cs" />
-     <Compile Include="Assets\Mapbox\Examples\1_DataExplorer\HighlightBuildings.cs" />
-     <Compile Include="Assets\Mapbox\Examples\1_DataExplorer\Scripts\TextMeshOutline.cs" />
-     <Compile Include="Assets\Mapbox\Examples\2_AstronautGame\AstronautGame\Astronaut\AstronautDirections.cs" />
-     <Compile Include="Assets\Mapbox\Examples\2_AstronautGame\AstronautGame\Astronaut\AstronautMouseController.cs" />
-     <Compile Include="Assets\Mapbox\Examples\2_AstronautGame\AstronautGame\Astronaut\CharacterMovement.cs" />
-     <Compile Include="Assets\Mapbox\Examples\3_POIPlacement\POIPlacementScriptExample.cs" />
-     <Compile Include="Assets\Mapbox\Examples\4_ReplaceFeatures\Scripts\BlinkLight.cs" />
      <Compile Include="Assets\Mapbox\Examples\5_Playground\Scripts\DirectionsExample.cs" />
      <Compile Include="Assets\Mapbox\Examples\5_Playground\Scripts\ForwardGeocoderExample.cs" />
      <Compile Include="Assets\Mapbox\Examples\5_Playground\Scripts\LogLocationProviderData.cs" />
@@ -923,12 +916,6 @@
      <Compile Include="Assets\Mapbox\Examples\5_Playground\Scripts\VectorTileExample.cs" />
      <Compile Include="Assets\Mapbox\Examples\6_ZoomableMap\Scripts\SetCameraHeight.cs" />
      <Compile Include="Assets\Mapbox\Examples\6_ZoomableMap\Scripts\SpawnOnMap.cs" />
-     <Compile Include="Assets\Mapbox\Examples\7_Globe\Scripts\DragRotate.cs" />
-     <Compile Include="Assets\Mapbox\Examples\7_Globe\Scripts\SpawnOnGlobeExample.cs" />
-     <Compile Include="Assets\Mapbox\Examples\8_VoxelMap\Scripts\TextureScaler.cs" />
-     <Compile Include="Assets\Mapbox\Examples\8_VoxelMap\Scripts\VoxelData.cs" />
-     <Compile Include="Assets\Mapbox\Examples\8_VoxelMap\Scripts\VoxelFetcher.cs" />
-     <Compile Include="Assets\Mapbox\Examples\8_VoxelMap\Scripts\VoxelTile.cs" />
      <Compile Include="Assets\Mapbox\Examples\Scripts\CameraBillboard.cs" />
      <Compile Include="Assets\Mapbox\Examples\Scripts\CameraMovement.cs" />
      <Compile Include="Assets\Mapbox\Examples\Scripts\ChangeShadowDistance.cs" />
@@ -1190,28 +1177,6 @@
      <Compile Include="Assets\Mapbox\Unity\Utilities\TelemetryConfigurationButton.cs" />
      <Compile Include="Assets\Mapbox\Unity\Utilities\VectorEntity.cs" />
      <Compile Include="Assets\Mapbox\Unity\Utilities\VectorExtensions.cs" />
-     <Compile Include="Assets\MapboxAR\Examples\ARPrerequisiteInfo.cs" />
-     <Compile Include="Assets\MapboxAR\Examples\ARTabletop\Scripts\ARPlaneHandler.cs" />
-     <Compile Include="Assets\MapboxAR\Examples\ARTabletop\Scripts\ARTableTopCameraMovement.cs" />
-     <Compile Include="Assets\MapboxAR\Examples\ARTabletop\Scripts\PlaceMapOnARPlane.cs" />
-     <Compile Include="Assets\MapboxAR\Examples\ARTabletop\Scripts\SnapMapToTargetTransform.cs" />
-     <Compile Include="Assets\MapboxAR\Examples\ARTabletop\Scripts\UpdateShaderCoordinatesByARPlane.cs" />
-     <Compile Include="Assets\MapboxAR\Scripts\Camera\ManualTouchCamera.cs" />
-     <Compile Include="Assets\MapboxAR\Scripts\Camera\TouchCamera.cs" />
-     <Compile Include="Assets\MapboxAR\Scripts\ManualSync\FollowTargetTransform.cs" />
-     <Compile Include="Assets\MapboxAR\Scripts\ManualSync\RelocateMapByGPS.cs" />
-     <Compile Include="Assets\MapboxAR\Scripts\ManualSync\RotateOnYTargetTransform.cs" />
-     <Compile Include="Assets\MapboxAR\Scripts\ManualSync\UpdateMapPosByARPlaneY.cs" />
-     <Compile Include="Assets\MapboxAR\Scripts\PlayerSizeFromLocationAccuracy.cs" />
-     <Compile Include="Assets\MapboxAR\Unity\Ar\AbstractAlignmentStrategy.cs" />
-     <Compile Include="Assets\MapboxAR\Unity\Ar\AverageHeadingAlignmentStrategy.cs" />
-     <Compile Include="Assets\MapboxAR\Unity\Ar\ISynchronizationContext.cs" />
-     <Compile Include="Assets\MapboxAR\Unity\Ar\LerpAlignmentStrategy.cs" />
-     <Compile Include="Assets\MapboxAR\Unity\Ar\ManualSynchronizationContextBehaviour.cs" />
-     <Compile Include="Assets\MapboxAR\Unity\Ar\SimpleAutomaticSynchronizationContext.cs" />
-     <Compile Include="Assets\MapboxAR\Unity\Ar\SimpleAutomaticSynchronizationContextBehaviour.cs" />
-     <Compile Include="Assets\MapboxAR\Unity\Ar\SnapAlignmentStrategy.cs" />
-     <Compile Include="Assets\MapboxAR\Unity\Ar\Utilities\PlotRoute.cs" />
      <Compile Include="Assets\Scripts\Maps\IMapUrlBuilder.cs" />
      <Compile Include="Assets\Scripts\Maps\MapBuilder.cs" />
      <Compile Include="Assets\Scripts\Maps\MapTile.cs" />
@@ -1247,79 +1212,8 @@
      <Compile Include="Assets\Scripts\services\USStatusTextManager.cs" />
      <Compile Include="Assets\Scripts\services\VideoReciver.cs" />
      <Compile Include="Assets\SliderEvents.cs" />
-     <Compile Include="Assets\UnityARInterface\ARRemote\Scripts\ARRemoteDevice.cs" />
-     <Compile Include="Assets\UnityARInterface\ARRemote\Scripts\ARRemoteEditor.cs" />
-     <Compile Include="Assets\UnityARInterface\ARRemote\Scripts\ARRemoteEditorInterface.cs" />
-     <Compile Include="Assets\UnityARInterface\ARRemote\Scripts\ARSerializableObjects.cs" />
-     <Compile Include="Assets\UnityARInterface\Examples\ARFocusSquare\ARFocusSquare.cs" />
-     <Compile Include="Assets\UnityARInterface\Examples\Scripts\DemoGUI.cs" />
-     <Compile Include="Assets\UnityARInterface\Examples\Scripts\MatchingScalePicker.cs" />
-     <Compile Include="Assets\UnityARInterface\Examples\Scripts\ObjectShooter.cs" />
-     <Compile Include="Assets\UnityARInterface\Examples\Scripts\OptionsGUI.cs" />
-     <Compile Include="Assets\UnityARInterface\Examples\Scripts\PlaceOnPlane.cs" />
-     <Compile Include="Assets\UnityARInterface\Examples\Scripts\RemoveRigidbody.cs" />
-     <Compile Include="Assets\UnityARInterface\Scripts\ARAnchor.cs" />
-     <Compile Include="Assets\UnityARInterface\Scripts\ARBase.cs" />
-     <Compile Include="Assets\UnityARInterface\Scripts\ARController.cs" />
-     <Compile Include="Assets\UnityARInterface\Scripts\ARCoreInterface.cs" />
-     <Compile Include="Assets\UnityARInterface\Scripts\AREditorInterface.cs" />
-     <Compile Include="Assets\UnityARInterface\Scripts\ARInterface.cs" />
-     <Compile Include="Assets\UnityARInterface\Scripts\ARKitInterface.cs" />
-     <Compile Include="Assets\UnityARInterface\Scripts\ARLightEstimate.cs" />
-     <Compile Include="Assets\UnityARInterface\Scripts\ARMessageIds.cs" />
-     <Compile Include="Assets\UnityARInterface\Scripts\ARPlaneVisualizer.cs" />
-     <Compile Include="Assets\UnityARInterface\Scripts\ARPointCloudVisualizer.cs" />
-     <Compile Include="Assets\UnityARInterface\Scripts\BoundedPlane.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\ARKitRemote\ARKitRemoteConnection.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\ARKitRemote\ConnectionMessageIds.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\ARKitRemote\ConnectToEditor.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\ARKitRemote\EditorHitTest.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\ARKitRemote\ObjectSerializationExtension.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\ARKitRemote\SerializableObjects.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\ARKitRemote\UnityRemoteVideo.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Examples\AddRemoveAnchorExample\UnityARUserAnchorExample.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Examples\FocusSquare\FocusSquare.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Helpers\AR3DOFCameraManager.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Helpers\ARPlaneAnchorGameObject.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Helpers\DontDestroyOnLoad.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Helpers\PointCloudParticleExample.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Helpers\UnityARAmbient.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Helpers\UnityARAnchorManager.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Helpers\UnityARCameraManager.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Helpers\UnityARCameraNearFar.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Helpers\UnityARGeneratePlane.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Helpers\UnityARHitTestExample.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Helpers\UnityARKitControl.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Helpers\UnityARKitLightManager.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Helpers\UnityARMatrixOps.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Helpers\UnityARUserAnchorComponent.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Helpers\UnityARUtility.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Helpers\UnityARVideo.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Helpers\UnityPointCloudExample.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\ARAnchor.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\ARCamera.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\ARErrorCode.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\ARFaceAnchor.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\ARFrame.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\ARHitTestResult.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\ARHitTestResultType.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\ARLightEstimate.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\ARPlaneAnchor.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\ARPlaneAnchorAlignment.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\ARPoint.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\ARRect.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\ARSize.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\ARTextureHandles.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\ARTrackingQuality.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\ARTrackingState.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\ARTrackingStateReason.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\ARUserAnchor.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\UnityARSessionNativeInterface.cs" />
-     <Compile Include="Assets\UnityARKitPlugin\UnityARKitPluginSettings.cs" />
      <None Include="Assets\Mapbox\Unity\Location\ExampleGpsTraces\LocationProviderAndroidNative.txt" />
      <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFConstant.cginc" />
-     <None Include="Assets\UnityARInterface\Examples\Common\Shaders\MobileOcclusion.shader" />
-     <None Include="Assets\UnityARInterface\Examples\Common\Shaders\InstancedSurfaceShader.shader" />
      <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\UnlitConfigurable.shader" />
      <None Include="Assets\HoloToolkit\UX\Shaders\HUXButtonShader.shader" />
      <None Include="Assets\HoloToolkit\SpatialUnderstanding\Materials\SpatialUnderstandingSurface.shader" />
@@ -1330,7 +1224,6 @@
      <None Include="Assets\HoloToolkit-Examples\Medical\Shaders\VolumeRenderShared.cginc" />
      <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\VertexLitConfigurable.cginc" />
      <None Include="Assets\Mapbox\Unity\Location\ExampleGpsTraces\Helsinki.txt" />
-     <None Include="Assets\Mapbox\Examples\2_AstronautGame\AstronautGame\Building\CharacterBuildingShader.shader" />
      <None Include="Assets\HoloToolkit-Examples\Prototyping\Shaders\UnlitTransparentTriplanar.shader" />
      <None Include="Assets\HoloToolkit-Examples\Medical\Shaders\VolumeRenderThickSlice.shader" />
      <None Include="Assets\GoogleARCore\SDK\Materials\ARBackground.shader" />
@@ -1338,16 +1231,12 @@
      <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFStandardInput.cginc" />
      <None Include="Assets\Mapbox\Shaders\MapboxStylesPerRenderer.shader" />
      <None Include="Assets\Mapbox\Fonts\OpenSansLic.txt" />
-     <None Include="Assets\MapboxAR\link.xml" />
-     <None Include="Assets\MapboxAR\Examples\ARTabletop\Shaders\ClipBox\Clip_Box.shader" />
      <None Include="Assets\Mapbox\README.txt" />
      <None Include="Assets\HoloToolkit-Examples\UX\Materials\AcrylicReflectiveTransparent.shader" />
      <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\FastConfigurable\FastConfigurable.cginc" />
      <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\FastConfigurable\FastConfigurable2Sided.shader" />
-     <None Include="Assets\UnityARKitPlugin\Examples\Common\Shaders\MobileOcclusion.shader" />
      <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFVertexLitCommon.cginc" />
      <None Include="Assets\Mapbox\Core\Plugins\Android\UniAndroidPermission\AndroidManifest-uniRP.xml" />
-     <None Include="Assets\MapboxAR\Examples\ARTabletop\Shaders\ClipBox\LICENSE.txt" />
      <None Include="Assets\csc.rsp" />
      <None Include="Assets\HoloToolkit-Examples\Medical\Shaders\PlaneCut.cginc" />
      <None Include="Assets\HoloToolkit-Examples\Medical\Shaders\math.cginc" />
@@ -1361,43 +1250,34 @@
      <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\StandardFast.shader" />
      <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\LambertianConfigurable.shader" />
      <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\BlinnPhongConfigurableTransparent.shader" />
-     <None Include="Assets\UnityARKitPlugin\ARKitRemote\ARKITREMOTE.txt" />
      <None Include="Assets\HoloToolkit\SpatialMapping\Shaders\Wireframe.shader" />
      <None Include="Assets\Mapbox\Unity\Location\ExampleGpsTraces\LocationProviderUnity.txt" />
      <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFConstant.shader" />
      <None Include="Assets\Mapbox\Unity\Location\ExampleGpsTraces\LocationProviderAndroidNative-2.txt" />
-     <None Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Shaders\YUVShaderLinear.shader" />
      <None Include="Assets\HoloToolkit\Input\Shaders\CursorShader.shader" />
      <None Include="Assets\HoloToolkit\Input\Shaders\EditorHands.shader" />
      <None Include="Assets\HoloToolkit\SpatialMapping\Shaders\Occlusion.shader" />
-     <None Include="Assets\Mapbox\Examples\2_AstronautGame\AstronautGame\Astronaut\ProjectorLight.shader" />
      <None Include="Assets\HoloToolkit\MRTKVersion.txt" />
      <None Include="Assets\GoogleARCore\Examples\ComputerVision\Materials\AREdgeDetectionBackground.shader" />
      <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFStandard.shader" />
      <None Include="Assets\HoloToolkit\SpatialUnderstanding\Materials\SpatialMappingSurface.shader" />
-     <None Include="Assets\UnityARKitPlugin\Examples\Common\Shaders\MobileARShadow.shader" />
      <None Include="Assets\HoloToolkit-Examples\Prototyping\Shaders\UnlitTriplanar.shader" />
      <None Include="Assets\HoloToolkit\UX\Shaders\Normal-Diffuse.shader" />
      <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\LambertianConfigurableTransparent.shader" />
      <None Include="Assets\HoloToolkit\UX\Shaders\InvisibleShader.shader" />
      <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\FastConfigurable\FastConfigurable.shader" />
-     <None Include="Assets\MapboxAR\Examples\ARTabletop\Shaders\Clip_MapboxStyles.shader" />
      <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\macro.cginc" />
      <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\HoloToolkitCommon.cginc" />
      <None Include="Assets\HoloToolkit\UX\Shaders\DebugNormals.shader" />
-     <None Include="Assets\UnityARKitPlugin\Examples\Common\Shaders\InstancedSurfaceShader.shader" />
      <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\FastConfigurable\macro.cginc" />
      <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\FastConfigurable\HoloToolkitCommon.cginc" />
-     <None Include="Assets\MapboxAR\Examples\ARTabletop\Shaders\Clip_MapBoxStylesPerRenderer.shader" />
      <None Include="Assets\HoloToolkit\UX\Shaders\Alpha-Diffuse.shader" />
-     <None Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Shaders\YUVShader.shader" />
      <None Include="Assets\HoloToolkit\Common\Shaders\Standard.shader" />
      <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\VertexLitConfigurableTransparent.shader" />
      <None Include="Assets\HoloToolkit\UX\Shaders\HUXButtonHighlightShader.shader" />
      <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\BlinnPhongConfigurable.cginc" />
      <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFMobileCommon.cginc" />
      <None Include="Assets\mcs.rsp" />
-     <None Include="Assets\UnityARInterface\Examples\Common\Shaders\MobileARShadow.shader" />
      <None Include="Assets\HoloToolkit-Examples\UX\Materials\AcrylicReflective.shader" />
      <None Include="Assets\Mapbox\link.xml" />
      <None Include="Assets\HoloToolkit\UX\Shaders\Occlusion.shader" />
@@ -1578,6 +1458,24 @@
  <Reference Include="Newtonsoft.Json">
  <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/JsonNet/Newtonsoft.Json.dll</HintPath>
  </Reference>
+ <Reference Include="Mapbox.VectorTile.ExtensionMethods">
+ <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.ExtensionMethods.dll</HintPath>
+ </Reference>
+ <Reference Include="Mapbox.VectorTile.Geometry">
+ <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.Geometry.dll</HintPath>
+ </Reference>
+ <Reference Include="Mapbox.VectorTile.PbfReader">
+ <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.PbfReader.dll</HintPath>
+ </Reference>
+ <Reference Include="Mapbox.VectorTile.VectorTileReader">
+ <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.VectorTileReader.dll</HintPath>
+ </Reference>
+ <Reference Include="Mapbox.IO.Compression">
+ <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.IO.Compression/net35/Mapbox.IO.Compression.dll</HintPath>
+ </Reference>
+ <Reference Include="Mapbox.Json">
+ <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.Json/Net35/Mapbox.Json.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Users/homer/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/UnityEngine.Analytics.dll</HintPath>
  </Reference>
@@ -1586,24 +1484,6 @@
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/Users/homer/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
- </Reference>
- <Reference Include="Mapbox.VectorTile.PbfReader">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.PbfReader.dll</HintPath>
- </Reference>
- <Reference Include="Mapbox.IO.Compression">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.IO.Compression/net35/Mapbox.IO.Compression.dll</HintPath>
- </Reference>
- <Reference Include="Mapbox.VectorTile.VectorTileReader">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.VectorTileReader.dll</HintPath>
- </Reference>
- <Reference Include="Mapbox.Json">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.Json/Net35/Mapbox.Json.dll</HintPath>
- </Reference>
- <Reference Include="Mapbox.VectorTile.Geometry">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.Geometry.dll</HintPath>
- </Reference>
- <Reference Include="Mapbox.VectorTile.ExtensionMethods">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/RemoteController/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.ExtensionMethods.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
