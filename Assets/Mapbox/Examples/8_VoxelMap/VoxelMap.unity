@@ -825,21 +825,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb0ebec3dc2616941bc6ed14d239dd56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _voxels:
-  - Color: {r: 0, g: 1, b: 0, a: 1}
-    Voxel: {fileID: 1000012276909320, guid: be188b8431533497f81342f748507523, type: 2}
-  - Color: {r: 0, g: 0.19607845, b: 0, a: 1}
-    Voxel: {fileID: 1000013304073402, guid: 6bab41b00b822431298c5d57404b84ce, type: 2}
-  - Color: {r: 1, g: 0, b: 1, a: 1}
-    Voxel: {fileID: 1000010278372000, guid: 14cd476dd6ad643c98df122c3491e379, type: 2}
-  - Color: {r: 1, g: 1, b: 0, a: 1}
-    Voxel: {fileID: 1000012838333090, guid: a09bf619783d54820b0a4ffa05a96046, type: 2}
-  - Color: {r: 0, g: 0, b: 0, a: 1}
-    Voxel: {fileID: 1000011657203076, guid: 86204e4d8182e47fba9a34b82fba90b5, type: 2}
-  - Color: {r: 0, g: 1, b: 1, a: 1}
-    Voxel: {fileID: 1000010278372000, guid: 08a5c81e68c344101b7d6dfa2d4518d9, type: 2}
-  - Color: {r: 0, g: 0, b: 1, a: 1}
-    Voxel: {fileID: 1000011451876416, guid: 0de7a5089ac5549d4a6abaa3325c5b66, type: 2}
 --- !u!114 &1926148285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -852,15 +837,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5fb1ae8036545848eae9ab4c9dd119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _geocodeInput: {fileID: 476261658}
-  _zoom: 10
-  _elevationMultiplier: 2
-  _voxelDepthPadding: 1
-  _tileWidthInVoxels: 100
-  _voxelFetcher: {fileID: 1926148284}
-  _camera: {fileID: 643084841}
-  _voxelBatchCount: 500
-  _styleUrl: mapbox://styles/mapbox/cjb3veyx9532a2tpjozhuv0u9
 --- !u!4 &1926148286
 Transform:
   m_ObjectHideFlags: 0
