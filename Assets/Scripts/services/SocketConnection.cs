@@ -9,24 +9,18 @@ using System.IO;
 
 namespace ObserverPattern
 {
-    [Serializable]
-    public class parseJSONBatteryLevel
-    {
-        public string title;
-        public int level;
-    }
+
     public class SocketConnection
     {
         List<Observer> observers = new List<Observer>();
         public static SocketConnection instance = null;
-        
-        private string serverURL = "http://localhost:8080/socket.io/";
+        private string IP = DataManager.getInstance().getWebSocketServer();
         SocketManager manager;
         private SocketConnection()
         {
             SocketOptions options = new SocketOptions();
             options.AutoConnect = true;
-            manager = new SocketManager(new Uri("http://localhost:8080/socket.io/"), options);
+            manager = new SocketManager(new Uri("http://" + IP + ":8080/socket.io/"), options);
             manager.Socket.On(SocketIOEventTypes.Connect, OnServerConnect);
             manager.Socket.On(SocketIOEventTypes.Disconnect, OnServerDisconnect);
             manager.Socket.On(SocketIOEventTypes.Error, OnError);
@@ -40,10 +34,13 @@ namespace ObserverPattern
             manager.Socket.On("gpsSignalStatusChanged", OnGPSSignalStatusChanged);
             manager.Socket.On("flightModeSwitchChanged",OnFlightModeSwitchChanged);
             manager.Socket.On("systemStatusChanged", OnSystemStatusChanged);
-
             manager.Socket.On("flightTimeChanged", OnFlightTimeChanged);
             manager.Socket.On("homeLocationChanged", OnHomeLocationChanged);
             manager.Socket.On("coordinatesChanged", OnCoordinatesChanged);
+
+            manager.Socket.On("connectSocketChanged", OnConnectSocket);
+            manager.Socket.On("disconnectSocketChanged", OnDisconnectSocket);
+
             //manager.Socket.On("rcConnectionStatusChanged", OnRCConnectionStatusChanged);
             manager.Open();
         }
@@ -109,6 +106,15 @@ namespace ObserverPattern
         {
             Notify(args[0].ToString(), "flightTimeChanged");
         }
+        void OnConnectSocket(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "connectSocket");
+        }
+        void OnDisconnectSocket(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "disconnectSocket");
+        }
+
         void OnServerConnect(Socket socket, Packet packet, params object[] args)
         {
             Debug.Log("Connected");

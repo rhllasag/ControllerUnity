@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ObserverPattern
 {
@@ -24,6 +25,10 @@ namespace ObserverPattern
         public GameObject hight;
         public GameObject homeLocation;
         public GameObject coordinates;
+        //Video Streaming
+        public VideoReciver videoReciver;
+        public bool enableLog = false;
+
         void Start()
         {
             //Create MeshObject that can observe events and give them an event to do
@@ -38,6 +43,9 @@ namespace ObserverPattern
             MeshObject hightMesh = new MeshObject(hight, new Hight());
             MeshObject homeLocationMesh = new MeshObject(homeLocation, new HomeLocation());
             MeshObject coodinatesMesh = new MeshObject(coordinates, new Coordinates());
+            videoReciver = new VideoReciver(enableLog);
+
+            
             //Add the MeshObject to the list of objects waiting for something to happen
             SocketConnection.getInstance().AddObserver(batteryLevelMesh);
             SocketConnection.getInstance().AddObserver(remoteControllerMesh);
@@ -48,6 +56,7 @@ namespace ObserverPattern
             SocketConnection.getInstance().AddObserver(batteryNAircraftMesh);
             SocketConnection.getInstance().AddObserver(flightTimeMesh);
             SocketConnection.getInstance().AddObserver(hightMesh);
+            SocketConnection.getInstance().AddObserver(videoReciver);
             SocketConnection.getInstance().AddObserver(homeLocationMesh);
             SocketConnection.getInstance().AddObserver(coodinatesMesh);
 
@@ -57,11 +66,20 @@ namespace ObserverPattern
 
         void Update()
         {
-            //The boxes should jump if the sphere is cose to origo
-            //if ((sphereObj.transform.position).magnitude < 0.5f)
-            //{
-              //  subject.Notify();
-            //}
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                
+                videoReciver.connect();
+            }
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                videoReciver.disconnect();
+            }
+        }
+        void OnApplicationQuit()
+        {
+            videoReciver.disconnect();
         }
     }
+
 }

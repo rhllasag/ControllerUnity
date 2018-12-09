@@ -826,6 +826,7 @@
      <Compile Include="Assets\HoloToolkit-Examples\UX\Scripts\Widgets\TextMeshColorThemeWidget.cs" />
      <Compile Include="Assets\HoloToolkit-Examples\UX\Scripts\Widgets\TextureThemeWidget.cs" />
      <Compile Include="Assets\HoloToolkitExtensions\Scripts\RemoteAssets\DynamicTextureDownloader.cs" />
+     <Compile Include="Assets\LoadMotionControllerScene.cs" />
      <Compile Include="Assets\Mapbox\Core\cheap-ruler-cs\CheapRuler.cs" />
      <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\DirectionResource.cs" />
      <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Directions.cs" />
@@ -1177,13 +1178,15 @@
      <Compile Include="Assets\Mapbox\Unity\Utilities\TelemetryConfigurationButton.cs" />
      <Compile Include="Assets\Mapbox\Unity\Utilities\VectorEntity.cs" />
      <Compile Include="Assets\Mapbox\Unity\Utilities\VectorExtensions.cs" />
+     <Compile Include="Assets\Scripts\GeoCoordinates\HandleTextFile.cs" />
      <Compile Include="Assets\Scripts\Maps\IMapUrlBuilder.cs" />
      <Compile Include="Assets\Scripts\Maps\MapBuilder.cs" />
      <Compile Include="Assets\Scripts\Maps\MapTile.cs" />
      <Compile Include="Assets\Scripts\Maps\OpenStreetMapTileBuilder.cs" />
      <Compile Include="Assets\Scripts\Maps\TileInfo.cs" />
      <Compile Include="Assets\Scripts\Maps\WorldCoordinate.cs" />
-     <Compile Include="Assets\Scripts\Menus\LoadSceneToClick.cs" />
+     <Compile Include="Assets\Scripts\models\DataManager.cs" />
+     <Compile Include="Assets\Scripts\models\Menus\LoadSceneToClick.cs" />
      <Compile Include="Assets\Scripts\models\MeshComponents.cs" />
      <Compile Include="Assets\Scripts\Panels\BatteryPanel\BatteryPanelController.cs" />
      <Compile Include="Assets\Scripts\Panels\BatteryPanel\BatteryPanelMeshEvents.cs" />
@@ -1224,6 +1227,7 @@
      <None Include="Assets\HoloToolkit-Examples\Medical\Shaders\VolumeRenderShared.cginc" />
      <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\VertexLitConfigurable.cginc" />
      <None Include="Assets\Mapbox\Unity\Location\ExampleGpsTraces\Helsinki.txt" />
+     <None Include="Assets\Resources\test.txt" />
      <None Include="Assets\HoloToolkit-Examples\Prototyping\Shaders\UnlitTransparentTriplanar.shader" />
      <None Include="Assets\HoloToolkit-Examples\Medical\Shaders\VolumeRenderThickSlice.shader" />
      <None Include="Assets\GoogleARCore\SDK\Materials\ARBackground.shader" />

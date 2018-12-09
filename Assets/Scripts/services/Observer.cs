@@ -9,6 +9,7 @@ namespace ObserverPattern
 
         public abstract void OnNotify(string data, string component);
     }
+    
     public class MeshObject : Observer
     {
         //The  gameobject which will do something
@@ -21,6 +22,7 @@ namespace ObserverPattern
         MeshEvents messegsEvent;
         //JObject
         JObject json;
+        HandleTextFile handleText= new HandleTextFile();
         public MeshObject(GameObject boxObj, MeshEvents boxEvent)
         {
             this.boxObj = boxObj;
@@ -122,8 +124,10 @@ namespace ObserverPattern
             if (messegsEvent.Description().CompareTo("coordinates") == 0 && component.CompareTo("coordinatesChanged") == 0)
             {
                 json = JObject.Parse(data);
+                handleText.WriteString("True;False;False;True;unity;DeviceLocationProvider;20180524-163505.787;20180524-163427.922;"+ GetJArrayValue(json, "latitude") + ";" + GetJArrayValue(json, "longitude")+ ";34.0;305.1;305.1;[not supported by provider];[not supported by provider];[not supported by provider];[not supported by provider]");
                 var value = "(" + GetJArrayValue(json, "latitude") + " : " + GetJArrayValue(json, "longitude") + ")";
                 boxObj.GetComponent<TextMesh>().text = value;
+
             }
 
         }

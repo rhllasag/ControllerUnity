@@ -6,5 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/HoloToolkit-Examples/Utilities/Scenes/SceneLauncher.unity
-    guid: fd656d2febd0dea46b3825b704706806
+    path: Assets/Scenes/Intro.unity
+    guid: f7576e16f17cdef4aae8cd1ee523d53c
+  - enabled: 1
+    path: Assets/Scenes/MotionControllerTest.unity
+    guid: 031f48e64bee7dc4da3a2cd4ffe42c03
