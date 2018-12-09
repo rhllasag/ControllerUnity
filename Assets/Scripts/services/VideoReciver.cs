@@ -32,9 +32,11 @@ namespace ObserverPattern
         {
             if (component.CompareTo("connectSocketChanged") == 0)
             {
+                connect();
             }
             if (component.CompareTo("disconnectSocketChanged") == 0)
             {
+                disconnect();
             }
         }
         // Use this for initialization
