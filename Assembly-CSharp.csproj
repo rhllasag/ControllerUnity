@@ -1192,9 +1192,7 @@
      <Compile Include="Assets\Scripts\Panels\BatteryPanel\BatteryPanelObserver.cs" />
      <Compile Include="Assets\Scripts\Panels\MeshComponents.cs" />
      <Compile Include="Assets\Scripts\Panels\SystemPanel\SetHomeLocation.cs" />
-     <Compile Include="Assets\Scripts\Panels\SystemPanel\SliderFlightDistance.cs" />
-     <Compile Include="Assets\Scripts\Panels\SystemPanel\SliderIntelligentFlightModes.cs" />
-     <Compile Include="Assets\Scripts\Panels\SystemPanel\SliderMaximumAltitude.cs" />
+     <Compile Include="Assets\Scripts\Panels\SystemPanel\SliderManager.cs" />
      <Compile Include="Assets\Scripts\Panels\SystemPanel\SystemPanelController.cs" />
      <Compile Include="Assets\Scripts\Panels\SystemPanel\SystemPanelMeshEvents.cs" />
      <Compile Include="Assets\Scripts\Panels\SystemPanel\SystemPanelObserver.cs" />

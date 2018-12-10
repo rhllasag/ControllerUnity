@@ -181,10 +181,10 @@ namespace Mapbox.Unity.Map
 		public float Zoom
 		{
 			get
-			{
-				return Options.locationOptions.zoom;
-			}
-		}
+            {
+                return Options.locationOptions.zoom;
+            }
+        }
 
 		public void SetZoom(float zoom)
 		{
@@ -202,7 +202,11 @@ namespace Mapbox.Unity.Map
 			{
 				return _initialZoom;
 			}
-		}
+            set
+            {
+                _initialZoom=value;
+            }
+        }
 
 
 		public Transform Root

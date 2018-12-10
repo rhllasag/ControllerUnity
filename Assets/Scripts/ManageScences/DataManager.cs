@@ -6,8 +6,93 @@ public class DataManager
 {
     /// <summary>Static reference to the instance of our DataManager</summary>
     public static DataManager instance;
-    public string videoStreamingServer= "192.168.1.4";
-    public string webSocketServer= "192.168.1.6";
+    private string videoStreamingServer= "192.168.1.4";
+    private string webSocketServer= "192.168.1.6";
+    private bool intelligentFLightModes;
+    private bool beginnerMode;
+    private bool distanceLimit;
+    private int altitudeRTH;
+    private int maximumAltitude;
+    private int maximumFlightDistance;
+
+    public bool IntelligentFLightModes
+    {
+        get
+        {
+            return intelligentFLightModes;
+        }
+
+        set
+        {
+            intelligentFLightModes = value;
+        }
+    }
+
+    public bool BeginnerMode
+    {
+        get
+        {
+            return beginnerMode;
+        }
+
+        set
+        {
+            beginnerMode = value;
+        }
+    }
+
+    public bool DistanceLimit
+    {
+        get
+        {
+            return distanceLimit;
+        }
+
+        set
+        {
+            distanceLimit = value;
+        }
+    }
+
+    public int AltitudeRTH
+    {
+        get
+        {
+            return altitudeRTH;
+        }
+
+        set
+        {
+            altitudeRTH = value;
+        }
+    }
+
+    public int MaximumAltitude
+    {
+        get
+        {
+            return maximumAltitude;
+        }
+
+        set
+        {
+            maximumAltitude = value;
+        }
+    }
+
+    public int MaximumFlightDistance
+    {
+        get
+        {
+            return maximumFlightDistance;
+        }
+
+        set
+        {
+            maximumFlightDistance = value;
+        }
+    }
+
     private DataManager() {
     }
     public void setVideoStreamingServer(string ip) {
