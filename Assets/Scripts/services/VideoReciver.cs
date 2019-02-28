@@ -30,12 +30,14 @@ namespace ObserverPattern
 
         public override void OnNotify(string data, string component)
         {
-            if (component.CompareTo("connectSocketChanged") == 0)
+            if (component.CompareTo("connectSocket") == 0)
             {
+                Debug.Log("Connect Video");
                 connect();
             }
-            if (component.CompareTo("disconnectSocketChanged") == 0)
+            if (component.CompareTo("disconnectSocket") == 0)
             {
+                Debug.Log("Disconnect Video");
                 disconnect();
             }
         }

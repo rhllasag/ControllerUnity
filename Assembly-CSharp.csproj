@@ -1211,7 +1211,6 @@
      <Compile Include="Assets\Scripts\ScreenActions\TakeOff.cs" />
      <Compile Include="Assets\Scripts\Services\Loop.cs" />
      <Compile Include="Assets\Scripts\Services\Observer.cs" />
-     <Compile Include="Assets\Scripts\Services\SocketClient.cs" />
      <Compile Include="Assets\Scripts\Services\SocketConnection.cs" />
      <Compile Include="Assets\Scripts\Services\USStatusTextManager.cs" />
      <Compile Include="Assets\Scripts\Services\VideoReciver.cs" />
