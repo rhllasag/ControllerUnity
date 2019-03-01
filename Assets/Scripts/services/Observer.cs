@@ -4,6 +4,7 @@ using UnityEngine;
 using Newtonsoft.Json.Linq;
 using Mapbox.Unity.Map;
 using HoloToolkit.Examples.InteractiveElements;
+using Mapbox.Unity.Location;
 
 namespace ObserverPattern
 {
@@ -23,7 +24,8 @@ namespace ObserverPattern
         GameObject rTHObj;
         GameObject map;
         GameObject zoomMap;
-
+        GameObject locationAircraft;
+        GameObject locationHome;
         //What will happen when this box gets an event
         MeshEvents messegsEvent;
         //JObject
@@ -34,8 +36,10 @@ namespace ObserverPattern
             this.boxObj = boxObj;
             this.messegsEvent = boxEvent;
         }
-        public MeshObject(GameObject boxObj, GameObject map, GameObject zoomMap, MeshEvents boxEvent)
+        public MeshObject(GameObject boxObj, GameObject map, GameObject zoomMap, GameObject locationHome, GameObject locationAircraft, MeshEvents boxEvent)
         {
+            this.locationAircraft = locationAircraft;
+            this.locationHome = locationHome;
             this.zoomMap = zoomMap;
             this.map = map;
             this.boxObj = boxObj;
@@ -137,6 +141,8 @@ namespace ObserverPattern
                 map.GetComponent<AbstractMap>().SetCenterLatitudeLongitude(new Mapbox.Utils.Vector2d(float.Parse(GetJArrayValue(json, "latitude")), float.Parse(GetJArrayValue(json, "longitude"))));
                 map.GetComponent<AbstractMap>().SetZoom(float.Parse(zoomMap.GetComponent<SliderGestureControl>().Label.text));
                 map.GetComponent<AbstractMap>().UpdateMap(float.Parse(zoomMap.GetComponent<SliderGestureControl>().Label.text));
+                locationHome.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude[0] = ""+float.Parse(GetJArrayValue(json, "latitude"))+", "+ float.Parse(GetJArrayValue(json, "longitude"));
+                locationAircraft.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude[0] = "0, 0";
             }
             if (messegsEvent.Description().CompareTo("coordinates") == 0 && component.CompareTo("coordinatesChanged") == 0)
             {

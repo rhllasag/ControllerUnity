@@ -1293,7 +1293,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 70357595}
-  m_Text: 4
+  m_Text: 15
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -3449,7 +3449,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 224553529}
-  m_Text: 04:30
+  m_Text: 07:15
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -10777,7 +10777,7 @@ Transform:
   m_GameObject: {fileID: 834119221}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 4.14, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 1698050152}
   m_RootOrder: 1
@@ -14859,6 +14859,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObject: {fileID: 1165971667}
   map: {fileID: 0}
+--- !u!1 &1176362197 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1638059881744458, guid: 35ce2bb4caba9434db5e656796b632b1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1353088030}
 --- !u!114 &1178567705 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114658503893516242, guid: 35ce2bb4caba9434db5e656796b632b1,
@@ -17669,6 +17674,18 @@ Prefab:
       propertyPath: _deviceLocationProviderUnity
       value: 
       objectReference: {fileID: 1178567705}
+    - target: {fileID: 4168681940542294, guid: 35ce2bb4caba9434db5e656796b632b1, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168681940542294, guid: 35ce2bb4caba9434db5e656796b632b1, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168681940542294, guid: 35ce2bb4caba9434db5e656796b632b1, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35ce2bb4caba9434db5e656796b632b1, type: 2}
   m_IsPrefabParent: 0
@@ -18358,7 +18375,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1405245726}
-  m_Text: 92%
+  m_Text: 68%
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -18786,7 +18803,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1442029870}
-  m_Text: 55%
+  m_Text: 49%
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -20595,7 +20612,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1619811997}
-  m_Text: '[18min]'
+  m_Text: '[13min]'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -22043,6 +22060,8 @@ MonoBehaviour:
   rth: {fileID: 245887230}
   map: {fileID: 461735600}
   zoomMap: {fileID: 1647366746}
+  locationHome: {fileID: 562825805}
+  locationAircraft: {fileID: 1176362197}
   batteryNAircraft: {fileID: 1619811997}
   flighTime: {fileID: 224553529}
   hight: {fileID: 1831247065}
