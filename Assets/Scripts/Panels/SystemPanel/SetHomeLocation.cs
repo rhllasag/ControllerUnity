@@ -10,9 +10,9 @@ namespace ObserverPattern
     public void OnInputClicked(InputClickedEventData eventData)
     {
             SocketConnection.getInstance().emitMainScreenEvent("newHome");
-     }
+    }
 
-        public void OnInputDown(InputEventData eventData)
+    public void OnInputDown(InputEventData eventData)
     {
     }
 
@@ -35,6 +35,7 @@ namespace ObserverPattern
     public void OnManipulationUpdated(ManipulationEventData eventData)
     {
             SocketConnection.getInstance().emitMainScreenEvent("newHome");
+
     }
 
         // Use this for initialization

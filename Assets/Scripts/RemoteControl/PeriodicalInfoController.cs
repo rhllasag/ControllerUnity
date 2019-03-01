@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Mapbox.Unity.Map;
 
 namespace ObserverPattern
 {
@@ -18,6 +19,8 @@ namespace ObserverPattern
         public GameObject landing;
         public GameObject takeOff;
         public GameObject rth;
+        public GameObject map;
+        public GameObject zoomMap;
         //BatteryNeeded to RTH
         public GameObject batteryNAircraft;
         //Flight Data
@@ -25,6 +28,7 @@ namespace ObserverPattern
         public GameObject hight;
         public GameObject homeLocation;
         public GameObject coordinates;
+
         //Video Streaming
         public VideoReciver videoReciver;
         public bool enableLog = false;
@@ -41,7 +45,7 @@ namespace ObserverPattern
             MeshObject batteryNAircraftMesh = new MeshObject(batteryNAircraft, new BatteryARTH());
             MeshObject flightTimeMesh = new MeshObject(flighTime, new FlightTime());
             MeshObject hightMesh = new MeshObject(hight, new Hight());
-            MeshObject homeLocationMesh = new MeshObject(homeLocation, new HomeLocation());
+            MeshObject homeLocationMesh = new MeshObject(homeLocation,map,zoomMap, new HomeLocation());
             MeshObject coodinatesMesh = new MeshObject(coordinates, new Coordinates());
             videoReciver = new VideoReciver(enableLog);
 

@@ -6,8 +6,8 @@ public class DataManager
 {
     /// <summary>Static reference to the instance of our DataManager</summary>
     public static DataManager instance;
-    private string videoStreamingServer= "10.254.0.35";
-    private string webSocketServer= "10.9.9.194";
+    private string videoStreamingServer= "192.168.1.2";
+    private string webSocketServer= "192.168.1.4";
     private bool intelligentFLightModes;
     private bool beginnerMode;
     private bool distanceLimit;

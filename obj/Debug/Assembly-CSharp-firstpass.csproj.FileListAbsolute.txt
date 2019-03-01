@@ -87,3 +87,11 @@ C:\Users\homer\Desktop\Unity Apps\RemoteController\obj\Debug\Assembly-CSharp-fir
 C:\Users\homer\Desktop\Unity Apps\RemoteController\obj\Debug\Assembly-CSharp-firstpass.csproj.CopyComplete
 C:\Users\homer\Desktop\Unity Apps\RemoteController\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\homer\Desktop\Unity Apps\RemoteController\obj\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\homer\Desktop\Unity Apps\RemoteController\Temp\bin\Debug\Mapbox.IO.Compression.dll
+C:\Users\homer\Desktop\Unity Apps\RemoteController\Temp\bin\Debug\Mapbox.Json.dll
+C:\Users\homer\Desktop\Unity Apps\RemoteController\Temp\bin\Debug\Mapbox.VectorTile.ExtensionMethods.dll
+C:\Users\homer\Desktop\Unity Apps\RemoteController\Temp\bin\Debug\Mapbox.VectorTile.Geometry.dll
+C:\Users\homer\Desktop\Unity Apps\RemoteController\Temp\bin\Debug\Mapbox.VectorTile.PbfReader.dll
+C:\Users\homer\Desktop\Unity Apps\RemoteController\Temp\bin\Debug\Mapbox.VectorTile.VectorTileReader.dll
+C:\Users\homer\Desktop\Unity Apps\RemoteController\Temp\bin\Debug\Mapbox.IO.Compression.pdb
+C:\Users\homer\Desktop\Unity Apps\RemoteController\Temp\bin\Debug\Mapbox.Json.pdb

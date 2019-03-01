@@ -41,6 +41,7 @@ namespace ObserverPattern
             if (gameObject.name.CompareTo("SliderZoomMap") == 0) {
                 map.GetComponent<AbstractMap>().SetZoom(float.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text));
                 map.GetComponent<AbstractMap>().UpdateMap(float.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text));
+
             }
         }
         public void onSelect()

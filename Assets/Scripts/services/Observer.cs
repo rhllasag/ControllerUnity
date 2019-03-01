@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json.Linq;
+using Mapbox.Unity.Map;
+using HoloToolkit.Examples.InteractiveElements;
+
 namespace ObserverPattern
 {
     public abstract class Observer
@@ -18,13 +21,23 @@ namespace ObserverPattern
         GameObject landingObj;
         GameObject takeOffObj;
         GameObject rTHObj;
+        GameObject map;
+        GameObject zoomMap;
+
         //What will happen when this box gets an event
         MeshEvents messegsEvent;
         //JObject
         JObject json;
-        HandleTextFile handleText= new HandleTextFile();
+       // HandleTextFile handleText= new HandleTextFile();
         public MeshObject(GameObject boxObj, MeshEvents boxEvent)
         {
+            this.boxObj = boxObj;
+            this.messegsEvent = boxEvent;
+        }
+        public MeshObject(GameObject boxObj, GameObject map, GameObject zoomMap, MeshEvents boxEvent)
+        {
+            this.zoomMap = zoomMap;
+            this.map = map;
             this.boxObj = boxObj;
             this.messegsEvent = boxEvent;
         }
@@ -120,11 +133,15 @@ namespace ObserverPattern
                 json = JObject.Parse(data);
                 var value = "(" + GetJArrayValue(json, "latitude") + ":" + GetJArrayValue(json, "longitude") + ")";
                 boxObj.GetComponent<TextMesh>().text = value;
+                Debug.Log(float.Parse(GetJArrayValue(json, "latitude"))+","+ float.Parse(GetJArrayValue(json, "longitude")));
+                map.GetComponent<AbstractMap>().SetCenterLatitudeLongitude(new Mapbox.Utils.Vector2d(float.Parse(GetJArrayValue(json, "latitude")), float.Parse(GetJArrayValue(json, "longitude"))));
+                map.GetComponent<AbstractMap>().SetZoom(float.Parse(zoomMap.GetComponent<SliderGestureControl>().Label.text));
+                map.GetComponent<AbstractMap>().UpdateMap(float.Parse(zoomMap.GetComponent<SliderGestureControl>().Label.text));
             }
             if (messegsEvent.Description().CompareTo("coordinates") == 0 && component.CompareTo("coordinatesChanged") == 0)
             {
                 json = JObject.Parse(data);
-                handleText.WriteString("True;False;False;True;unity;DeviceLocationProvider;20180524-163505.787;20180524-163427.922;"+ GetJArrayValue(json, "latitude") + ";" + GetJArrayValue(json, "longitude")+ ";34.0;305.1;305.1;[not supported by provider];[not supported by provider];[not supported by provider];[not supported by provider]");
+                //handleText.WriteString("True;False;False;True;unity;DeviceLocationProvider;20180524-163505.787;20180524-163427.922;"+ GetJArrayValue(json, "latitude") + ";" + GetJArrayValue(json, "longitude")+ ";34.0;305.1;305.1;[not supported by provider];[not supported by provider];[not supported by provider];[not supported by provider]");
                 var value = "(" + GetJArrayValue(json, "latitude") + " : " + GetJArrayValue(json, "longitude") + ")";
                 boxObj.GetComponent<TextMesh>().text = value;
 

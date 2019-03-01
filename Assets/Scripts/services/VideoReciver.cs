@@ -2,7 +2,6 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Net.Sockets;
-using System.Net;
 using System.IO;
 using System;
 namespace ObserverPattern

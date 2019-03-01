@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
 using System.IO;
 using Mapbox.Unity.Location;
 
 public class HandleTextFile
 {
+
     EditorLocationProviderLocationLog log = new EditorLocationProviderLocationLog();
     [MenuItem("Tools/Write file")]
     public void WriteString(string text)
@@ -32,3 +34,5 @@ public class HandleTextFile
     }
 
 }
+#endif
+
