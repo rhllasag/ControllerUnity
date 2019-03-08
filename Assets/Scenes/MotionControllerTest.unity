@@ -1306,7 +1306,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 70357595}
-  m_Text: 15
+  m_Text: 6
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -2398,7 +2398,7 @@ Prefab:
     - target: {fileID: 102860042799533698, guid: f96fd98222a1e2243ba69ffd9b371279,
         type: 2}
       propertyPath: m_Text
-      value: Add
+      value: Add / Exit
       objectReference: {fileID: 0}
     - target: {fileID: 1723860127229764, guid: f96fd98222a1e2243ba69ffd9b371279, type: 2}
       propertyPath: m_Name
@@ -16747,6 +16747,7 @@ GameObject:
   - component: {fileID: 1296887948}
   - component: {fileID: 1296887950}
   - component: {fileID: 1296887949}
+  - component: {fileID: 1296887951}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -16822,6 +16823,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1296887951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1296887947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dd0cbac03d83fb4992202f0c1e7d260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1314463179
 GameObject:
   m_ObjectHideFlags: 0

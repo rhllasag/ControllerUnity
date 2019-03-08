@@ -61,6 +61,10 @@ namespace ObserverPattern
         {
             manager.Socket.Emit(screen_event, json);
         }
+        public void emitFloat(string screen_event, float number)
+        {
+            manager.Socket.Emit(screen_event, number);
+        }
         public void emitData(float x, float y)
         {
             manager.Socket.Emit("newJoystickPossition", "x: " + x + "  y:" + y);

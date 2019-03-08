@@ -44,11 +44,11 @@ namespace ObserverPattern
             }
             if (gameObject.name.CompareTo("SliderSetAltitude") == 0)
             {
-                SocketConnection.getInstance().emitData("newAltitudeWaypoints", "{data:" + DataManager.getInstance().AltitudeWaypoints + "}");
+                SocketConnection.getInstance().emitFloat("newAltitudeWaypoints", (float)DataManager.getInstance().AltitudeWaypoints);
             }
             if (gameObject.name.CompareTo("SliderSetSpeed") == 0)
             {
-                SocketConnection.getInstance().emitData("newSpeedWaypoints", "{data:" + DataManager.getInstance().SpeedWaypoints + "}");
+                SocketConnection.getInstance().emitFloat("newSpeedWaypoints", (float)DataManager.getInstance().SpeedWaypoints);
             }
         }
         public void onSelect()

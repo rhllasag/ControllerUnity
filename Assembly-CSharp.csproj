@@ -51,8 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AddWaypoints.cs" />
-     <Compile Include="Assets\ClearWaypoints.cs" />
      <Compile Include="Assets\GoogleARCore\Examples\ComputerVision\Scripts\ComputerVisionController.cs" />
      <Compile Include="Assets\GoogleARCore\Examples\ComputerVision\Scripts\EdgeDetector.cs" />
      <Compile Include="Assets\GoogleARCore\Examples\ComputerVision\Scripts\TextureReader.cs" />
@@ -1181,7 +1179,6 @@
      <Compile Include="Assets\Mapbox\Unity\Utilities\TelemetryConfigurationButton.cs" />
      <Compile Include="Assets\Mapbox\Unity\Utilities\VectorEntity.cs" />
      <Compile Include="Assets\Mapbox\Unity\Utilities\VectorExtensions.cs" />
-     <Compile Include="Assets\RadialManager.cs" />
      <Compile Include="Assets\Scripts\GeoCoordinates\HandleTextFile.cs" />
      <Compile Include="Assets\Scripts\ManageScences\DataManager.cs" />
      <Compile Include="Assets\Scripts\ManageScences\LoadMotionControllerScene.cs" />
@@ -1208,20 +1205,24 @@
      <Compile Include="Assets\Scripts\RemoteControl\JoyStickButton.cs" />
      <Compile Include="Assets\Scripts\RemoteControl\PeriodicalInfoController.cs" />
      <Compile Include="Assets\Scripts\ScreenActions\AbleConfigurationPanels.cs" />
+     <Compile Include="Assets\Scripts\ScreenActions\AddWaypoints.cs" />
      <Compile Include="Assets\Scripts\ScreenActions\ChangeCamera.cs" />
+     <Compile Include="Assets\Scripts\ScreenActions\ClearWaypoints.cs" />
      <Compile Include="Assets\Scripts\ScreenActions\EnableJoystick.cs" />
      <Compile Include="Assets\Scripts\ScreenActions\Landing.cs" />
+     <Compile Include="Assets\Scripts\ScreenActions\RadialManager.cs" />
      <Compile Include="Assets\Scripts\ScreenActions\ReturnToHome.cs" />
      <Compile Include="Assets\Scripts\ScreenActions\ScreenButtonActions.cs" />
+     <Compile Include="Assets\Scripts\ScreenActions\StartWaypointsMission.cs" />
+     <Compile Include="Assets\Scripts\ScreenActions\StopWaypointsMission.cs" />
      <Compile Include="Assets\Scripts\ScreenActions\TakeOff.cs" />
+     <Compile Include="Assets\Scripts\ScreenActions\UploadWaypointsMission.cs" />
      <Compile Include="Assets\Scripts\Services\Loop.cs" />
      <Compile Include="Assets\Scripts\Services\Observer.cs" />
      <Compile Include="Assets\Scripts\Services\SocketConnection.cs" />
      <Compile Include="Assets\Scripts\Services\USStatusTextManager.cs" />
      <Compile Include="Assets\Scripts\Services\VideoReciver.cs" />
-     <Compile Include="Assets\StartWaypointsMission.cs" />
-     <Compile Include="Assets\StopWaypointsMission.cs" />
-     <Compile Include="Assets\UploadWaypointsMission.cs" />
+     <Compile Include="Assets\SendJsonTest.cs" />
      <None Include="Assets\Mapbox\Unity\Location\ExampleGpsTraces\LocationProviderAndroidNative.txt" />
      <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFConstant.cginc" />
      <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\UnlitConfigurable.shader" />
