@@ -765,6 +765,7 @@ GameObject:
   - component: {fileID: 47367210}
   - component: {fileID: 2004282772}
   - component: {fileID: 47367209}
+  - component: {fileID: 47367211}
   m_Layer: 0
   m_Name: Radial (3)
   m_TagString: Untagged
@@ -814,6 +815,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.22, y: 0.05, z: 0.025}
   m_Center: {x: 0.08, y: 0, z: 0}
+--- !u!114 &47367211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 47367207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9902337b030a04a45aa7a0096fbe0b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 47367207}
 --- !u!1 &52661455
 GameObject:
   m_ObjectHideFlags: 0
@@ -2389,7 +2402,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1723860127229764, guid: f96fd98222a1e2243ba69ffd9b371279, type: 2}
       propertyPath: m_Name
-      value: AddWaipoints
+      value: AddWaypoints
       objectReference: {fileID: 0}
     - target: {fileID: 23518754739827216, guid: f96fd98222a1e2243ba69ffd9b371279,
         type: 2}
@@ -4182,7 +4195,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 282575245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3733fff2f7dd79041b00f573c1d27516, type: 3}
+  m_Script: {fileID: 11500000, guid: f480a41f123c151468fa4c321a3c9c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &283163182
@@ -5014,6 +5027,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a61fbf52f79ff5b479d7c59ec56dd0bc, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &320854611 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1466493769746676, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+    type: 2}
+  m_PrefabInternal: {fileID: 1501803696}
+--- !u!114 &320854615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 320854611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9902337b030a04a45aa7a0096fbe0b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 320854611}
 --- !u!1 &324295760
 GameObject:
   m_ObjectHideFlags: 0
@@ -6207,6 +6237,7 @@ GameObject:
   - component: {fileID: 491892006}
   - component: {fileID: 491892005}
   - component: {fileID: 491892004}
+  - component: {fileID: 491892007}
   m_Layer: 0
   m_Name: Radial (2)
   m_TagString: Untagged
@@ -6283,7 +6314,18 @@ MonoBehaviour:
   PassiveMode: 0
   OnSelection:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 491892007}
+        m_MethodName: SetRadial
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: go_home
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   OnDeselection:
@@ -6304,6 +6346,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.22, y: 0.05, z: 0.025}
   m_Center: {x: 0.08, y: 0, z: 0}
+--- !u!114 &491892007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 491892002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9902337b030a04a45aa7a0096fbe0b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 491892002}
 --- !u!1 &495820594
 GameObject:
   m_ObjectHideFlags: 0
@@ -8067,7 +8121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 604943134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3733fff2f7dd79041b00f573c1d27516, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d6c7f14f336b7f48bc99276d1c2ecb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &606857277
@@ -10442,6 +10496,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 811864436}
   m_Mesh: {fileID: 4300010, guid: 61a6f0d3d48e97148991dd176179e9ca, type: 3}
+--- !u!1 &813424244 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1202278137495104, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+    type: 2}
+  m_PrefabInternal: {fileID: 1501803696}
+--- !u!114 &813424248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 813424244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9902337b030a04a45aa7a0096fbe0b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 813424244}
 --- !u!1 &815359286
 GameObject:
   m_ObjectHideFlags: 0
@@ -12193,7 +12264,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 930447092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3733fff2f7dd79041b00f573c1d27516, type: 3}
+  m_Script: {fileID: 11500000, guid: 755b25e03a3a2e24488a0a324c49be7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &932461622
@@ -12545,6 +12616,7 @@ GameObject:
   - component: {fileID: 947228588}
   - component: {fileID: 947228587}
   - component: {fileID: 947228586}
+  - component: {fileID: 947228589}
   m_Layer: 0
   m_Name: Radial (4)
   m_TagString: Untagged
@@ -12621,7 +12693,18 @@ MonoBehaviour:
   PassiveMode: 0
   OnSelection:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 947228589}
+        m_MethodName: SetRadial
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: back_to_1st
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   OnDeselection:
@@ -12642,6 +12725,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.22, y: 0.05, z: 0.025}
   m_Center: {x: 0.08, y: 0, z: 0}
+--- !u!114 &947228589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 947228584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9902337b030a04a45aa7a0096fbe0b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 947228584}
 --- !u!1 &962121187
 GameObject:
   m_ObjectHideFlags: 0
@@ -17000,7 +17095,7 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1325371347}
-  m_Text: Back To 1st
+  m_Text: Waypoints
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -19461,6 +19556,21 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1293667000}
     m_Modifications:
+    - target: {fileID: 114919813284908442, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114044172500847206, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114043264694764536, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010854291810, guid: c787cb9b2d35bd54a9e9dec1f4690846, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0.042307835
@@ -19516,7 +19626,7 @@ Prefab:
     - target: {fileID: 102526303557393894, guid: c787cb9b2d35bd54a9e9dec1f4690846,
         type: 2}
       propertyPath: m_Text
-      value: None
+      value: Auto
       objectReference: {fileID: 0}
     - target: {fileID: 4272680688915758, guid: c787cb9b2d35bd54a9e9dec1f4690846, type: 2}
       propertyPath: m_LocalPosition.y
@@ -19529,7 +19639,7 @@ Prefab:
     - target: {fileID: 102610667132183586, guid: c787cb9b2d35bd54a9e9dec1f4690846,
         type: 2}
       propertyPath: m_Text
-      value: Go Home
+      value: Initial
       objectReference: {fileID: 0}
     - target: {fileID: 4436752242188922, guid: c787cb9b2d35bd54a9e9dec1f4690846, type: 2}
       propertyPath: m_LocalPosition.y
@@ -19542,7 +19652,7 @@ Prefab:
     - target: {fileID: 102242770055895700, guid: c787cb9b2d35bd54a9e9dec1f4690846,
         type: 2}
       propertyPath: m_Text
-      value: Auto Land
+      value: RC Control
       objectReference: {fileID: 0}
     - target: {fileID: 1000013478656648, guid: c787cb9b2d35bd54a9e9dec1f4690846, type: 2}
       propertyPath: m_Name
@@ -19589,6 +19699,96 @@ Prefab:
         type: 2}
       propertyPath: Keyword
       value: radialh3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114919813284908442, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114919813284908442, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114919813284908442, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1981141441}
+    - target: {fileID: 114919813284908442, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetRadial
+      objectReference: {fileID: 0}
+    - target: {fileID: 114919813284908442, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114919813284908442, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: auto
+      objectReference: {fileID: 0}
+    - target: {fileID: 114044172500847206, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114044172500847206, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114044172500847206, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 320854615}
+    - target: {fileID: 114044172500847206, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetRadial
+      objectReference: {fileID: 0}
+    - target: {fileID: 114044172500847206, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114044172500847206, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: initial
+      objectReference: {fileID: 0}
+    - target: {fileID: 114043264694764536, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114043264694764536, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114043264694764536, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 813424248}
+    - target: {fileID: 114043264694764536, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetRadial
+      objectReference: {fileID: 0}
+    - target: {fileID: 114043264694764536, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114043264694764536, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+        type: 2}
+      propertyPath: OnSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: rc_control
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000010673394902, guid: c787cb9b2d35bd54a9e9dec1f4690846, type: 2}
@@ -19657,6 +19857,7 @@ GameObject:
   - component: {fileID: 1506873452}
   - component: {fileID: 2004282774}
   - component: {fileID: 1506873451}
+  - component: {fileID: 1506873453}
   m_Layer: 0
   m_Name: Radial (1)
   m_TagString: Untagged
@@ -19706,6 +19907,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.22, y: 0.05, z: 0.025}
   m_Center: {x: 0.08, y: 0, z: 0}
+--- !u!114 &1506873453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1506873449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9902337b030a04a45aa7a0096fbe0b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 1506873449}
 --- !u!1 &1524309694
 GameObject:
   m_ObjectHideFlags: 0
@@ -23599,7 +23812,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1879698339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3733fff2f7dd79041b00f573c1d27516, type: 3}
+  m_Script: {fileID: 11500000, guid: e53d7ebda504b354fbdd2ea90fd388a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1881226409
@@ -24880,6 +25093,7 @@ GameObject:
   - component: {fileID: 1975493744}
   - component: {fileID: 1975493743}
   - component: {fileID: 1975493742}
+  - component: {fileID: 1975493745}
   m_Layer: 0
   m_Name: RadialH4
   m_TagString: Untagged
@@ -24956,7 +25170,18 @@ MonoBehaviour:
   PassiveMode: 0
   OnSelection:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1975493745}
+        m_MethodName: SetRadial
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: waypoints
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   OnDeselection:
@@ -24977,6 +25202,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.22, y: 0.05, z: 0.025}
   m_Center: {x: 0.08, y: 0, z: 0}
+--- !u!114 &1975493745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1975493740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9902337b030a04a45aa7a0096fbe0b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 1975493740}
+--- !u!1 &1981141437 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1118471385266590, guid: c787cb9b2d35bd54a9e9dec1f4690846,
+    type: 2}
+  m_PrefabInternal: {fileID: 1501803696}
+--- !u!114 &1981141441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1981141437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9902337b030a04a45aa7a0096fbe0b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 1981141437}
 --- !u!1 &1981970828
 GameObject:
   m_ObjectHideFlags: 0
@@ -25088,7 +25342,18 @@ MonoBehaviour:
   PassiveMode: 0
   OnSelection:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 47367211}
+        m_MethodName: SetRadial
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: auto_land
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   OnDeselection:
@@ -25136,7 +25401,18 @@ MonoBehaviour:
   PassiveMode: 0
   OnSelection:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1506873453}
+        m_MethodName: SetRadial
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: none
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   OnDeselection:
@@ -27434,7 +27710,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2146708367}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3733fff2f7dd79041b00f573c1d27516, type: 3}
+  m_Script: {fileID: 11500000, guid: c56119f291dd9db49b9c252afcecea0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2147019904

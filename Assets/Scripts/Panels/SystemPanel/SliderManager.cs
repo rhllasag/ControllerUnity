@@ -41,7 +41,14 @@ namespace ObserverPattern
             if (gameObject.name.CompareTo("SliderZoomMap") == 0) {
                 map.GetComponent<AbstractMap>().SetZoom(float.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text));
                 map.GetComponent<AbstractMap>().UpdateMap(float.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text));
-
+            }
+            if (gameObject.name.CompareTo("SliderSetAltitude") == 0)
+            {
+                SocketConnection.getInstance().emitData("newAltitudeWaypoints", "{data:" + DataManager.getInstance().AltitudeWaypoints + "}");
+            }
+            if (gameObject.name.CompareTo("SliderSetSpeed") == 0)
+            {
+                SocketConnection.getInstance().emitData("newSpeedWaypoints", "{data:" + DataManager.getInstance().SpeedWaypoints + "}");
             }
         }
         public void onSelect()
