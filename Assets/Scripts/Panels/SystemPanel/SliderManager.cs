@@ -25,18 +25,15 @@ namespace ObserverPattern
             if (gameObject.name.CompareTo("SliderAltitudeRTH") == 0)
             {
                 DataManager.getInstance().AltitudeRTH = int.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text);
-                Debug.Log(DataManager.getInstance().AltitudeRTH);
                 SocketConnection.getInstance().emitData("newAltitudeRTH", "{data:"+ DataManager.getInstance().AltitudeRTH + "}");
             }
             if (gameObject.name.CompareTo("SliderMaximumAltitude") == 0)
             {
                 DataManager.getInstance().MaximumAltitude = int.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text);
-                Debug.Log(DataManager.getInstance().MaximumAltitude);
             }
             if (gameObject.name.CompareTo("SliderMaximumFlighDistance") == 0)
             {
                 DataManager.getInstance().MaximumFlightDistance = int.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text);
-                Debug.Log(DataManager.getInstance().MaximumFlightDistance);
             }
             if (gameObject.name.CompareTo("SliderZoomMap") == 0) {
                 map.GetComponent<AbstractMap>().SetZoom(float.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text));
@@ -44,11 +41,13 @@ namespace ObserverPattern
             }
             if (gameObject.name.CompareTo("SliderSetAltitude") == 0)
             {
-                SocketConnection.getInstance().emitFloat("newAltitudeWaypoints", (float)DataManager.getInstance().AltitudeWaypoints);
+                DataManager.getInstance().AltitudeWaypoints = float.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text);
+                SocketConnection.getInstance().emitFloat("newAltitudeWaypoints", DataManager.getInstance().AltitudeWaypoints);
             }
             if (gameObject.name.CompareTo("SliderSetSpeed") == 0)
             {
-                SocketConnection.getInstance().emitFloat("newSpeedWaypoints", (float)DataManager.getInstance().SpeedWaypoints);
+                DataManager.getInstance().SpeedWaypoints = float.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text);
+                SocketConnection.getInstance().emitFloat("newSpeedWaypoints", DataManager.getInstance().SpeedWaypoints);
             }
         }
         public void onSelect()

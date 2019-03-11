@@ -48,7 +48,7 @@ namespace ObserverPattern
             MeshObject flightTimeMesh = new MeshObject(flighTime, new FlightTime());
             MeshObject hightMesh = new MeshObject(hight, new Hight());
             MeshObject homeLocationMesh = new MeshObject(homeLocation,map,zoomMap, locationHome, locationAircraft, new HomeLocation());
-            MeshObject coodinatesMesh = new MeshObject(coordinates, new Coordinates());
+            MeshObject coodinatesMesh = new MeshObject(coordinates, map, zoomMap, locationHome, locationAircraft, new Coordinates());
             videoReciver = new VideoReciver(enableLog);
 
             

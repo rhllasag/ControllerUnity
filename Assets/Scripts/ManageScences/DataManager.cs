@@ -12,10 +12,10 @@ public class DataManager
     private bool beginnerMode;
     private bool distanceLimit;
     private int altitudeRTH;
-    private int altitudeWaypoints;
+    private float altitudeWaypoints;
     private int maximumAltitude;
     private int maximumFlightDistance;
-    private int speedWaypoints;
+    private float speedWaypoints;
 
     public bool IntelligentFLightModes
     {
@@ -68,7 +68,7 @@ public class DataManager
             altitudeRTH = value;
         }
     }
-    public int AltitudeWaypoints
+    public float AltitudeWaypoints
     {
         get
         {
@@ -80,7 +80,7 @@ public class DataManager
             altitudeWaypoints = value;
         }
     }
-    public int SpeedWaypoints
+    public float SpeedWaypoints
     {
         get
         {
