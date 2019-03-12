@@ -14,6 +14,7 @@ namespace ObserverPattern
         public GameObject gpsSignalState;
         public GameObject visualNavigationState;
         public GameObject systemSatus;
+        public GameObject statusPanel;
         public GameObject flightSwitchMode;
         //The Object to Landing, TakeOff, Landing
         public GameObject landing;
@@ -42,7 +43,7 @@ namespace ObserverPattern
             MeshObject remoteControllerMesh = new MeshObject(remoteController, new RCControl());
             MeshObject gpsSignalStateMesh = new MeshObject(gpsSignalState, new GPSSignal());
             MeshObject visualNavigationStateMesh = new MeshObject(visualNavigationState, new VisualNavigation());
-            MeshObject systemStatusMesh = new MeshObject(systemSatus, new SystemStatus());
+            MeshObject systemStatusMesh = new MeshObject(systemSatus,statusPanel, new SystemStatus());
             MeshObject flightSwitchModeMesh = new MeshObject(landing,takeOff,rth,flightSwitchMode, new FlightSwitchMode());
             MeshObject batteryNAircraftMesh = new MeshObject(batteryNAircraft, new BatteryARTH());
             MeshObject flightTimeMesh = new MeshObject(flighTime, new FlightTime());
@@ -50,8 +51,6 @@ namespace ObserverPattern
             MeshObject homeLocationMesh = new MeshObject(homeLocation,map,zoomMap, locationHome, locationAircraft, new HomeLocation());
             MeshObject coodinatesMesh = new MeshObject(coordinates, map, zoomMap, locationHome, locationAircraft, new Coordinates());
             videoReciver = new VideoReciver(enableLog);
-
-            
             //Add the MeshObject to the list of objects waiting for something to happen
             SocketConnection.getInstance().AddObserver(batteryLevelMesh);
             SocketConnection.getInstance().AddObserver(remoteControllerMesh);
@@ -67,20 +66,9 @@ namespace ObserverPattern
             SocketConnection.getInstance().AddObserver(coodinatesMesh);
 
         }
-
-
-
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                
-                videoReciver.connect();
-            }
-            if (Input.GetKeyDown(KeyCode.O))
-            {
-                videoReciver.disconnect();
-            }
+            
         }
         void OnApplicationQuit()
         {

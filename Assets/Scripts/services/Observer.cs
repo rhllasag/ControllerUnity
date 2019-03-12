@@ -27,6 +27,7 @@ namespace ObserverPattern
         GameObject zoomMap;
         GameObject locationAircraft;
         GameObject locationHome;
+        GameObject statusPanel;
         double latitudeDiference = 0;
         double longitudeDiference = 0;
         double latitudeAux = 0;
@@ -47,6 +48,12 @@ namespace ObserverPattern
         public MeshObject(GameObject boxObj, MeshEvents boxEvent)
         {
             this.boxObj = boxObj;
+            this.messegsEvent = boxEvent;
+        }
+        public MeshObject(GameObject boxObj,  GameObject statusPanel, MeshEvents boxEvent)
+        {
+            this.boxObj = boxObj;
+            this.statusPanel = statusPanel;
             this.messegsEvent = boxEvent;
         }
         public MeshObject(GameObject boxObj, GameObject map, GameObject zoomMap, GameObject locationHome, GameObject locationAircraft, MeshEvents boxEvent)
@@ -124,9 +131,10 @@ namespace ObserverPattern
             }
             if (messegsEvent.Description().CompareTo("system") == 0 && component.CompareTo("systemStatusChanged") == 0)
             {
+                statusPanel.SetActive(true);
                 json = JObject.Parse(data);
-                var value = GetJArrayValue(json, "systemStatus");
-                boxObj.GetComponent<TextMesh>().text = "sys";
+                var value = GetJArrayValue(json, "message");
+                boxObj.GetComponent<TextMesh>().text = value;
             }
             if (messegsEvent.Description().CompareTo("batteryNAircraft") == 0 && component.CompareTo("batteryANeededRTHChanged") == 0)
             {

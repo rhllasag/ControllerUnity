@@ -1,4 +1,6 @@
 ﻿using HoloToolkit.Examples.InteractiveElements;
+using Mapbox.Json.Linq;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,16 +16,9 @@ namespace ObserverPattern
         GameObject boxObj;
         BatteryPanelMeshEvents messegsEvent;
         InteractiveToggle interactiveToggleScript;
-        TextMesh textMesh;
-
+        JObject json;
         public BatteryPanelMeshObject(GameObject boxObj, BatteryPanelMeshEvents boxEvent)
         {
-            this.boxObj = boxObj;
-            this.messegsEvent = boxEvent;
-        }
-        public BatteryPanelMeshObject(TextMesh textMesh,GameObject boxObj, BatteryPanelMeshEvents boxEvent)
-        {
-            this.textMesh = textMesh;
             this.boxObj = boxObj;
             this.messegsEvent = boxEvent;
         }
@@ -35,28 +30,40 @@ namespace ObserverPattern
         }
         public override void OnNotify(string data, string component)
         {
-            if (messegsEvent.Description().CompareTo("batteryVoltage") == 0)
+            if (messegsEvent.Description().CompareTo("batteryVoltage") == 0 && component.CompareTo("batteryStateChanged") == 0)
             {
-
+                json = JObject.Parse(data);
+                var value = GetJArrayValue(json, "voltage");
+                boxObj.GetComponent<TextMesh>().text = value+ "V";
             }
-            if (messegsEvent.Description().CompareTo("batteryTemperature") == 0)
+            if (messegsEvent.Description().CompareTo("batteryTemperature") == 0 && component.CompareTo("batteryStateChanged") == 0)
             {
-
+                json = JObject.Parse(data);
+                var value = GetJArrayValue(json, "temperature");
+                boxObj.GetComponent<TextMesh>().text = value+"C";
             }
-            if (messegsEvent.Description().CompareTo("intelligentRTH") == 0)
+            if (messegsEvent.Description().CompareTo("intelligentRTH") == 0 && component.CompareTo("smartRTHChanged") == 0)
             {
+                Debug.Log("In intelligentRTH");
+                json = JObject.Parse(data);
+                var value = GetJArrayValue(json, "value");
+                if(value.CompareTo("true")==0)
                 interactiveToggleScript.SetSelection(true);
-                bool go=interactiveToggleScript.IsSelected;
+                else if(value.CompareTo("false") == 0)
+                    interactiveToggleScript.SetSelection(false);
             }
-            if (messegsEvent.Description().CompareTo("rthError") == 0)
+        }
+
+        public string GetJArrayValue(JObject yourJArray, string key)
+        {
+            foreach (KeyValuePair<string, JToken> keyValuePair in yourJArray)
             {
-                textMesh.text = "";
+                if (key == keyValuePair.Key)
+                {
+                    return keyValuePair.Value.ToString();
+                }
             }
-            if (messegsEvent.Description().CompareTo("rthWarning") == 0)
-            {
-                textMesh.text="";
-                textMesh.ToString();
-            }
+            return null;
         }
     }
 }

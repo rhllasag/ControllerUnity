@@ -5,7 +5,7 @@ using BestHTTP;
 using BestHTTP.SocketIO;
 using System;
 using System.IO;
-
+using Mapbox.Json.Linq;
 
 namespace ObserverPattern
 {
@@ -13,6 +13,7 @@ namespace ObserverPattern
     public class SocketConnection
     {
         List<Observer> observers = new List<Observer>();
+        List<BatteryPanelObserver> observersBattery = new List<BatteryPanelObserver>();
         public static SocketConnection instance = null;
         private string IP = DataManager.getInstance().getWebSocketServer();
         SocketManager manager;
@@ -29,6 +30,7 @@ namespace ObserverPattern
             manager.Socket.On("reconnect_attempt", OnReconnectAttempt);
             manager.Socket.On("reconnect_failed", OnReconnectFailed);
             manager.Socket.On("batteryLevelChanged", OnBatteryLevelChanged);
+            manager.Socket.On("batteryStateChanged", OnBatteryStateChanged);
             manager.Socket.On("rcConnectionStatusChanged", OnRCConnectionStatusChanged);
             manager.Socket.On("flightAssistantStateChanged", OnFlightAssistantStateChanged);
             manager.Socket.On("gpsSignalStatusChanged", OnGPSSignalStatusChanged);
@@ -37,7 +39,6 @@ namespace ObserverPattern
             manager.Socket.On("flightTimeChanged", OnFlightTimeChanged);
             manager.Socket.On("homeLocationChanged", OnHomeLocationChanged);
             manager.Socket.On("coordinatesChanged", OnCoordinatesChanged);
-
             manager.Socket.On("connectSocketChanged", OnConnectSocket);
             manager.Socket.On("disconnectSocketChanged", OnDisconnectSocket);
 
@@ -72,7 +73,10 @@ namespace ObserverPattern
         void OnBatteryLevelChanged(Socket socket, Packet packet, params object[] args)
         {
             Notify(args[0].ToString(), "batteryLevelChanged");
-            Notify(args[0].ToString(), "batteryANeededRTHChanged");
+        }
+        void OnBatteryStateChanged(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "batteryStateChanged");
         }
         void OnAirlinkWifiLevelChanged(Socket socket, Packet packet, params object[] args)
         {
@@ -173,7 +177,10 @@ namespace ObserverPattern
         {
             observers.Add(observer);
         }
-
+        public void AddObserver(BatteryPanelObserver observer)
+        {
+            observersBattery.Add(observer);
+        }
         //Remove observer from the list
         public void RemoveObserver(Observer observer)
         {
@@ -185,6 +192,12 @@ namespace ObserverPattern
                 //Notify all observers even though some may not be interested in what has happened
                 //Each observer should check if it is interested in this event
                 observers[i].OnNotify(data,component);
+            }
+            for (int i = 0; i < observersBattery.Count; i++)
+            {
+                //Notify all observers even though some may not be interested in what has happened
+                //Each observer should check if it is interested in this event
+                observersBattery[i].OnNotify(data, component);
             }
         }
     }

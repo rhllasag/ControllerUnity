@@ -17,9 +17,14 @@ namespace ObserverPattern
         {
             BatteryPanelMeshObject batteryVoltageMesh = new BatteryPanelMeshObject(batteryVoltage, new BatteryVoltage());
             BatteryPanelMeshObject batteryTemperatureMesh = new BatteryPanelMeshObject(batteryTemperature, new BatteryTemperature());
-            BatteryPanelMeshObject intelligentRTHMesh = new BatteryPanelMeshObject(intelligentRTH.GetComponent<InteractiveToggle>(), intelligentRTH, new IntelligentRTH());
-            BatteryPanelMeshObject returnToHomeErrorMesh = new BatteryPanelMeshObject(returnToHomeError.GetComponent<TextMesh>(), returnToHomeError, new BatteryRTHError());
-            BatteryPanelMeshObject returnToHomeWarningMesh = new BatteryPanelMeshObject(returnToHomeWarning.GetComponent<TextMesh>(), returnToHomeWarning, new BatteryRTHWarning());
+            BatteryPanelMeshObject intelligentRTHMesh = new BatteryPanelMeshObject(intelligentRTH, new IntelligentRTH());
+            BatteryPanelMeshObject returnToHomeErrorMesh = new BatteryPanelMeshObject(returnToHomeError, new BatteryRTHError());
+            BatteryPanelMeshObject returnToHomeWarningMesh = new BatteryPanelMeshObject(returnToHomeWarning, new BatteryRTHWarning());
+            SocketConnection.getInstance().AddObserver(batteryVoltageMesh);
+            SocketConnection.getInstance().AddObserver(batteryTemperatureMesh);
+            SocketConnection.getInstance().AddObserver(intelligentRTHMesh);
+            SocketConnection.getInstance().AddObserver(returnToHomeErrorMesh);
+            SocketConnection.getInstance().AddObserver(returnToHomeWarningMesh);
         }
 
         // Update is called once per frame

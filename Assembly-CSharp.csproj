@@ -1208,6 +1208,7 @@
      <Compile Include="Assets\Scripts\ScreenActions\AddWaypoints.cs" />
      <Compile Include="Assets\Scripts\ScreenActions\ChangeCamera.cs" />
      <Compile Include="Assets\Scripts\ScreenActions\ClearWaypoints.cs" />
+     <Compile Include="Assets\Scripts\ScreenActions\CloseSystemStatusPanel.cs" />
      <Compile Include="Assets\Scripts\ScreenActions\EnableJoystick.cs" />
      <Compile Include="Assets\Scripts\ScreenActions\Landing.cs" />
      <Compile Include="Assets\Scripts\ScreenActions\RadialManager.cs" />

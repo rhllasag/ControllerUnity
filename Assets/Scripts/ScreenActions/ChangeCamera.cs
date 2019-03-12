@@ -1,17 +1,16 @@
 ﻿using HoloToolkit.Unity.InputModule;
+using ObserverPattern;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ChangeCamera : MonoBehaviour, IInputHandler, IInputClickHandler, IManipulationHandler
 {
-    void changeCamera()
-    {
-        Debug.Log("Change camera");
-    }
+    public VideoReciver videoReciver;
     public void OnInputClicked(InputClickedEventData eventData)
     {
-        changeCamera();
+        videoReciver.disconnect();
+        videoReciver.connect();
     }
 
     public void OnInputDown(InputEventData eventData)
@@ -36,7 +35,8 @@ public class ChangeCamera : MonoBehaviour, IInputHandler, IInputClickHandler, IM
 
     public void OnManipulationUpdated(ManipulationEventData eventData)
     {
-        changeCamera();
+        videoReciver.disconnect();
+        videoReciver.connect();
     }
 
     // Use this for initialization
@@ -46,6 +46,11 @@ public class ChangeCamera : MonoBehaviour, IInputHandler, IInputClickHandler, IM
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            videoReciver.disconnect();
+            videoReciver.connect();
+        }
+
+    }
 }

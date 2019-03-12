@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using ObserverPattern;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,22 +34,20 @@ public class ToggleEvent : MonoBehaviour {
     public void onIntelligentFlightModes()
     {
         changeUI();
-        Debug.Log("On Intelligent Flight Modes");
     }
     public void offIntelligentFlightModes()
     {
         changeUI();
-        Debug.Log("Off Intelligent Flight Modes");
     }
     public void onIntelligentReturnToHome()
     {
         changeUI();
-        Debug.Log("On Intelligent Return To Home");
+        SocketConnection.getInstance().emitData("newSmartRTH","true");
     }
     public void offIntelligentReturnToHome()
     {
         changeUI();
-        Debug.Log("Off Intelligent Return To Home");
+        SocketConnection.getInstance().emitData("newSmartRTH", "false");
     }
     public void onBeginnerMode()
     {
