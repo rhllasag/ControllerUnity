@@ -33,7 +33,9 @@ namespace ObserverPattern
             manager.Socket.On("batteryLevelChanged", OnBatteryLevelChanged);
             manager.Socket.On("batteryStateChanged", OnBatteryStateChanged);
             manager.Socket.On("smartRTHChanged", OnSmartRTHChanged);
+            manager.Socket.On("returnToHomeQuestionChanged", OnReturnToHomeQuestionChanged);
 
+            
             manager.Socket.On("rcConnectionStatusChanged", OnRCConnectionStatusChanged);
             manager.Socket.On("flightAssistantStateChanged", OnFlightAssistantStateChanged);
             manager.Socket.On("gpsSignalStatusChanged", OnGPSSignalStatusChanged);
@@ -86,6 +88,10 @@ namespace ObserverPattern
         void OnSmartRTHChanged(Socket socket, Packet packet, params object[] args)
         {
             Notify(args[0].ToString(), "smartRTHChanged");
+        }
+        void OnReturnToHomeQuestionChanged(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "returnToHomeQuestionChanged");
         }
         
         void OnAirlinkWifiLevelChanged(Socket socket, Packet packet, params object[] args)

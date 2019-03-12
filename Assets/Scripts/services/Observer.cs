@@ -168,8 +168,8 @@ namespace ObserverPattern
                 locationAircraft.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude.Insert(count, "" + double.Parse(GetJArrayValue(json, "latitude")) + ", " + double.Parse(GetJArrayValue(json, "longitude")));
                 latitudeDiference = 0;
                 longitudeDiference = 0;
-                latitudeAux = 0;
-                longitudeAux = 0;
+                latitudeAux = double.Parse(GetJArrayValue(json, "latitude"));
+                longitudeAux = double.Parse(GetJArrayValue(json, "longitude"));
                 latitudeBase = 0;
                 longitudeBase = 0;
                 latitudeMovement = 0;

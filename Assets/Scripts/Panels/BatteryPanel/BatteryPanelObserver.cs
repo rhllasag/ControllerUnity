@@ -22,6 +22,7 @@ namespace ObserverPattern
             this.boxObj = boxObj;
             this.messegsEvent = boxEvent;
         }
+        
         public BatteryPanelMeshObject(InteractiveToggle iTScript, GameObject boxObj, BatteryPanelMeshEvents boxEvent)
         {
             this.interactiveToggleScript = iTScript;
@@ -55,6 +56,10 @@ namespace ObserverPattern
                     interactiveToggleScript.SetSelection(false);
                     boxObj.SetActive(false);
                 }
+            }
+            if (messegsEvent.Description().CompareTo("batteryRTHPanel") == 0 && component.CompareTo("returnToHomeQuestionChanged") == 0)
+            {
+                boxObj.SetActive(true);
             }
         }
 

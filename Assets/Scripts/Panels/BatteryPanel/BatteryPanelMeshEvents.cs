@@ -22,6 +22,13 @@ namespace ObserverPattern
             return "batteryTemperature";
         }
     }
+    public class BatteryRTHPanel : BatteryPanelMeshEvents
+    {
+        public override string Description()
+        {
+            return "batteryRTHPanel";
+        }
+    }
     public class IntelligentRTH : BatteryPanelMeshEvents
     {
         public override string Description()

@@ -1,4 +1,5 @@
 ﻿using HoloToolkit.Unity.InputModule;
+using ObserverPattern;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class CloseSystemStatusPanel : MonoBehaviour, IInputHandler, IInputClickH
     public void OnInputClicked(InputClickedEventData eventData)
     {
         panel.SetActive(false);
+        SocketConnection.getInstance().emitData("newReturnToHomeDecision", "false");
     }
 
     public void OnInputDown(InputEventData eventData)
@@ -37,7 +39,7 @@ public class CloseSystemStatusPanel : MonoBehaviour, IInputHandler, IInputClickH
     public void OnManipulationUpdated(ManipulationEventData eventData)
     {
         panel.SetActive(false);
-
+        SocketConnection.getInstance().emitData("newReturnToHomeDecision", "false");
     }
 
     void Start () {
@@ -50,7 +52,7 @@ public class CloseSystemStatusPanel : MonoBehaviour, IInputHandler, IInputClickH
         if (Input.GetKeyDown(KeyCode.C))
         {
             panel.SetActive(false);
-
+            SocketConnection.getInstance().emitData("newReturnToHomeDecision", "false");
         }
     }
 }

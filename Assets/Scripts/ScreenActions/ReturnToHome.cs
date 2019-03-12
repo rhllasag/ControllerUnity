@@ -6,10 +6,12 @@ using UnityEngine;
 
 public class ReturnToHome : MonoBehaviour, IInputHandler, IInputClickHandler, IManipulationHandler
 {
+    public GameObject panel;
+
     public void OnInputClicked(InputClickedEventData eventData)
     {
         SocketConnection.getInstance().emitMainScreenEvent("newReturnToHome");
-
+        panel.SetActive(false);
     }
 
     public void OnInputDown(InputEventData eventData)
@@ -35,6 +37,7 @@ public class ReturnToHome : MonoBehaviour, IInputHandler, IInputClickHandler, IM
     public void OnManipulationUpdated(ManipulationEventData eventData)
     {
         SocketConnection.getInstance().emitMainScreenEvent("newReturnToHome");
+        panel.SetActive(false);
 
     }
 
@@ -47,6 +50,8 @@ public class ReturnToHome : MonoBehaviour, IInputHandler, IInputClickHandler, IM
 	void Update () {
         if (Input.GetKeyDown(KeyCode.R))
         {
+            if(panel!=null)
+                panel.SetActive(false);
             SocketConnection.getInstance().emitMainScreenEvent("newReturnToHome");
         }
     }
