@@ -7,7 +7,7 @@ public class DataManager
     /// <summary>Static reference to the instance of our DataManager</summary>
     public static DataManager instance;
     private string videoStreamingServer= "10.254.0.221";
-    private string webSocketServer= "192.168.1.3";
+    private string webSocketServer= "192.168.1.4";
     private bool intelligentFLightModes;
     private bool beginnerMode;
     private bool distanceLimit;
@@ -16,7 +16,8 @@ public class DataManager
     private int maximumAltitude;
     private int maximumFlightDistance;
     private float speedWaypoints;
-
+    private int rTHBatteryError;
+    private int rTHBatteryWarning;
     public bool IntelligentFLightModes
     {
         get
@@ -90,6 +91,30 @@ public class DataManager
         set
         {
             speedWaypoints = value;
+        }
+    }
+    public int RTHBatteryWarning
+    {
+        get
+        {
+            return rTHBatteryWarning;
+        }
+
+        set
+        {
+            rTHBatteryWarning = value;
+        }
+    }
+    public int RTHBatteryError
+    {
+        get
+        {
+            return rTHBatteryError;
+        }
+
+        set
+        {
+            rTHBatteryError = value;
         }
     }
     public int MaximumAltitude

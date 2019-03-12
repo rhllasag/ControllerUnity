@@ -49,6 +49,16 @@ namespace ObserverPattern
                 DataManager.getInstance().SpeedWaypoints = float.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text);
                 SocketConnection.getInstance().emitFloat("newSpeedWaypoints", DataManager.getInstance().SpeedWaypoints);
             }
+            if (gameObject.name.CompareTo("SliderBatteryWarning") == 0)
+            {
+                DataManager.getInstance().RTHBatteryWarning = int.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text);
+                SocketConnection.getInstance().emitInt("newLowBatteryWarningThreshold", DataManager.getInstance().RTHBatteryWarning);
+            }
+            if (gameObject.name.CompareTo("SliderBatteryError") == 0)
+            {
+                DataManager.getInstance().RTHBatteryError = int.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text);
+                SocketConnection.getInstance().emitInt("newSeriousLowBatteryWarningThreshold", DataManager.getInstance().RTHBatteryError);
+            }
         }
         public void onSelect()
         {

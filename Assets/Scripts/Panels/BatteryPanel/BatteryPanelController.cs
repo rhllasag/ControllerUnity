@@ -10,21 +10,18 @@ namespace ObserverPattern
         //The Object that will jump
         public GameObject batteryTemperature;
         public GameObject intelligentRTH;
-        public GameObject returnToHomeError;
-        public GameObject returnToHomeWarning;
+        public GameObject intelligentRTHToogle;
         // Use this for initialization
         void Start()
         {
             BatteryPanelMeshObject batteryVoltageMesh = new BatteryPanelMeshObject(batteryVoltage, new BatteryVoltage());
             BatteryPanelMeshObject batteryTemperatureMesh = new BatteryPanelMeshObject(batteryTemperature, new BatteryTemperature());
-            BatteryPanelMeshObject intelligentRTHMesh = new BatteryPanelMeshObject(intelligentRTH, new IntelligentRTH());
-            BatteryPanelMeshObject returnToHomeErrorMesh = new BatteryPanelMeshObject(returnToHomeError, new BatteryRTHError());
-            BatteryPanelMeshObject returnToHomeWarningMesh = new BatteryPanelMeshObject(returnToHomeWarning, new BatteryRTHWarning());
+            BatteryPanelMeshObject intelligentRTHMesh = new BatteryPanelMeshObject(intelligentRTHToogle.GetComponent<InteractiveToggle>(),intelligentRTH, new IntelligentRTH());
+
             SocketConnection.getInstance().AddObserver(batteryVoltageMesh);
             SocketConnection.getInstance().AddObserver(batteryTemperatureMesh);
             SocketConnection.getInstance().AddObserver(intelligentRTHMesh);
-            SocketConnection.getInstance().AddObserver(returnToHomeErrorMesh);
-            SocketConnection.getInstance().AddObserver(returnToHomeWarningMesh);
+
         }
 
         // Update is called once per frame

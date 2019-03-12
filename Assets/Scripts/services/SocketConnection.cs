@@ -29,8 +29,11 @@ namespace ObserverPattern
             manager.Socket.On("reconnecting", OnReconnecting);
             manager.Socket.On("reconnect_attempt", OnReconnectAttempt);
             manager.Socket.On("reconnect_failed", OnReconnectFailed);
+
             manager.Socket.On("batteryLevelChanged", OnBatteryLevelChanged);
             manager.Socket.On("batteryStateChanged", OnBatteryStateChanged);
+            manager.Socket.On("smartRTHChanged", OnSmartRTHChanged);
+
             manager.Socket.On("rcConnectionStatusChanged", OnRCConnectionStatusChanged);
             manager.Socket.On("flightAssistantStateChanged", OnFlightAssistantStateChanged);
             manager.Socket.On("gpsSignalStatusChanged", OnGPSSignalStatusChanged);
@@ -41,8 +44,6 @@ namespace ObserverPattern
             manager.Socket.On("coordinatesChanged", OnCoordinatesChanged);
             manager.Socket.On("connectSocketChanged", OnConnectSocket);
             manager.Socket.On("disconnectSocketChanged", OnDisconnectSocket);
-
-            //manager.Socket.On("rcConnectionStatusChanged", OnRCConnectionStatusChanged);
             manager.Open();
         }
         public static SocketConnection getInstance()
@@ -66,6 +67,10 @@ namespace ObserverPattern
         {
             manager.Socket.Emit(screen_event, number);
         }
+        public void emitInt(string screen_event, int number)
+        {
+            manager.Socket.Emit(screen_event, number);
+        }
         public void emitData(float x, float y)
         {
             manager.Socket.Emit("newJoystickPossition", "x: " + x + "  y:" + y);
@@ -78,6 +83,11 @@ namespace ObserverPattern
         {
             Notify(args[0].ToString(), "batteryStateChanged");
         }
+        void OnSmartRTHChanged(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "smartRTHChanged");
+        }
+        
         void OnAirlinkWifiLevelChanged(Socket socket, Packet packet, params object[] args)
         {
             Notify(args[0].ToString(), "rcConnectionStatusChanged");
