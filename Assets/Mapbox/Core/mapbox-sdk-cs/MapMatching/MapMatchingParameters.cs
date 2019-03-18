@@ -5,7 +5,7 @@
 //-----------------------------------------------------------------------
 using System;
 using System.ComponentModel;
-using Mapbox.VectorTile.Geometry;
+//using Mapbox.VectorTile.Geometry;
 
 namespace Mapbox.MapMatching
 {

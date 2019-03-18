@@ -12,7 +12,8 @@ namespace ObserverPattern
         // Use this for initialization
         void Start()
         {
-
+            map.GetComponent<AbstractMap>().SetZoom(18.0f);
+            map.GetComponent<AbstractMap>().UpdateMap(18.0f);
         }
 
         // Update is called once per frame

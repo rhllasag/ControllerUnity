@@ -1,0 +1,18 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Assets",
+    "\\Assets\\Mapbox\\Core",
+    "\\Assets\\Mapbox\\Core\\mapbox-sdk-cs",
+    "\\Assets\\Mapbox\\Core\\mapbox-sdk-cs\\MapMatching",
+    "\\Assets\\Plugins\\Best HTTP (Pro)",
+    "\\Assets\\Plugins\\Best HTTP (Pro)\\BestHTTP",
+    "\\Assets\\Plugins\\Best HTTP (Pro)\\BestHTTP\\PlatformSupport",
+    "\\Assets\\Plugins\\Best HTTP (Pro)\\BestHTTP\\PlatformSupport\\TcpClient",
+    "\\Assets\\Plugins\\Best HTTP (Pro)\\BestHTTP\\PlatformSupport\\TcpClient\\WinRT",
+    "\\Assets\\Scripts",
+    "\\Assets\\Scripts\\ManageScences"
+  ],
+  "SelectedNode": "\\Assets\\Scripts\\services\\Observer.cs",
+  "PreviewInSolutionExplorer": false
+}

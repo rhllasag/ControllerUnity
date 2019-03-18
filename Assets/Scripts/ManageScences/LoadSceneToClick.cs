@@ -11,8 +11,6 @@ public class LoadSceneToClick : MonoBehaviour, IInputHandler, IInputClickHandler
     public GameObject gOToDissable1;
     public GameObject gOToDissable2;
     public GameObject gOToDissable3;
-    public GameObject gOToDissable4;
-    public GameObject gOToDissable5;
     public TextMesh textMesh;
     public string title;
     private void changeUI()
@@ -36,10 +34,6 @@ public class LoadSceneToClick : MonoBehaviour, IInputHandler, IInputClickHandler
                     gOToDissable2.SetActive(false);
                 if (gOToDissable3 != null)
                     gOToDissable3.SetActive(false);
-                if (gOToDissable4 != null)
-                    gOToDissable4.SetActive(false);
-                if (gOToDissable5 != null)
-                    gOToDissable5.SetActive(false);
             }
         }
     }

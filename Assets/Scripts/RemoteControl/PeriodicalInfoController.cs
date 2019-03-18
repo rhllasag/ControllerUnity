@@ -33,7 +33,7 @@ namespace ObserverPattern
         public GameObject coordinates;
 
         //Video Streaming
-        public VideoReciver videoReciver;
+        //public VideoReciver videoReciver;
         public bool enableLog = false;
 
         void Start()
@@ -50,7 +50,7 @@ namespace ObserverPattern
             MeshObject hightMesh = new MeshObject(hight, new Hight());
             MeshObject homeLocationMesh = new MeshObject(homeLocation,map,zoomMap, locationHome, locationAircraft, new HomeLocation());
             MeshObject coodinatesMesh = new MeshObject(coordinates, map, zoomMap, locationHome, locationAircraft, new Coordinates());
-            videoReciver = new VideoReciver(enableLog);
+            //videoReciver = new VideoReciver(enableLog);
             //Add the MeshObject to the list of objects waiting for something to happen
             SocketConnection.getInstance().AddObserver(batteryLevelMesh);
             SocketConnection.getInstance().AddObserver(remoteControllerMesh);
@@ -61,18 +61,22 @@ namespace ObserverPattern
             SocketConnection.getInstance().AddObserver(batteryNAircraftMesh);
             SocketConnection.getInstance().AddObserver(flightTimeMesh);
             SocketConnection.getInstance().AddObserver(hightMesh);
-            SocketConnection.getInstance().AddObserver(videoReciver);
+            //SocketConnection.getInstance().AddObserver(videoReciver);
             SocketConnection.getInstance().AddObserver(homeLocationMesh);
             SocketConnection.getInstance().AddObserver(coodinatesMesh);
 
         }
         void Update()
         {
-            
+            if (Input.GetKeyDown(KeyCode.N))
+            {
+                //videoReciver.disconnect();
+                //videoReciver.connect();
+            }
         }
         void OnApplicationQuit()
         {
-            videoReciver.disconnect();
+            //videoReciver.disconnect();
         }
     }
 
