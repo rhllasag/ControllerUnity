@@ -4,13 +4,15 @@
     "\\Assets",
     "\\Assets\\HoloToolkit-Examples",
     "\\Assets\\HoloToolkit-Examples\\UX",
-    "\\Assets\\HoloToolkit-Examples\\UX\\Scripts",
+    "\\Assets\\Mapbox",
+    "\\Assets\\Mapbox\\Unity",
+    "\\Assets\\Mapbox\\Unity\\Map",
     "\\Assets\\Scripts",
     "\\Assets\\Scripts\\Panels",
-    "\\Assets\\Scripts\\Panels\\BatteryPanel",
+    "\\Assets\\Scripts\\Panels\\SystemPanel",
     "\\Assets\\Scripts\\RemoteControl",
     "\\Assets\\Scripts\\services"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\Panels\\BatteryPanel\\BatteryPanelObserver.cs",
+  "SelectedNode": "\\Assets\\Mapbox\\Unity\\Map\\AbstractMap.cs",
   "PreviewInSolutionExplorer": false
 }

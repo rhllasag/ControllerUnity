@@ -35,8 +35,6 @@ namespace ObserverPattern
         //Video Streaming
         //public VideoReciver videoReciver;
         public bool enableLog = false;
-
-
         //Panels
         public GameObject joystickPanel;
         void Start()

@@ -12,6 +12,11 @@ public class ToggleEvent : MonoBehaviour {
     public GameObject toogle;
     int count = 0;
     bool RTHEnable = false;
+    bool AnticollisionEnable = false;
+    bool HorizontalAnticollisionEnable = false;
+    bool BeginnerModeEnable = false;
+    bool LimitDistanceEnable = false;
+
     private void changeUI()
     {
         if(enableGameObject!=null)
@@ -24,108 +29,55 @@ public class ToggleEvent : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            IsRTHEnabled();
-        }
-    }
-    public void onIntelligentFlightModes()
-    {
-        changeUI();
-    }
-    public void offIntelligentFlightModes()
-    {
-        changeUI();
-    }
-    public void onIntelligentReturnToHome()
-    {
-        if (enableGameObject != null)
-        {
-            if (count % 2 == 0)
-            {
-                changeUI();
-                SocketConnection.getInstance().emitBoolean("newSmartRTH", true);
-                SocketConnection.getInstance().emitData(count, -1);
-                
-            }
-            else
-            {
-                toogle.GetComponent<InteractiveToggle>().SetSelection(false);
-            }
-            count++;
-        }
-    }
-    public void offIntelligentReturnToHome()
-    {
-        if (count % 2 == 0)
-        {
-            changeUI();
-            SocketConnection.getInstance().emitBoolean("newSmartRTH", false);
-            SocketConnection.getInstance().emitData(-1, count);
-            count++;
-        }
-        else
-        {
-            toogle.GetComponent<InteractiveToggle>().SetSelection(true);
-        }
-        count++;
     }
     public void IsRTHEnabled() {
         if (count % 2 == 0)
         {
             changeUI();
             RTHEnable = !RTHEnable;
-            //toogle.GetComponent<InteractiveToggle>().SetSelection(RTHEnable);
             SocketConnection.getInstance().emitBoolean("newSmartRTH",RTHEnable);
         }
         count++;
     }
-    public void onBeginnerMode()
+    public void IsAnticollisionEnable()
     {
-        changeUI();
+        if (count % 2 == 0)
+        {
+            changeUI();
+            AnticollisionEnable = !AnticollisionEnable;
+            SocketConnection.getInstance().emitBoolean("newAnticollision", AnticollisionEnable);
+        }
+        count++;
     }
-    public void offBeginnerMode()
+    public void IsHorizontalAnticollisionEnable()
     {
-        changeUI();
+        if (count % 2 == 0)
+        {
+            changeUI();
+            HorizontalAnticollisionEnable = !HorizontalAnticollisionEnable;
+            SocketConnection.getInstance().emitBoolean("newHorizontalAnticollision", HorizontalAnticollisionEnable);
+        }
+        count++;
     }
-    public void onHightMax()
+    public void IsBeginnerModeEnable()
     {
-        changeUI();
+        if (count % 2 == 0)
+        {
+            changeUI();
+            BeginnerModeEnable = !BeginnerModeEnable;
+            SocketConnection.getInstance().emitBoolean("newBeginnerMode", BeginnerModeEnable);
+        }
+        count++;
     }
-    public void offHightMax()
+    public void IsLimitDistanceEnable()
     {
-        changeUI();
+        if (count % 2 == 0)
+        {
+            changeUI();
+            LimitDistanceEnable = !LimitDistanceEnable;
+            SocketConnection.getInstance().emitBoolean("newLimitDistance", LimitDistanceEnable);
+        }
+        count++;
     }
-    public void onAnticollision()
-    {
-        changeUI();
-    }
-    public void offAnticollision()
-    {
-        changeUI();
-    }
-    public void onHorizontalAnticollision()
-    {
-        changeUI();
-    }
-    public void offHorizontalAnticollision()
-    {
-        changeUI();
-    }
-    public void onRadarInformation()
-    {
-        changeUI();
-    }
-    public void offRadarInformation()
-    {
-        changeUI();
-    }
-    public void onMaxDistance()
-    {
-        changeUI();
-    }
-    public void offMaxDistance()
-    {
-        changeUI();
-    }
+    
 }

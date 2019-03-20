@@ -13,6 +13,8 @@ namespace ObserverPattern
     {
         List<Observer> observers = new List<Observer>();
         List<BatteryPanelObserver> observersBattery = new List<BatteryPanelObserver>();
+        List<VisualNavigationPanelObserver> observersCollision = new List<VisualNavigationPanelObserver>();
+        List<SystemPanelObserver> observersSettings = new List<SystemPanelObserver>();
         public static SocketConnection instance = null;
         private string IP = DataManager.getInstance().getWebSocketServer();
         SocketManager manager;
@@ -31,7 +33,6 @@ namespace ObserverPattern
 
             manager.Socket.On("batteryLevelChanged", OnBatteryLevelChanged);
             manager.Socket.On("batteryStateChanged", OnBatteryStateChanged);
-            manager.Socket.On("smartRTHChanged", OnSmartRTHChanged);
             manager.Socket.On("returnToHomeQuestionChanged", OnReturnToHomeQuestionChanged);
 
             
@@ -45,10 +46,17 @@ namespace ObserverPattern
             manager.Socket.On("coordinatesChanged", OnCoordinatesChanged);
             manager.Socket.On("connectSocketChanged", OnConnectSocket);
             manager.Socket.On("disconnectSocketChanged", OnDisconnectSocket);
-
-
+            
+            
             manager.Socket.On("joystickPanelChanged", OnJoystickPanelChanged);
-
+            manager.Socket.On("smartRTHChanged", OnSmartRTHChanged);
+            manager.Socket.On("anticollisionChanged", OnAnticollisionChanged);
+            manager.Socket.On("horizontalAnticollisionChanged", OnHorizontalAnticollisionChanged);
+            manager.Socket.On("beginnerModeChanged", OnBeginnerModeChanged);
+            manager.Socket.On("limitDistanceChanged", OnLimitDistanceChanged);
+            manager.Socket.On("maximumAltitudeChanged", OnMaximumAltitudeChanged);
+            manager.Socket.On("maximumFlightDistanceChanged", OnMaximumFlightDistanceChanged);
+            
             manager.Open();
         }
         public static SocketConnection getInstance()
@@ -95,6 +103,30 @@ namespace ObserverPattern
         void OnSmartRTHChanged(Socket socket, Packet packet, params object[] args)
         {
             Notify(args[0].ToString(), "smartRTHChanged");
+        }
+        void OnAnticollisionChanged(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "anticollisionChanged");
+        }
+        void OnHorizontalAnticollisionChanged(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "horizontalAnticollisionChanged");
+        }
+        void OnBeginnerModeChanged(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "beginnerModeChanged");
+        }
+        void OnLimitDistanceChanged(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "limitDistanceChanged");
+        }
+        void OnMaximumAltitudeChanged(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "maximumAltitudeChanged");
+        }
+        void OnMaximumFlightDistanceChanged(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "maximumFlightDistanceChanged");
         }
         void OnReturnToHomeQuestionChanged(Socket socket, Packet packet, params object[] args)
         {
@@ -208,6 +240,14 @@ namespace ObserverPattern
         {
             observersBattery.Add(observer);
         }
+        public void AddCollisionObserver(VisualNavigationPanelObserver observer)
+        {
+            observersCollision.Add(observer);
+        }
+        public void AddSystemObserver(SystemPanelObserver observer)
+        {
+            observersSettings.Add(observer);
+        }
         //Remove observer from the list
         public void RemoveObserver(Observer observer)
         {
@@ -225,6 +265,18 @@ namespace ObserverPattern
                 //Notify all observers even though some may not be interested in what has happened
                 //Each observer should check if it is interested in this event
                 observersBattery[i].OnNotify(data, component);
+            }
+            for (int i = 0; i < observersCollision.Count; i++)
+            {
+                //Notify all observers even though some may not be interested in what has happened
+                //Each observer should check if it is interested in this event
+                observersCollision[i].OnNotify(data, component);
+            }
+            for (int i = 0; i < observersSettings.Count; i++)
+            {
+                //Notify all observers even though some may not be interested in what has happened
+                //Each observer should check if it is interested in this event
+                observersSettings[i].OnNotify(data, component);
             }
         }
     }

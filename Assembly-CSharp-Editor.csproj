@@ -53,8 +53,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\GoogleARCore\SDK\Scripts\Editor\ARCoreRequiredMenuItem.cs" />
-     <Compile Include="Assets\GoogleARCore\SDK\Scripts\Editor\BuildHelper.cs" />
      <Compile Include="Assets\HoloToolkit\BuildAndDeploy\Editor\BuildDeployPortal.cs" />
      <Compile Include="Assets\HoloToolkit\BuildAndDeploy\Editor\BuildDeployPrefs.cs" />
      <Compile Include="Assets\HoloToolkit\BuildAndDeploy\Editor\BuildDeployTools.cs" />

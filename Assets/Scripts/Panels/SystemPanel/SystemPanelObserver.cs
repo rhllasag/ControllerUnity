@@ -25,33 +25,38 @@ public class SystemPanelMeshObject : SystemPanelObserver
         this.boxObj = boxObj;
         this.messegsEvent = boxEvent;
     }
-    public SystemPanelMeshObject(InteractiveToggle iTScript, GameObject boxObj, SystemPanelMeshEvents boxEvent)
+    public SystemPanelMeshObject(InteractiveToggle iTScript, SystemPanelMeshEvents boxEvent)
     {
         this.interactiveToggleScript = iTScript;
-        this.boxObj = boxObj;
         this.messegsEvent = boxEvent;
     }
     public override void OnNotify(string data, string component)
     {
-        if (messegsEvent.Description().CompareTo("intelligentFM") == 0)
+        if (messegsEvent.Description().CompareTo("beginnerMode") == 0 && component.CompareTo("beginnerModeChanged") == 0)
         {
-
-        }
-        if (messegsEvent.Description().CompareTo("altitudeRTH") == 0)
-        {
-
-        }
-        if (messegsEvent.Description().CompareTo("beginnerMode") == 0)
-        {
-
+            if (data.Contains("True"))
+            {
+                interactiveToggleScript.SetSelection(true);
+            }
+            else if (data.Contains("False"))
+            {
+                interactiveToggleScript.SetSelection(false);
+            }
         }
         if (messegsEvent.Description().CompareTo("maximumAltitude") == 0)
         {
 
         }
-        if (messegsEvent.Description().CompareTo("limitDistance") == 0)
+        if (messegsEvent.Description().CompareTo("limitDistance") == 0 && component.CompareTo("limitDistanceChanged") == 0)
         {
-
+            if (data.Contains("True"))
+            {
+                interactiveToggleScript.SetSelection(true);
+            }
+            else if (data.Contains("False"))
+            {
+                interactiveToggleScript.SetSelection(false);
+            }
         }
         if (messegsEvent.Description().CompareTo("maximumFlightAltitude") == 0)
         {

@@ -29,14 +29,12 @@ namespace ObserverPattern
             if (gameObject.name.CompareTo("SliderMaximumAltitude") == 0)
             {
                 DataManager.getInstance().MaximumAltitude = int.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text);
+                SocketConnection.getInstance().emitInt("newMaximumAltitude", DataManager.getInstance().MaximumAltitude);
             }
             if (gameObject.name.CompareTo("SliderMaximumFlighDistance") == 0)
             {
                 DataManager.getInstance().MaximumFlightDistance = int.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text);
-            }
-            if (gameObject.name.CompareTo("SliderZoomMap") == 0) {
-                map.GetComponent<AbstractMap>().SetZoom(float.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text));
-                map.GetComponent<AbstractMap>().UpdateMap(float.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text));
+                SocketConnection.getInstance().emitInt("newMaximumFlightDistance", DataManager.getInstance().MaximumFlightDistance);
             }
             if (gameObject.name.CompareTo("SliderSetAltitude") == 0)
             {
@@ -57,6 +55,11 @@ namespace ObserverPattern
             {
                 DataManager.getInstance().RTHBatteryError = int.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text);
                 SocketConnection.getInstance().emitInt("newSeriousLowBatteryWarningThreshold", DataManager.getInstance().RTHBatteryError);
+            }
+            if (gameObject.name.CompareTo("SliderZoomMap") == 0)
+            {
+                //map.GetComponent<AbstractMap>().SetZoom(float.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text));
+                //map.GetComponent<AbstractMap>().UpdateMap(float.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text));
             }
         }
         public void onSelect()

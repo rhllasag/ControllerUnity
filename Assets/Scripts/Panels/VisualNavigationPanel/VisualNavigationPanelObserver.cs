@@ -9,26 +9,37 @@ public abstract class VisualNavigationPanelObserver{
 }
 public class VisualNavigationPanelMeshObject : VisualNavigationPanelObserver
 {
-    GameObject boxObj;
     VisualNavigationPanelMeshEvents messegsEvent;
     InteractiveToggle interactiveToggleScript;
-    TextMesh textMesh;
-    public VisualNavigationPanelMeshObject(GameObject boxObj, VisualNavigationPanelMeshEvents boxEvent)
-    {
-        this.boxObj = boxObj;
-        this.messegsEvent = boxEvent;
-    }
-    public VisualNavigationPanelMeshObject(InteractiveToggle iTScript, GameObject boxObj, VisualNavigationPanelMeshEvents boxEvent)
+    public VisualNavigationPanelMeshObject(InteractiveToggle iTScript, VisualNavigationPanelMeshEvents boxEvent)
     {
         this.interactiveToggleScript = iTScript;
-        this.boxObj = boxObj;
         this.messegsEvent = boxEvent;
     }
     public override void OnNotify(string data, string component)
     {
-        if (messegsEvent.Description().CompareTo("intelligentFM") == 0)
+        if (messegsEvent.Description().CompareTo("anticollisionSystem") == 0 && component.CompareTo("anticollisionChanged") == 0)
         {
-
+            if (data.Contains("True"))
+            {
+                interactiveToggleScript.SetSelection(true);
+            }
+            else if (data.Contains("False"))
+            {
+                interactiveToggleScript.SetSelection(false);
+            }
         }
+        if (messegsEvent.Description().CompareTo("horizontalAC") == 0 && component.CompareTo("horizontalAnticollisionChanged") == 0)
+        {
+            if (data.Contains("True"))
+            {
+                interactiveToggleScript.SetSelection(true);
+            }
+            else if (data.Contains("False"))
+            {
+                interactiveToggleScript.SetSelection(false);
+            }
+        }
+        
     }
 }

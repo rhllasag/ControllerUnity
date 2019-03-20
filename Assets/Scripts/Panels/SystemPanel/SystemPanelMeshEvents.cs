@@ -5,20 +5,6 @@ using ObserverPattern;
 public abstract class SystemPanelMeshEvents{
       public abstract string Description();
 }
-public class IntelligentFlightMode : SystemPanelMeshEvents
-{
-    public override string Description()
-    {
-        return "intelligentFM";
-    }
-}
-public class AltitudeRTH : SystemPanelMeshEvents
-{
-    public override string Description()
-    {
-        return "altitudeRTH";
-    }
-}
 public class BeginnerMode : SystemPanelMeshEvents
 {
     public override string Description()
