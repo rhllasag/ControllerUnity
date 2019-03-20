@@ -13,6 +13,7 @@ public class LoadSceneToClick : MonoBehaviour, IInputHandler, IInputClickHandler
     public GameObject gOToDissable3;
     public TextMesh textMesh;
     public string title;
+    int count = 0;
     private void changeUI()
     {
         if (textMesh != null)
@@ -21,7 +22,7 @@ public class LoadSceneToClick : MonoBehaviour, IInputHandler, IInputClickHandler
         }
         if (gOToEnable != null)
         {
-            if (gOToEnable.active == true)
+            if (gOToEnable.activeSelf)
             {
                 gOToEnable.SetActive(false);
             }
@@ -39,7 +40,9 @@ public class LoadSceneToClick : MonoBehaviour, IInputHandler, IInputClickHandler
     }
     public void OnInputClicked(InputClickedEventData eventData)
     {
-        changeUI();
+        if (count % 2 == 0)
+            changeUI();
+        count++;
     }
 
     public void OnInputDown(InputEventData eventData)
@@ -64,7 +67,7 @@ public class LoadSceneToClick : MonoBehaviour, IInputHandler, IInputClickHandler
 
     public void OnManipulationUpdated(ManipulationEventData eventData)
     {
-        changeUI();
+        //changeUI();
     }
 
     // Use this for initialization

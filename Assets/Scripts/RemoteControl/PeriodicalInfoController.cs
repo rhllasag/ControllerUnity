@@ -36,6 +36,9 @@ namespace ObserverPattern
         //public VideoReciver videoReciver;
         public bool enableLog = false;
 
+
+        //Panels
+        public GameObject joystickPanel;
         void Start()
         {
             //Create MeshObject that can observe events and give them an event to do
@@ -50,6 +53,7 @@ namespace ObserverPattern
             MeshObject hightMesh = new MeshObject(hight, new Hight());
             MeshObject homeLocationMesh = new MeshObject(homeLocation,map,zoomMap, locationHome, locationAircraft, new HomeLocation());
             MeshObject coodinatesMesh = new MeshObject(coordinates, map, zoomMap, locationHome, locationAircraft, new Coordinates());
+            MeshObject joystickPanelMesh = new MeshObject(joystickPanel, new JoyStickPanel());
             //videoReciver = new VideoReciver(enableLog);
             //Add the MeshObject to the list of objects waiting for something to happen
             SocketConnection.getInstance().AddObserver(batteryLevelMesh);
@@ -64,6 +68,7 @@ namespace ObserverPattern
             //SocketConnection.getInstance().AddObserver(videoReciver);
             SocketConnection.getInstance().AddObserver(homeLocationMesh);
             SocketConnection.getInstance().AddObserver(coodinatesMesh);
+            SocketConnection.getInstance().AddObserver(joystickPanelMesh);
 
         }
         void Update()

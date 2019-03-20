@@ -5,10 +5,12 @@ using System.Collections.Generic;
 using UnityEngine;
 public class StopWaypointsMission : MonoBehaviour, IInputHandler, IInputClickHandler, IManipulationHandler
 {
-
+    int count = 0;
     public void OnInputClicked(InputClickedEventData eventData)
     {
-        SocketConnection.getInstance().emitMainScreenEvent("endWaypointsMission");
+        if (count % 2 == 0)
+            SocketConnection.getInstance().emitMainScreenEvent("endWaypointsMission");
+        count++;
     }
 
     public void OnInputDown(InputEventData eventData)
@@ -33,7 +35,6 @@ public class StopWaypointsMission : MonoBehaviour, IInputHandler, IInputClickHan
 
     public void OnManipulationUpdated(ManipulationEventData eventData)
     {
-        SocketConnection.getInstance().emitMainScreenEvent("endWaypointsMission");
 
     }
 

@@ -7,9 +7,12 @@ using UnityEngine;
 
 public class AddWaypoints : MonoBehaviour, IInputHandler, IInputClickHandler, IManipulationHandler
 {
+    int count = 0;
     public void OnInputClicked(InputClickedEventData eventData)
     {
-        SocketConnection.getInstance().emitMainScreenEvent("addWaypoints");
+        if (count % 2 == 0)
+            SocketConnection.getInstance().emitMainScreenEvent("addWaypoints");
+        count++;
     }
 
     public void OnInputDown(InputEventData eventData)
@@ -34,7 +37,6 @@ public class AddWaypoints : MonoBehaviour, IInputHandler, IInputClickHandler, IM
 
     public void OnManipulationUpdated(ManipulationEventData eventData)
     {
-        SocketConnection.getInstance().emitMainScreenEvent("addWaypoints");
     }
 
     // Use this for initialization

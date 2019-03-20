@@ -7,9 +7,12 @@ namespace ObserverPattern
 {
     public class TakeOff : MonoBehaviour, IInputHandler, IInputClickHandler, IManipulationHandler
     {
+        int count = 0;
         public void OnInputClicked(InputClickedEventData eventData)
         {
+            if(count%2!=0)
             SocketConnection.getInstance().emitMainScreenEvent("newTakeOff");
+            count++;
         }
 
         public void OnInputDown(InputEventData eventData)
@@ -34,7 +37,7 @@ namespace ObserverPattern
 
         public void OnManipulationUpdated(ManipulationEventData eventData)
         {
-            SocketConnection.getInstance().emitMainScreenEvent("newTakeOff");
+            //SocketConnection.getInstance().emitMainScreenEvent("newTakeOff");
         }
 
         // Use this for initialization

@@ -7,9 +7,12 @@ namespace ObserverPattern
 {
     public class SetHomeLocation : MonoBehaviour, IInputHandler, IInputClickHandler, IManipulationHandler
 {
-    public void OnInputClicked(InputClickedEventData eventData)
+        int count = 0;
+        public void OnInputClicked(InputClickedEventData eventData)
     {
-            SocketConnection.getInstance().emitMainScreenEvent("newHome");
+            if (count % 2 == 0)
+                SocketConnection.getInstance().emitMainScreenEvent("newHome");
+            count++;
     }
 
     public void OnInputDown(InputEventData eventData)
@@ -34,8 +37,6 @@ namespace ObserverPattern
 
     public void OnManipulationUpdated(ManipulationEventData eventData)
     {
-            SocketConnection.getInstance().emitMainScreenEvent("newHome");
-
     }
 
         // Use this for initialization

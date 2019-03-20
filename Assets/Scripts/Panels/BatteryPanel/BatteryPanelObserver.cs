@@ -45,16 +45,13 @@ namespace ObserverPattern
             }
             if (messegsEvent.Description().CompareTo("intelligentRTH") == 0 && component.CompareTo("smartRTHChanged") == 0)
             {
-                json = JObject.Parse(data);
-                var value = GetJArrayValue(json, "value");
-                if (value.CompareTo("true") == 0)
+                if(data.Contains("True"))
                 {
                     interactiveToggleScript.SetSelection(true);
-                    boxObj.SetActive(true);
                 }
-                else if (value.CompareTo("false") == 0) {
+                else if(data.Contains("False"))
+                {
                     interactiveToggleScript.SetSelection(false);
-                    boxObj.SetActive(false);
                 }
             }
             if (messegsEvent.Description().CompareTo("batteryRTHPanel") == 0 && component.CompareTo("returnToHomeQuestionChanged") == 0)

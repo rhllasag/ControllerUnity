@@ -5,7 +5,6 @@ using BestHTTP;
 using BestHTTP.SocketIO;
 using System;
 using System.IO;
-using Mapbox.Json.Linq;
 
 namespace ObserverPattern
 {
@@ -46,6 +45,10 @@ namespace ObserverPattern
             manager.Socket.On("coordinatesChanged", OnCoordinatesChanged);
             manager.Socket.On("connectSocketChanged", OnConnectSocket);
             manager.Socket.On("disconnectSocketChanged", OnDisconnectSocket);
+
+
+            manager.Socket.On("joystickPanelChanged", OnJoystickPanelChanged);
+
             manager.Open();
         }
         public static SocketConnection getInstance()
@@ -65,6 +68,10 @@ namespace ObserverPattern
         {
             manager.Socket.Emit(screen_event, json);
         }
+        public void emitBoolean(string screen_event, bool boolean)
+        {
+            manager.Socket.Emit(screen_event, boolean+"");
+        }
         public void emitFloat(string screen_event, float number)
         {
             manager.Socket.Emit(screen_event, number);
@@ -75,7 +82,7 @@ namespace ObserverPattern
         }
         public void emitData(float x, float y)
         {
-            manager.Socket.Emit("newJoystickPossition", "x: " + x + "  y:" + y);
+            manager.Socket.Emit("newJoystickPossition", "x:" + x + "  y:" + y);
         }
         void OnBatteryLevelChanged(Socket socket, Packet packet, params object[] args)
         {
@@ -142,7 +149,11 @@ namespace ObserverPattern
         {
             Notify(args[0].ToString(), "disconnectSocket");
         }
-
+        void OnJoystickPanelChanged(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "joystickPanelChanged");
+        }
+        
         void OnServerConnect(Socket socket, Packet packet, params object[] args)
         {
             Debug.Log("Connected");

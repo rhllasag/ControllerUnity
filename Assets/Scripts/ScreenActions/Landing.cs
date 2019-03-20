@@ -6,9 +6,12 @@ using UnityEngine;
 
 public class Landing : MonoBehaviour,IInputHandler, IInputClickHandler, IManipulationHandler
 {
+    int count = 0;
     public void OnInputClicked(InputClickedEventData eventData)
     {
-        SocketConnection.getInstance().emitMainScreenEvent("newLanding");
+        if (count % 2 == 0)
+            SocketConnection.getInstance().emitMainScreenEvent("newLanding");
+        count++;
     }
 
     public void OnInputDown(InputEventData eventData)
@@ -33,7 +36,7 @@ public class Landing : MonoBehaviour,IInputHandler, IInputClickHandler, IManipul
 
     public void OnManipulationUpdated(ManipulationEventData eventData)
     {
-        SocketConnection.getInstance().emitMainScreenEvent("newLanding");
+        //SocketConnection.getInstance().emitMainScreenEvent("newLanding");
     }
 
     // Use this for initialization

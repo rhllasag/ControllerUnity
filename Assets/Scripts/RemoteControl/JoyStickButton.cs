@@ -9,54 +9,40 @@ namespace ObserverPattern
     {
         public float x;
         public float y;
+        int count = 0;
         public void OnInputClicked(InputClickedEventData eventData)
         {
-            SocketConnection.getInstance().emitData(x, y);
+            if (count % 2 == 0)
+                SocketConnection.getInstance().emitData(x, y);
+            count++;
         }
         public void OnInputDown(InputEventData eventData)
         {
-            // Debug.Log("OnInputDown");
         }
 
         public void OnInputUp(InputEventData eventData)
         {
-            // Debug.Log("OnInputUp");
         }
 
         public void OnManipulationCanceled(ManipulationEventData eventData)
         {
-            // Debug.Log("OnManipulationCanceled");
         }
 
         public void OnManipulationCompleted(ManipulationEventData eventData)
         {
-            // Debug.Log("OnManipulationCompleted");
         }
 
         public void OnManipulationStarted(ManipulationEventData eventData)
         {
-            //  Debug.Log("OnManipulationStarted");
         }
 
         public void OnManipulationUpdated(ManipulationEventData eventData)
         {
-            Debug.Log("Click");
-            SocketConnection.getInstance().emitData(x, y);
+            
         }
-
-
-
-
-
-
-
         void Start()
         {
-            //Debug.Log("Init");
-
         }
-
-        // Update is called once per frame
         void Update()
         {
 

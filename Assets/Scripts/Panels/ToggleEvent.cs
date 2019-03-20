@@ -1,4 +1,7 @@
-﻿using ObserverPattern;
+﻿using HoloToolkit.Examples.InteractiveElements;
+using Mapbox.Json.Linq;
+using ObserverPattern;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,30 +9,25 @@ using UnityEngine;
 public class ToggleEvent : MonoBehaviour {
 
     public GameObject enableGameObject;
+    public GameObject toogle;
+    int count = 0;
+    bool RTHEnable = false;
     private void changeUI()
     {
-        if (enableGameObject != null)
-        {
-            if (enableGameObject.active == true)
-            {
-                enableGameObject.SetActive(false);
-            }
-            else
-            {
-                enableGameObject.SetActive(true);
-
-            }
-        }
+        if(enableGameObject!=null)
+        enableGameObject.gameObject.SetActive(!enableGameObject.activeSelf);
     }
     void Start()
     {
 
     }
-
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            IsRTHEnabled();
+        }
     }
     public void onIntelligentFlightModes()
     {
@@ -41,72 +39,93 @@ public class ToggleEvent : MonoBehaviour {
     }
     public void onIntelligentReturnToHome()
     {
-        changeUI();
-        SocketConnection.getInstance().emitData("newSmartRTH","true");
+        if (enableGameObject != null)
+        {
+            if (count % 2 == 0)
+            {
+                changeUI();
+                SocketConnection.getInstance().emitBoolean("newSmartRTH", true);
+                SocketConnection.getInstance().emitData(count, -1);
+                
+            }
+            else
+            {
+                toogle.GetComponent<InteractiveToggle>().SetSelection(false);
+            }
+            count++;
+        }
     }
     public void offIntelligentReturnToHome()
     {
-        changeUI();
-        SocketConnection.getInstance().emitData("newSmartRTH", "false");
+        if (count % 2 == 0)
+        {
+            changeUI();
+            SocketConnection.getInstance().emitBoolean("newSmartRTH", false);
+            SocketConnection.getInstance().emitData(-1, count);
+            count++;
+        }
+        else
+        {
+            toogle.GetComponent<InteractiveToggle>().SetSelection(true);
+        }
+        count++;
+    }
+    public void IsRTHEnabled() {
+        if (count % 2 == 0)
+        {
+            changeUI();
+            RTHEnable = !RTHEnable;
+            //toogle.GetComponent<InteractiveToggle>().SetSelection(RTHEnable);
+            SocketConnection.getInstance().emitBoolean("newSmartRTH",RTHEnable);
+        }
+        count++;
     }
     public void onBeginnerMode()
     {
         changeUI();
-        Debug.Log("On Beginner Mode");
     }
     public void offBeginnerMode()
     {
         changeUI();
-        Debug.Log("Off Beginner Mode");
     }
     public void onHightMax()
     {
         changeUI();
-        Debug.Log("On Hight Max");
     }
     public void offHightMax()
     {
         changeUI();
-        Debug.Log("Off Hight Max");
     }
     public void onAnticollision()
     {
         changeUI();
-        Debug.Log("On Anticollision");
     }
     public void offAnticollision()
     {
         changeUI();
-        Debug.Log("Off Anticollision");
     }
     public void onHorizontalAnticollision()
     {
         changeUI();
-        Debug.Log("On Horizontal Anticollision");
     }
     public void offHorizontalAnticollision()
     {
         changeUI();
-        Debug.Log("Off Horizontal Anticollision");
     }
     public void onRadarInformation()
     {
         changeUI();
-        Debug.Log("On Radar Information");
     }
     public void offRadarInformation()
     {
         changeUI();
-        Debug.Log("Off Radar Information");
     }
     public void onMaxDistance()
     {
         changeUI();
-        Debug.Log("On Max Distance");
     }
     public void offMaxDistance()
     {
         changeUI();
-        Debug.Log("Off Max Distance");
     }
 }

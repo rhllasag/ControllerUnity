@@ -87,4 +87,11 @@ namespace ObserverPattern
             return "coordinates";
         }
     }
+    public class JoyStickPanel : MeshEvents
+    {
+        public override string Description()
+        {
+            return "joystickPanel";
+        }
+    }
 }

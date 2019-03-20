@@ -6,10 +6,12 @@ using UnityEngine;
 
 public class UploadWaypointsMission : MonoBehaviour, IInputHandler, IInputClickHandler, IManipulationHandler
 {
-
+    int count = 0;
     public void OnInputClicked(InputClickedEventData eventData)
     {
-        SocketConnection.getInstance().emitMainScreenEvent("uploadWaypointsMission");
+        if (count % 2 == 0)
+            SocketConnection.getInstance().emitMainScreenEvent("uploadWaypointsMission");
+        count++;
     }
 
     public void OnInputDown(InputEventData eventData)
@@ -34,8 +36,6 @@ public class UploadWaypointsMission : MonoBehaviour, IInputHandler, IInputClickH
 
     public void OnManipulationUpdated(ManipulationEventData eventData)
     {
-        SocketConnection.getInstance().emitMainScreenEvent("uploadWaypointsMission");
-
     }
 
     // Use this for initialization
@@ -50,7 +50,6 @@ public class UploadWaypointsMission : MonoBehaviour, IInputHandler, IInputClickH
         if (Input.GetKeyDown(KeyCode.U))
         {
             SocketConnection.getInstance().emitMainScreenEvent("uploadWaypointsMission");
-
         }
     }
 }

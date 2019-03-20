@@ -6,67 +6,56 @@ using UnityEngine.EventSystems;
 namespace ObserverPattern
 {
     public class EnableJoystick : MonoBehaviour, IInputHandler, IInputClickHandler, IManipulationHandler
-{
-
-    public GameObject gOToEnable;
-    private void changeUI()
     {
-        if (gOToEnable != null)
+        int count = 0;
+        public void OnInputClicked(InputClickedEventData eventData)
         {
-            if (gOToEnable.active == true)
+            
+            if(count%2==0)
+            SocketConnection.getInstance().emitMainScreenEvent("newJoystickPanel");
+            count++;
+        }
+
+        public void OnInputDown(InputEventData eventData)
+        {
+        }
+
+        public void OnInputUp(InputEventData eventData)
+        {
+        }
+
+        public void OnManipulationCanceled(ManipulationEventData eventData)
+        {
+        }
+
+        public void OnManipulationCompleted(ManipulationEventData eventData)
+        {
+        }
+
+        public void OnManipulationStarted(ManipulationEventData eventData)
+        {
+        }
+
+        public void OnManipulationUpdated(ManipulationEventData eventData)
+        {
+        }
+
+        // Use this for initialization
+        void Start()
+        {
+        }
+
+        void Awake()
+        {
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.J))
             {
-                gOToEnable.SetActive(false);
-            }
-            else
-            {
-                gOToEnable.SetActive(true);
-              
+                SocketConnection.getInstance().emitMainScreenEvent("newJoystickPanel");
             }
         }
     }
-    public void OnInputClicked(InputClickedEventData eventData)
-    {
-        changeUI();
-    }
-
-    public void OnInputDown(InputEventData eventData)
-    {
-    }
-
-    public void OnInputUp(InputEventData eventData)
-    {
-    }
-
-    public void OnManipulationCanceled(ManipulationEventData eventData)
-    {
-    }
-
-    public void OnManipulationCompleted(ManipulationEventData eventData)
-    {
-    }
-
-    public void OnManipulationStarted(ManipulationEventData eventData)
-    {
-    }
-
-    public void OnManipulationUpdated(ManipulationEventData eventData)
-    {
-        changeUI();
-    }
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            changeUI();
-        }
-    }
-}
 }

@@ -6,10 +6,12 @@ using UnityEngine;
 
 public class StartWaypointsMission : MonoBehaviour, IInputHandler, IInputClickHandler, IManipulationHandler
 {
-
+    int count = 0;
     public void OnInputClicked(InputClickedEventData eventData)
     {
-        SocketConnection.getInstance().emitMainScreenEvent("startWaypointsMission");
+        if (count % 2 == 0)
+            SocketConnection.getInstance().emitMainScreenEvent("startWaypointsMission");
+        count++;
     }
 
     public void OnInputDown(InputEventData eventData)
@@ -34,7 +36,6 @@ public class StartWaypointsMission : MonoBehaviour, IInputHandler, IInputClickHa
 
     public void OnManipulationUpdated(ManipulationEventData eventData)
     {
-        SocketConnection.getInstance().emitMainScreenEvent("startWaypointsMission");
 
     }
 

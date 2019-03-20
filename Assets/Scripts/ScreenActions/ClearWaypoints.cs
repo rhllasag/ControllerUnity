@@ -6,9 +6,12 @@ using UnityEngine;
 
 public class ClearWaypoints : MonoBehaviour, IInputHandler, IInputClickHandler, IManipulationHandler
 {
+    int count = 0;
     public void OnInputClicked(InputClickedEventData eventData)
     {
-        SocketConnection.getInstance().emitMainScreenEvent("clearWaypoints");
+        if (count % 2 == 0)
+            SocketConnection.getInstance().emitMainScreenEvent("clearWaypoints");
+        count++;
     }
 
     public void OnInputDown(InputEventData eventData)
@@ -33,7 +36,6 @@ public class ClearWaypoints : MonoBehaviour, IInputHandler, IInputClickHandler, 
 
     public void OnManipulationUpdated(ManipulationEventData eventData)
     {
-        SocketConnection.getInstance().emitMainScreenEvent("clearWaypoints");
     }
 
     // Use this for initialization

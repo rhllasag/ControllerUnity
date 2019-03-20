@@ -2,17 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\Assets",
-    "\\Assets\\Mapbox\\Core",
-    "\\Assets\\Mapbox\\Core\\mapbox-sdk-cs",
-    "\\Assets\\Mapbox\\Core\\mapbox-sdk-cs\\MapMatching",
-    "\\Assets\\Plugins\\Best HTTP (Pro)",
-    "\\Assets\\Plugins\\Best HTTP (Pro)\\BestHTTP",
-    "\\Assets\\Plugins\\Best HTTP (Pro)\\BestHTTP\\PlatformSupport",
-    "\\Assets\\Plugins\\Best HTTP (Pro)\\BestHTTP\\PlatformSupport\\TcpClient",
-    "\\Assets\\Plugins\\Best HTTP (Pro)\\BestHTTP\\PlatformSupport\\TcpClient\\WinRT",
+    "\\Assets\\HoloToolkit-Examples",
+    "\\Assets\\HoloToolkit-Examples\\UX",
+    "\\Assets\\HoloToolkit-Examples\\UX\\Scripts",
     "\\Assets\\Scripts",
-    "\\Assets\\Scripts\\ManageScences"
+    "\\Assets\\Scripts\\Panels",
+    "\\Assets\\Scripts\\Panels\\BatteryPanel",
+    "\\Assets\\Scripts\\RemoteControl",
+    "\\Assets\\Scripts\\services"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\services\\Observer.cs",
+  "SelectedNode": "\\Assets\\Scripts\\Panels\\BatteryPanel\\BatteryPanelObserver.cs",
   "PreviewInSolutionExplorer": false
 }

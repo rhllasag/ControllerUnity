@@ -6,9 +6,12 @@ using UnityEngine;
 
 public class ReturnToHome : MonoBehaviour, IInputHandler, IInputClickHandler, IManipulationHandler
 {
+    int count = 0;
     public void OnInputClicked(InputClickedEventData eventData)
     {
-        SocketConnection.getInstance().emitMainScreenEvent("newReturnToHome");
+        if (count % 2 == 0)
+            SocketConnection.getInstance().emitMainScreenEvent("newReturnToHome");
+        count++;
     }
 
     public void OnInputDown(InputEventData eventData)
@@ -33,7 +36,6 @@ public class ReturnToHome : MonoBehaviour, IInputHandler, IInputClickHandler, IM
 
     public void OnManipulationUpdated(ManipulationEventData eventData)
     {
-        SocketConnection.getInstance().emitMainScreenEvent("newReturnToHome");
     }
 
     // Use this for initialization

@@ -38,8 +38,6 @@ public class CloseSystemStatusPanel : MonoBehaviour, IInputHandler, IInputClickH
 
     public void OnManipulationUpdated(ManipulationEventData eventData)
     {
-        panel.SetActive(false);
-        SocketConnection.getInstance().emitData("newReturnToHomeDecision", "false");
     }
 
     void Start () {

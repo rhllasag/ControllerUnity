@@ -1214,7 +1214,6 @@
      <Compile Include="Assets\Scripts\ScreenActions\Landing.cs" />
      <Compile Include="Assets\Scripts\ScreenActions\RadialManager.cs" />
      <Compile Include="Assets\Scripts\ScreenActions\ReturnToHome.cs" />
-     <Compile Include="Assets\Scripts\ScreenActions\ScreenButtonActions.cs" />
      <Compile Include="Assets\Scripts\ScreenActions\StartWaypointsMission.cs" />
      <Compile Include="Assets\Scripts\ScreenActions\StopWaypointsMission.cs" />
      <Compile Include="Assets\Scripts\ScreenActions\TakeOff.cs" />

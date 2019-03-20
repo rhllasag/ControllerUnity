@@ -203,7 +203,18 @@ namespace ObserverPattern
                 latitudeAux = double.Parse(GetJArrayValue(json, "latitude"));
                 longitudeAux = double.Parse(GetJArrayValue(json, "longitude"));
             }
-            
+            if (messegsEvent.Description().CompareTo("joystickPanel") == 0 && component.CompareTo("joystickPanelChanged") == 0)
+            {
+                
+                if (boxObj != null)
+                {
+                    boxObj.SetActive(!boxObj.activeSelf);
+                }
+                else
+                {
+                    Debug.Log("Was null");
+                }
+            }
         }
 
         public string GetJArrayValue(JObject yourJArray, string key)
