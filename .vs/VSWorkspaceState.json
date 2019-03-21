@@ -2,17 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\Assets",
-    "\\Assets\\HoloToolkit-Examples",
-    "\\Assets\\HoloToolkit-Examples\\UX",
-    "\\Assets\\Mapbox",
-    "\\Assets\\Mapbox\\Unity",
-    "\\Assets\\Mapbox\\Unity\\Map",
+    "\\Assets\\Mapbox\\Core",
+    "\\Assets\\Mapbox\\Core\\mapbox-sdk-cs",
     "\\Assets\\Scripts",
     "\\Assets\\Scripts\\Panels",
-    "\\Assets\\Scripts\\Panels\\SystemPanel",
-    "\\Assets\\Scripts\\RemoteControl",
-    "\\Assets\\Scripts\\services"
+    "\\Assets\\Scripts\\Panels\\BatteryPanel",
+    "\\Assets\\Scripts\\Panels\\SystemPanel"
   ],
-  "SelectedNode": "\\Assets\\Mapbox\\Unity\\Map\\AbstractMap.cs",
+  "SelectedNode": "\\Assets\\Scripts\\Panels\\SliderManager.cs",
   "PreviewInSolutionExplorer": false
 }

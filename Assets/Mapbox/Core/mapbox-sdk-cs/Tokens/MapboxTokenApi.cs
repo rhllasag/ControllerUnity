@@ -7,8 +7,9 @@ namespace Mapbox.Tokens
 	using Mapbox.Platform;
 	using System;
 	using System.ComponentModel;
+    #if (UNITY_WSA || BUILD_FOR_WP8) && !UNITY_EDITOR
 	//using Mapbox.VectorTile.Geometry;
-
+    #endif
 	public enum MapboxTokenStatus
 	{
 		/// <summary>The token is valid and active </summary>

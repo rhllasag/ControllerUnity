@@ -749,6 +749,39 @@
      <Compile Include="Assets\HoloToolkit-Examples\UX\Scripts\Widgets\TextureThemeWidget.cs" />
      <Compile Include="Assets\HoloToolkitExtensions\Scripts\RemoteAssets\DynamicTextureDownloader.cs" />
      <Compile Include="Assets\Mapbox\Core\cheap-ruler-cs\CheapRuler.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\5_Playground\Scripts\DirectionsExample.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\5_Playground\Scripts\ForwardGeocoderExample.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\5_Playground\Scripts\LogLocationProviderData.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\5_Playground\Scripts\RasterTileExample.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\5_Playground\Scripts\ReverseGeocoderExample.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\5_Playground\Scripts\VectorTileExample.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\6_ZoomableMap\Scripts\SetCameraHeight.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\6_ZoomableMap\Scripts\SpawnOnMap.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\CameraBillboard.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\CameraMovement.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\ChangeShadowDistance.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\DragableDirectionWaypoint.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\FeatureSelectionDetector.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\FeatureUiMarker.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\ForwardGeocodeUserInput.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\HeroBuildingSelectionUserInput.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\HighlightFeature.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\ImmediatePositionWithLocationProvider.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\ImmediatePositionWithLocationProviderHome.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\LabelTextSetter.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\LoadingPanelController.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\LocationStatus.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\MakiHelper.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\ObjectInspectorModifier.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\PoiLabelTextSetter.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\PoiMarkerHelper.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\PositionWithLocationProvider.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\QuadTreeCameraMovement.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\ReloadMap.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\ReverseGeocodeUserInput.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\RotateWithLocationProvider.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\TrafficUvAnimator.cs" />
+     <Compile Include="Assets\Mapbox\Core\Examples\Scripts\UpdateMapWithLocationProvider.cs" />
      <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\DirectionResource.cs" />
      <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Directions.cs" />
      <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Overview.cs" />
@@ -830,39 +863,6 @@
      <Compile Include="Assets\Mapbox\Core\Plugins\Android\UniAndroidPermission\UniAndroidPermission.cs" />
      <Compile Include="Assets\Mapbox\Core\probe-extractor-cs\Probe.cs" />
      <Compile Include="Assets\Mapbox\Core\probe-extractor-cs\ProbeExtractor.cs" />
-     <Compile Include="Assets\Mapbox\Examples\5_Playground\Scripts\DirectionsExample.cs" />
-     <Compile Include="Assets\Mapbox\Examples\5_Playground\Scripts\ForwardGeocoderExample.cs" />
-     <Compile Include="Assets\Mapbox\Examples\5_Playground\Scripts\LogLocationProviderData.cs" />
-     <Compile Include="Assets\Mapbox\Examples\5_Playground\Scripts\RasterTileExample.cs" />
-     <Compile Include="Assets\Mapbox\Examples\5_Playground\Scripts\ReverseGeocoderExample.cs" />
-     <Compile Include="Assets\Mapbox\Examples\5_Playground\Scripts\VectorTileExample.cs" />
-     <Compile Include="Assets\Mapbox\Examples\6_ZoomableMap\Scripts\SetCameraHeight.cs" />
-     <Compile Include="Assets\Mapbox\Examples\6_ZoomableMap\Scripts\SpawnOnMap.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\CameraBillboard.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\CameraMovement.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\ChangeShadowDistance.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\DragableDirectionWaypoint.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\FeatureSelectionDetector.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\FeatureUiMarker.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\ForwardGeocodeUserInput.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\HeroBuildingSelectionUserInput.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\HighlightFeature.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\ImmediatePositionWithLocationProvider.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\ImmediatePositionWithLocationProviderHome.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\LabelTextSetter.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\LoadingPanelController.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\LocationStatus.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\MakiHelper.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\ObjectInspectorModifier.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\PoiLabelTextSetter.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\PoiMarkerHelper.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\PositionWithLocationProvider.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\QuadTreeCameraMovement.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\ReloadMap.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\ReverseGeocodeUserInput.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\RotateWithLocationProvider.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\TrafficUvAnimator.cs" />
-     <Compile Include="Assets\Mapbox\Examples\Scripts\UpdateMapWithLocationProvider.cs" />
      <Compile Include="Assets\Mapbox\Unity\Constants.cs" />
      <Compile Include="Assets\Mapbox\Unity\DataContainers\CameraBoundsTileProviderOptions.cs" />
      <Compile Include="Assets\Mapbox\Unity\DataContainers\ColliderOptions.cs" />
@@ -1115,8 +1115,8 @@
      <Compile Include="Assets\Scripts\Panels\BatteryPanel\BatteryPanelMeshEvents.cs" />
      <Compile Include="Assets\Scripts\Panels\BatteryPanel\BatteryPanelObserver.cs" />
      <Compile Include="Assets\Scripts\Panels\MeshComponents.cs" />
+     <Compile Include="Assets\Scripts\Panels\SliderManager.cs" />
      <Compile Include="Assets\Scripts\Panels\SystemPanel\SetHomeLocation.cs" />
-     <Compile Include="Assets\Scripts\Panels\SystemPanel\SliderManager.cs" />
      <Compile Include="Assets\Scripts\Panels\SystemPanel\SystemPanelController.cs" />
      <Compile Include="Assets\Scripts\Panels\SystemPanel\SystemPanelMeshEvents.cs" />
      <Compile Include="Assets\Scripts\Panels\SystemPanel\SystemPanelObserver.cs" />
@@ -1222,25 +1222,25 @@
      <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\UnlitConfigurable.cginc" />
      <None Include="Assets\HoloToolkit\UX\Shaders\3DTextShader.shader" />
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/ControllerUnity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/homer/Desktop/UnityApps/ControllerUnity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/ControllerUnity/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>C:/Users/homer/Desktop/UnityApps/ControllerUnity/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/ControllerUnity/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>C:/Users/homer/Desktop/UnityApps/ControllerUnity/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.XR.WindowsMR.Editor">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/ControllerUnity/Library/ScriptAssemblies/Unity.XR.WindowsMR.Editor.dll</HintPath>
+ <HintPath>C:/Users/homer/Desktop/UnityApps/ControllerUnity/Library/ScriptAssemblies/Unity.XR.WindowsMR.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/ControllerUnity/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/homer/Desktop/UnityApps/ControllerUnity/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/ControllerUnity/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+ <HintPath>C:/Users/homer/Desktop/UnityApps/ControllerUnity/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
  <Reference Include="Unity.XR.WindowsMR">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/ControllerUnity/Library/ScriptAssemblies/Unity.XR.WindowsMR.dll</HintPath>
+ <HintPath>C:/Users/homer/Desktop/UnityApps/ControllerUnity/Library/ScriptAssemblies/Unity.XR.WindowsMR.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/MetroSupport/Tools/UnityEngine.AIModule.dll</HintPath>
@@ -1441,37 +1441,37 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="GLTFSerialization">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/ControllerUnity/Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/GLTFSerialization/GLTFSerialization.dll</HintPath>
+ <HintPath>C:/Users/homer/Desktop/UnityApps/ControllerUnity/Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/GLTFSerialization/GLTFSerialization.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/ControllerUnity/Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/JsonNet/Newtonsoft.Json.dll</HintPath>
+ <HintPath>C:/Users/homer/Desktop/UnityApps/ControllerUnity/Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/JsonNet/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="Mapbox.VectorTile.ExtensionMethods">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/ControllerUnity/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.ExtensionMethods.dll</HintPath>
+ <HintPath>C:/Users/homer/Desktop/UnityApps/ControllerUnity/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.ExtensionMethods.dll</HintPath>
  </Reference>
  <Reference Include="Mapbox.VectorTile.Geometry">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/ControllerUnity/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.Geometry.dll</HintPath>
+ <HintPath>C:/Users/homer/Desktop/UnityApps/ControllerUnity/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.Geometry.dll</HintPath>
  </Reference>
  <Reference Include="Mapbox.VectorTile.PbfReader">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/ControllerUnity/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.PbfReader.dll</HintPath>
+ <HintPath>C:/Users/homer/Desktop/UnityApps/ControllerUnity/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.PbfReader.dll</HintPath>
  </Reference>
  <Reference Include="Mapbox.VectorTile.VectorTileReader">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/ControllerUnity/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.VectorTileReader.dll</HintPath>
+ <HintPath>C:/Users/homer/Desktop/UnityApps/ControllerUnity/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.VectorTileReader.dll</HintPath>
  </Reference>
  <Reference Include="Mapbox.IO.Compression">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/ControllerUnity/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.IO.Compression/net35/Mapbox.IO.Compression.dll</HintPath>
+ <HintPath>C:/Users/homer/Desktop/UnityApps/ControllerUnity/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.IO.Compression/net35/Mapbox.IO.Compression.dll</HintPath>
  </Reference>
  <Reference Include="Mapbox.Json">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/ControllerUnity/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.Json/Net35/Mapbox.Json.dll</HintPath>
+ <HintPath>C:/Users/homer/Desktop/UnityApps/ControllerUnity/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.Json/Net35/Mapbox.Json.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/ControllerUnity/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+ <HintPath>C:/Users/homer/Desktop/UnityApps/ControllerUnity/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/ControllerUnity/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>C:/Users/homer/Desktop/UnityApps/ControllerUnity/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
- <HintPath>C:/Users/homer/Desktop/Unity Apps/ControllerUnity/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+ <HintPath>C:/Users/homer/Desktop/UnityApps/ControllerUnity/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

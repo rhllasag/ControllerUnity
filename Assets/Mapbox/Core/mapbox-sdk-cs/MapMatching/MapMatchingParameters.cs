@@ -5,8 +5,9 @@
 //-----------------------------------------------------------------------
 using System;
 using System.ComponentModel;
+#if (UNITY_WSA || BUILD_FOR_WP8) && !UNITY_EDITOR
 //using Mapbox.VectorTile.Geometry;
-
+#endif
 namespace Mapbox.MapMatching
 {
 	/// <summary>Directions profile id</summary>
