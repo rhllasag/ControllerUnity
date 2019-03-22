@@ -9,6 +9,7 @@ namespace ObserverPattern
     {
         public GameObject gameObject;
         public GameObject map;
+        bool firstTimeMap=true;
         // Use this for initialization
         void Start()
         {
@@ -58,8 +59,14 @@ namespace ObserverPattern
             }
             if (gameObject.name.CompareTo("SliderZoomMap") == 0)
             {
-                map.GetComponent<AbstractMap>().SetZoom(float.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text));
-                map.GetComponent<AbstractMap>().UpdateMap(float.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text));
+                if (firstTimeMap&&map!=null) {
+                    map.GetComponent<AbstractMap>().SetCenterLatitudeLongitude(new Mapbox.Utils.Vector2d(0.0D, 0.0D));
+                }
+                else if (map != null)
+                {
+                    map.GetComponent<AbstractMap>().SetZoom(float.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text));
+                    map.GetComponent<AbstractMap>().UpdateMap(float.Parse(gameObject.GetComponent<SliderGestureControl>().Label.text));
+                }
             }
         }
         public void onSelect()

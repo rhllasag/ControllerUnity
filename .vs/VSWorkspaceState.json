@@ -2,13 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\Assets",
+    "\\Assets\\Mapbox",
     "\\Assets\\Mapbox\\Core",
     "\\Assets\\Mapbox\\Core\\mapbox-sdk-cs",
+    "\\Assets\\Mapbox\\Core\\mapbox-sdk-cs\\MapMatching",
+    "\\Assets\\Mapbox\\Core\\mapbox-sdk-cs\\Tokens",
+    "\\Assets\\Plugins",
     "\\Assets\\Scripts",
-    "\\Assets\\Scripts\\Panels",
-    "\\Assets\\Scripts\\Panels\\BatteryPanel",
-    "\\Assets\\Scripts\\Panels\\SystemPanel"
+    "\\Assets\\Scripts\\RemoteControl"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\Panels\\SliderManager.cs",
+  "SelectedNode": "\\Assets\\Scripts\\RemoteControl\\PeriodicalInfoController.cs",
   "PreviewInSolutionExplorer": false
 }

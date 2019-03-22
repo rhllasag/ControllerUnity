@@ -62,9 +62,6 @@ namespace ObserverPattern
             this.locationHome = locationHome;
             this.zoomMap = zoomMap;
             this.map = map;
-            map.GetComponent<AbstractMap>().SetCenterLatitudeLongitude(new Mapbox.Utils.Vector2d(0.0D,0.0D));
-            map.GetComponent<AbstractMap>().SetZoom(18.0F);
-            map.GetComponent<AbstractMap>().UpdateMap(18.0F);
             this.boxObj = boxObj;
             this.messegsEvent = boxEvent;
         }

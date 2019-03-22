@@ -5,21 +5,21 @@ public class USStatusTextManager
 {
     internal void SetError(string errorStatus)
     {
-        Debug.Print(errorStatus);
+       // Debug.Print(errorStatus);
     }
 
     internal void SetWarning(string warningStatus)
     {
-        Debug.Print(warningStatus);
+       // Debug.Print(warningStatus);
     }
 
     internal void SetSuccess(string successStatus)
     {
-        Debug.Print(successStatus);
+        //Debug.Print(successStatus);
     }
 
     internal void SetUnknown(string unknownStatus)
     {
-        Debug.Print(unknownStatus);
+       // Debug.Print(unknownStatus);
     }
 }
