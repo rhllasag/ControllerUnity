@@ -6,6 +6,7 @@ using Mapbox.Unity.Map;
 using HoloToolkit.Examples.InteractiveElements;
 using Mapbox.Unity.Location;
 using Mapbox.Utils;
+using Mapbox.Examples;
 
 namespace ObserverPattern
 {
@@ -160,12 +161,18 @@ namespace ObserverPattern
                 var value = "(" + GetJArrayValue(json, "latitude") + ":" + GetJArrayValue(json, "longitude") + ")";
                 boxObj.GetComponent<TextMesh>().text = value;
                 map.GetComponent<AbstractMap>().SetCenterLatitudeLongitude(new Mapbox.Utils.Vector2d(double.Parse(GetJArrayValue(json, "latitude")), double.Parse(GetJArrayValue(json, "longitude"))));
-                map.GetComponent<AbstractMap>().SetZoom(float.Parse(zoomMap.GetComponent<SliderGestureControl>().Label.text));
-                map.GetComponent<AbstractMap>().UpdateMap(float.Parse(zoomMap.GetComponent<SliderGestureControl>().Label.text));
-                locationHome.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude = new List<string>();
-                locationHome.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude.Insert(count, "" + double.Parse(GetJArrayValue(json, "latitude")) + ", " + double.Parse(GetJArrayValue(json, "longitude")));
-                locationAircraft.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude = new List<string>();
-                locationAircraft.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude.Insert(count, "" + double.Parse(GetJArrayValue(json, "latitude")) + ", " + double.Parse(GetJArrayValue(json, "longitude")));
+                zoomMap.GetComponent<ReloadMap>().OnUpdate(float.Parse(zoomMap.GetComponent<SliderGestureControl>().Label.text));
+                //map.GetComponent<AbstractMap>().SetZoom(float.Parse(zoomMap.GetComponent<SliderGestureControl>().Label.text));
+                //map.GetComponent<AbstractMap>().UpdateMap(float.Parse(zoomMap.GetComponent<SliderGestureControl>().Label.text));
+                if (locationHome != null) {
+                    locationHome.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude = new List<string>();
+                    locationHome.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude.Insert(count, "" + double.Parse(GetJArrayValue(json, "latitude")) + ", " + double.Parse(GetJArrayValue(json, "longitude")));
+                }
+                if (locationAircraft != null)
+                {
+                    locationAircraft.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude = new List<string>();
+                    locationAircraft.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude.Insert(count, "" + double.Parse(GetJArrayValue(json, "latitude")) + ", " + double.Parse(GetJArrayValue(json, "longitude")));
+                }
                 latitudeDiference = 0;
                 longitudeDiference = 0;
                 latitudeAux = double.Parse(GetJArrayValue(json, "latitude"));
@@ -181,9 +188,11 @@ namespace ObserverPattern
                 json = JObject.Parse(data);
                 var value = "(" + GetJArrayValue(json, "latitude") + " : " + GetJArrayValue(json, "longitude") + ")";
                 boxObj.GetComponent<TextMesh>().text = value;
-                if (locationHome.GetComponent<LocationArrayEditorLocationProvider>()._heading >= 355)
-                    locationHome.GetComponent<LocationArrayEditorLocationProvider>()._heading = 0;
-                locationHome.GetComponent<LocationArrayEditorLocationProvider>()._heading += 5;
+                if (locationHome != null) {
+                    if (locationHome.GetComponent<LocationArrayEditorLocationProvider>()._heading >= 355)
+                        locationHome.GetComponent<LocationArrayEditorLocationProvider>()._heading = 0;
+                    locationHome.GetComponent<LocationArrayEditorLocationProvider>()._heading += 5;
+                }
                 count = 0;
                 latitudeDiference = double.Parse(GetJArrayValue(json, "latitude")) - latitudeAux;
                 longitudeDiference = double.Parse(GetJArrayValue(json, "longitude")) - longitudeAux;
@@ -197,8 +206,10 @@ namespace ObserverPattern
                 }
                 latitudeMovement += (latitudeDiference*contsMov);
                 longitudeMovement += (longitudeDiference * contsMov);
-                locationHome.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude = new List<string>();
-                locationHome.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude.Insert(0, "" + (latitudeBase + latitudeMovement) + ", " + (longitudeBase + longitudeMovement));
+                if (locationHome != null) {
+                    locationHome.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude = new List<string>();
+                    locationHome.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude.Insert(0, "" + (latitudeBase + latitudeMovement) + ", " + (longitudeBase + longitudeMovement));
+                }
                 Debug.Log("" + (latitudeBase+latitudeMovement) + ", " + (longitudeBase+longitudeMovement));
                 latitudeAux = double.Parse(GetJArrayValue(json, "latitude"));
                 longitudeAux = double.Parse(GetJArrayValue(json, "longitude"));

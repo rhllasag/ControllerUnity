@@ -123,7 +123,7 @@ namespace Mapbox.Unity.Location
 		{
 			if (Instance != null)
 			{
-				DestroyImmediate(gameObject);
+				//DestroyImmediate(gameObject);
 				return;
 			}
 			Instance = this;

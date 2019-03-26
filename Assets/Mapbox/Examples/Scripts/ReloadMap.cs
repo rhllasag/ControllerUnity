@@ -29,6 +29,10 @@
 		{
 			Reload(float.Parse(_zoomSlider.GetComponent<SliderGestureControl>().Label.text));
 		}
+		public void OnUpdate(float zoom)
+		{
+			Reload(zoom);
+		}
 		void Awake()
 		{
 			_camera = Camera.main;

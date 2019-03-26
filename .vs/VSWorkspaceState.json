@@ -3,14 +3,12 @@
     "",
     "\\Assets",
     "\\Assets\\Mapbox",
-    "\\Assets\\Mapbox\\Core",
-    "\\Assets\\Mapbox\\Core\\mapbox-sdk-cs",
-    "\\Assets\\Mapbox\\Core\\mapbox-sdk-cs\\MapMatching",
-    "\\Assets\\Mapbox\\Core\\mapbox-sdk-cs\\Tokens",
-    "\\Assets\\Plugins",
+    "\\Assets\\Mapbox\\Unity",
+    "\\Assets\\Mapbox\\Unity\\Location",
     "\\Assets\\Scripts",
-    "\\Assets\\Scripts\\RemoteControl"
+    "\\Assets\\Scripts\\RemoteControl",
+    "\\Assets\\Scripts\\services"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\RemoteControl\\PeriodicalInfoController.cs",
+  "SelectedNode": "\\Assets\\Scripts\\services\\Observer.cs",
   "PreviewInSolutionExplorer": false
 }
