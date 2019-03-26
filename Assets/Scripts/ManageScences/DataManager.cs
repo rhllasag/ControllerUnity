@@ -7,7 +7,7 @@ public class DataManager
     /// <summary>Static reference to the instance of our DataManager</summary>
     public static DataManager instance;
     private string videoStreamingServer= "192.168.1.12";
-    private string webSocketServer= "192.168.1.2";
+    private string webSocketServer= "192.168.1.3";
     private bool intelligentFLightModes;
     private bool beginnerMode;
     private bool distanceLimit;
