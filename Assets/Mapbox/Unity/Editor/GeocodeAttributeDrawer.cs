@@ -3,7 +3,6 @@ namespace Mapbox.Editor
 	using UnityEngine;
 	using UnityEditor;
 	using Mapbox.Unity.Utilities;
-	using Mapbox.Unity.Map;
 
 	/// <summary>
 	/// Custom property drawer for geocodes <para/>
@@ -26,8 +25,7 @@ namespace Mapbox.Editor
 
 			if (GUI.Button(buttonRect, searchButtonContent))
 			{
-				object objectToUpdate = EditorHelper.GetTargetObjectWithProperty(property);
-				GeocodeAttributeSearchWindow.Open(property, objectToUpdate);
+				GeocodeAttributeSearchWindow.Open(property);
 			}
 		}
 	}

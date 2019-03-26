@@ -4,7 +4,6 @@ using Mapbox.Unity.MeshGeneration.Data;
 using Mapbox.Unity.Map;
 using Mapbox.Map;
 using Mapbox.Utils;
-using UnityEngine.Rendering;
 
 namespace Mapbox.Unity.MeshGeneration.Factories.TerrainStrategies
 {
@@ -47,12 +46,10 @@ namespace Mapbox.Unity.MeshGeneration.Factories.TerrainStrategies
 			{
 				tile.gameObject.layer = _elevationOptions.unityLayerOptions.layerId;
 			}
-			if ((int)tile.ElevationType != (int)ElevationLayerType.LowPolygonTerrain ||
-			    tile.MeshFilter.mesh.vertexCount != RequiredVertexCount)
+
+			if (tile.MeshFilter.mesh.vertexCount == 0)
 			{
-				tile.MeshFilter.mesh.Clear();
 				CreateBaseMesh(tile);
-				tile.ElevationType = TileTerrainType.LowPoly;
 			}
 
 			GenerateTerrainMesh(tile);
@@ -114,7 +111,6 @@ namespace Mapbox.Unity.MeshGeneration.Factories.TerrainStrategies
 
 
 			var mesh = tile.MeshFilter.mesh;
-			mesh.indexFormat = IndexFormat.UInt32;
 			mesh.SetVertices(_newVertexList);
 			mesh.SetNormals(_newNormalList);
 			mesh.SetUVs(0, _newUvList);
@@ -194,7 +190,7 @@ namespace Mapbox.Unity.MeshGeneration.Factories.TerrainStrategies
 				_meshData.Add(tile.UnwrappedTileId, tile.MeshFilter.mesh);
 			}
 
-			if (_elevationOptions.colliderOptions.addCollider)
+			if (_elevationOptions.requiredOptions.addCollider)
 			{
 				var meshCollider = tile.Collider as MeshCollider;
 				if (meshCollider)

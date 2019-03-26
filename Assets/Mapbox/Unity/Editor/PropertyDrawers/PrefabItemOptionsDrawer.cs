@@ -13,7 +13,6 @@ namespace Mapbox.Editor
 
 		static float _lineHeight = EditorGUIUtility.singleLineHeight;
 		const string searchButtonContent = "Search";
-
 		private GUIContent prefabLocationsTitle = new GUIContent
 		{
 			text = "Prefab Locations",
@@ -57,9 +56,7 @@ namespace Mapbox.Editor
 			//Prefab Game Object
 			EditorGUI.indentLevel++;
 			var spawnPrefabOptions = property.FindPropertyRelative("spawnPrefabOptions");
-
 			EditorGUILayout.PropertyField(spawnPrefabOptions);
-
 			GUILayout.Space(1);
 			EditorGUI.indentLevel--;
 
@@ -89,12 +86,7 @@ namespace Mapbox.Editor
 
 			EditorGUI.indentLevel++;
 
-			EditorGUI.BeginChangeCheck();
 			findByProp.enumValueIndex = EditorGUILayout.Popup(findByDropDown, findByProp.enumValueIndex, findByPropContent);
-			if (EditorGUI.EndChangeCheck())
-			{
-				EditorHelper.CheckForModifiedProperty(property);
-			}
 
 			EditorGUILayout.EndHorizontal();
 
@@ -118,13 +110,8 @@ namespace Mapbox.Editor
 		private void ShowCategoryOptions(SerializedProperty property)
 		{
 			//Category drop down
-			EditorGUI.BeginChangeCheck();
 			var categoryProp = property.FindPropertyRelative("categories");
 			categoryProp.intValue = (int)(LocationPrefabCategories)(EditorGUILayout.EnumFlagsField(categoriesDropDown, (LocationPrefabCategories)categoryProp.intValue));
-			if (EditorGUI.EndChangeCheck())
-			{
-				EditorHelper.CheckForModifiedProperty(property);
-			}
 			ShowDensitySlider(property);
 		}
 
@@ -143,25 +130,18 @@ namespace Mapbox.Editor
 				var coordinateLabel = String.Format("Location {0}", i);
 
 				// draw coordinate string.
-				EditorGUI.BeginChangeCheck();
 				coordinate.stringValue = EditorGUILayout.TextField(coordinateLabel, coordinate.stringValue);
 
-				if(EditorGUI.EndChangeCheck())
-				{
-					EditorHelper.CheckForModifiedProperty(property, true);
-				}
 				// draw search button.
 				if (GUILayout.Button(new GUIContent(searchButtonContent), (GUIStyle)"minibuttonleft", GUILayout.MaxWidth(100)))
 				{
-					object propertyObject = EditorHelper.GetTargetObjectOfProperty(property);
-					GeocodeAttributeSearchWindow.Open(coordinate, propertyObject);
+					GeocodeAttributeSearchWindow.Open(coordinate);
 				}
 
 				//include a remove button in the row
 				if (GUILayout.Button(new GUIContent(" X "), (GUIStyle)"minibuttonright", GUILayout.MaxWidth(30)))
 				{
 					coordinateProperties.DeleteArrayElementAtIndex(i);
-					EditorHelper.CheckForModifiedProperty(property);
 				}
 				EditorGUILayout.EndHorizontal();
 			}
@@ -174,7 +154,6 @@ namespace Mapbox.Editor
 				coordinateProperties.arraySize++;
 				var newElement = coordinateProperties.GetArrayElementAtIndex(coordinateProperties.arraySize - 1);
 				newElement.stringValue = "";
-				EditorHelper.CheckForModifiedProperty(property);
 			}
 			EditorGUILayout.EndHorizontal();
 		}
@@ -185,12 +164,7 @@ namespace Mapbox.Editor
 			//Name field
 			var categoryProp = property.FindPropertyRelative("nameString");
 
-			EditorGUI.BeginChangeCheck();
 			categoryProp.stringValue = EditorGUILayout.TextField(nameField, categoryProp.stringValue);
-			if (EditorGUI.EndChangeCheck())
-			{
-				EditorHelper.CheckForModifiedProperty(property);
-			}
 
 			ShowDensitySlider(property);
 		}
@@ -199,13 +173,12 @@ namespace Mapbox.Editor
 		{
 			//Density slider
 			var densityProp = property.FindPropertyRelative("density");
-
-			EditorGUI.BeginChangeCheck();
-			EditorGUILayout.PropertyField(densityProp, densitySlider);
-			if (EditorGUI.EndChangeCheck())
+			if (Application.isPlaying)
 			{
-				EditorHelper.CheckForModifiedProperty(property);
+				GUI.enabled = false;
 			}
+
+			EditorGUILayout.PropertyField(densityProp, densitySlider);
 			GUI.enabled = true;
 			densityProp.serializedObject.ApplyModifiedProperties();
 		}

@@ -1,6 +1,4 @@
-﻿using Mapbox.Unity.Map.TileProviders;
-
-namespace Mapbox.Editor
+﻿namespace Mapbox.Editor
 {
 	using UnityEditor;
 	using UnityEngine;
@@ -18,7 +16,7 @@ namespace Mapbox.Editor
 			position.height = lineHeight;
 			EditorGUI.LabelField(position, "Location ");
 			position.y += lineHeight;
-			EditorGUILayout.PropertyField(property.FindPropertyRelative("locationOptions"));
+			EditorGUI.PropertyField(position, property.FindPropertyRelative("locationOptions"));
 			position.y += EditorGUI.GetPropertyHeight(property.FindPropertyRelative("locationOptions"));
 			var extentOptions = property.FindPropertyRelative("extentOptions");
 			var extentOptionsType = extentOptions.FindPropertyRelative("extentType");
@@ -32,24 +30,21 @@ namespace Mapbox.Editor
 			else
 			{
 				EditorGUI.PropertyField(position, property.FindPropertyRelative("extentOptions"));
-
 				position.y += EditorGUI.GetPropertyHeight(property.FindPropertyRelative("extentOptions"));
 			}
+
 
 			showPosition = EditorGUI.Foldout(position, showPosition, "Others");
 			if (showPosition)
 			{
 				position.y += lineHeight;
-				EditorGUILayout.PropertyField(property.FindPropertyRelative("placementOptions"));
-
+				EditorGUI.PropertyField(position, property.FindPropertyRelative("placementOptions"));
 				position.y += EditorGUI.GetPropertyHeight(property.FindPropertyRelative("placementOptions"));
 				EditorGUI.PropertyField(position, property.FindPropertyRelative("scalingOptions"));
-
 			}
+
 			EditorGUI.EndProperty();
-
 		}
-
 		public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 		{
 			// Reserve space for the total visible properties.

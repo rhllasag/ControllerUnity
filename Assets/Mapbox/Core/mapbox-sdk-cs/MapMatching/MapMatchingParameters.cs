@@ -6,6 +6,7 @@
 using System;
 using System.ComponentModel;
 using Mapbox.VectorTile.Geometry;
+
 namespace Mapbox.MapMatching
 {
 	/// <summary>Directions profile id</summary>

@@ -1,5 +1,3 @@
-using Mapbox.Unity.Map;
-
 namespace Mapbox.Unity.MeshGeneration.Modifiers
 {
 	using System.Collections.Generic;
@@ -15,27 +13,24 @@ namespace Mapbox.Unity.MeshGeneration.Modifiers
 	public class LineMeshModifier : MeshModifier
 	{
 		[SerializeField]
-		LineGeometryOptions _options;
-
+		public float Width = 3.0f;
 		private float _scaledWidth;
 		public override ModifierType Type { get { return ModifierType.Preprocess; } }
 
-		public override void SetProperties(ModifierProperties properties)
+		protected virtual void OnEnable()
 		{
-			_options = (LineGeometryOptions)properties;
-			_options.PropertyHasChanged += UpdateModifier;
-
+			_scaledWidth = Width;
 		}
 
 		public override void Run(VectorFeatureUnity feature, MeshData md, float scale)
 		{
-			_scaledWidth = _options.Width * scale;
+			_scaledWidth = Width * scale;
 			ExtureLine(feature, md);
 		}
 
 		public override void Run(VectorFeatureUnity feature, MeshData md, UnityTile tile = null)
 		{
-			_scaledWidth = tile != null ? _options.Width * tile.TileScale : _options.Width;
+			_scaledWidth = tile != null ? Width * tile.TileScale : Width;
 			ExtureLine(feature, md);
 		}
 

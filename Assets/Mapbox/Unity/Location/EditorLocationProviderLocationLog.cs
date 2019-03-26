@@ -24,9 +24,9 @@
 		/// </summary>
 		[SerializeField]
 		private TextAsset _locationLogFile;
-        
 
-        private LocationLogReader _logReader;
+
+		private LocationLogReader _logReader;
 		private IEnumerator<Location> _locationEnumerator;
 
 

@@ -8,6 +8,7 @@ namespace Mapbox.Tokens
 	using System;
 	using System.ComponentModel;
 	using Mapbox.VectorTile.Geometry;
+
 	public enum MapboxTokenStatus
 	{
 		/// <summary>The token is valid and active </summary>

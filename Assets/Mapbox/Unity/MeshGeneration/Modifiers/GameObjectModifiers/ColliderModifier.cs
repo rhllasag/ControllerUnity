@@ -17,64 +17,45 @@ namespace Mapbox.Unity.MeshGeneration.Modifiers
 		[SerializeField]
 		ColliderOptions _options;
 
-
 		public override void SetProperties(ModifierProperties properties)
 		{
 			_options = (ColliderOptions)properties;
-			_options.PropertyHasChanged += UpdateModifier;
-		}
-
-		public override void UnbindProperties()
-		{
-			_options.PropertyHasChanged -= UpdateModifier;
 		}
 
 		public override void Initialize()
 		{
 			//no need to reset strategy objects on map reinit as we're caching feature game objects as well
 			//creating a new one iff we don't already have one. if you want to reset/recreate you have to clear stuff inside current/old one first.
-
-			switch (_options.colliderType)
+			if (_colliderStrategy == null)
 			{
-				case ColliderType.None:
-					_colliderStrategy = null;
-					break;
-				case ColliderType.BoxCollider:
-					_colliderStrategy = new BoxColliderStrategy();
-					break;
-				case ColliderType.MeshCollider:
-					_colliderStrategy = new MeshColliderStrategy();
-					break;
-				case ColliderType.SphereCollider:
-					_colliderStrategy = new SphereColliderStrategy();
-					break;
-				default:
-					_colliderStrategy = null;
-					break;
+				switch (_options.colliderType)
+				{
+					case ColliderType.None:
+						_colliderStrategy = null;
+						break;
+					case ColliderType.BoxCollider:
+						_colliderStrategy = new BoxColliderStrategy();
+						break;
+					case ColliderType.MeshCollider:
+						_colliderStrategy = new MeshColliderStrategy();
+						break;
+					case ColliderType.SphereCollider:
+						_colliderStrategy = new SphereColliderStrategy();
+						break;
+					default:
+						_colliderStrategy = null;
+						break;
+				}
 			}
 		}
 
 		public override void Run(VectorEntity ve, UnityTile tile)
 		{
-			// if collider exists. remove it. 
-			RemoveColliderFrom(ve);
-			if (_colliderStrategy != null)
+			if(_colliderStrategy != null)
 			{
 				_colliderStrategy.AddColliderTo(ve);
 			}
-		}
 
-		public void RemoveColliderFrom(VectorEntity ve)
-		{
-			var existingCollider = ve.GameObject.GetComponent<Collider>();
-			if (existingCollider != null)
-			{
-				UnityEngine.Object.Destroy(existingCollider);
-				if (_colliderStrategy != null)
-				{
-					_colliderStrategy.Reset();
-				}
-			}
 		}
 
 		public class BoxColliderStrategy : IColliderStrategy
@@ -98,13 +79,6 @@ namespace Mapbox.Unity.MeshGeneration.Modifiers
 					_colliders.Add(ve.GameObject, ve.GameObject.AddComponent<BoxCollider>());
 				}
 			}
-			public void Reset()
-			{
-				if (_colliders != null)
-				{
-					_colliders.Clear();
-				}
-			}
 		}
 
 		public class MeshColliderStrategy : IColliderStrategy
@@ -125,13 +99,6 @@ namespace Mapbox.Unity.MeshGeneration.Modifiers
 				else
 				{
 					_colliders.Add(ve.GameObject, ve.GameObject.AddComponent<MeshCollider>());
-				}
-			}
-			public void Reset()
-			{
-				if (_colliders != null)
-				{
-					_colliders.Clear();
 				}
 			}
 		}
@@ -157,20 +124,11 @@ namespace Mapbox.Unity.MeshGeneration.Modifiers
 					_colliders.Add(ve.GameObject, ve.GameObject.AddComponent<SphereCollider>());
 				}
 			}
-
-			public void Reset()
-			{
-				if (_colliders != null)
-				{
-					_colliders.Clear();
-				}
-			}
 		}
 
 		public interface IColliderStrategy
 		{
 			void AddColliderTo(VectorEntity ve);
-			void Reset();
 		}
 	}
 }
