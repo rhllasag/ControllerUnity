@@ -805,11 +805,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 25681917}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.1400013, z: 0}
+  m_LocalPosition: {x: 0, y: 4.1400003, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
-  m_Father: {fileID: 2114956977}
-  m_RootOrder: 1
+  m_Father: {fileID: 1698050152}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &25681919
 MeshRenderer:
@@ -1596,7 +1596,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 77367067}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.35, y: -0.243, z: 0}
+  m_LocalPosition: {x: -0.55, y: -0.243, z: -0}
   m_LocalScale: {x: 12, y: 12, z: 10}
   m_Children: []
   m_Father: {fileID: 2142393903}
@@ -4776,7 +4776,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 348319758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.62, y: -0.27, z: 0}
+  m_LocalPosition: {x: -0.95, y: -0.27, z: 0}
   m_LocalScale: {x: 12, y: 12, z: 0.15}
   m_Children: []
   m_Father: {fileID: 1609864227}
@@ -5059,7 +5059,7 @@ MonoBehaviour:
   _deviceLocationProviderUnity: {fileID: 562825807}
   _deviceLocationProviderAndroid: {fileID: 1063732682}
   _editorLocationProvider: {fileID: 562825807}
-  _transformLocationProvider: {fileID: 1458059786}
+  _transformLocationProvider: {fileID: 562825807}
   _dontDestroyOnLoad: 1
 --- !u!1 &406974119
 GameObject:
@@ -5184,7 +5184,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 423310422}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 061d2afb48ace4fd19611279b6cf732f, type: 3}
   m_Name: 
@@ -5302,7 +5302,7 @@ MonoBehaviour:
   _deviceLocationProviderUnity: {fileID: 1178567705}
   _deviceLocationProviderAndroid: {fileID: 1922937232}
   _editorLocationProvider: {fileID: 1178567705}
-  _transformLocationProvider: {fileID: 1277858373}
+  _transformLocationProvider: {fileID: 1178567705}
   _dontDestroyOnLoad: 1
 --- !u!1 &456390976
 GameObject:
@@ -5553,8 +5553,8 @@ MonoBehaviour:
   _initializeOnStart: 1
   _options:
     locationOptions:
-      latitudeLongitude: -0.21861, -78.50972
-      zoom: 12.5
+      latitudeLongitude: -0.389039, -78.510822
+      zoom: 18.5
     extentOptions:
       extentType: 1
       cameraBoundsOptions:
@@ -5562,10 +5562,10 @@ MonoBehaviour:
         visibleBuffer: 0
         disposeBuffer: 0
       rangeAroundCenterOptions:
-        west: 1
-        north: 1
-        east: 1
-        south: 1
+        west: 2
+        north: 2
+        east: 2
+        south: 2
       rangeAroundTransformOptions:
         targetTransform: {fileID: 2114956977}
         visibleBuffer: 1
@@ -5590,11 +5590,11 @@ MonoBehaviour:
           UserName: 
       rasterOptions:
         useRetina: 0
-        useCompression: 0
-        useMipMap: 1
+        useCompression: 1
+        useMipMap: 0
   _terrain:
     _layerProperty:
-      sourceType: 2
+      sourceType: 0
       sourceOptions:
         isActive: 1
         layerSource:
@@ -5604,7 +5604,7 @@ MonoBehaviour:
           UserName: 
       elevationLayerType: 0
       requiredOptions:
-        addCollider: 0
+        addCollider: 1
         exaggerationFactor: 1
       modificationOptions:
         sampleCount: 10
@@ -5627,11 +5627,8 @@ MonoBehaviour:
         - airport_label
         - barrier_line
         - building
-        - contour
         - country_label
-        - hillshade
         - housenum_label
-        - landcover
         - landuse
         - landuse_overlay
         - marine_label
@@ -5643,7 +5640,6 @@ MonoBehaviour:
         - road
         - road_label
         - state_label
-        - traffic
         - water
         - water_label
         - waterway
@@ -7110,8 +7106,8 @@ MonoBehaviour:
   _updateInterval: 1
   _sendEvent: 0
   _latitudeLongitude:
-  - -0.21861, -78.50972
-  _heading: 112
+  - -0.386463, -78.511243
+  _heading: 89
 --- !u!1 &564311588
 GameObject:
   m_ObjectHideFlags: 0
@@ -15254,8 +15250,8 @@ MonoBehaviour:
   _updateInterval: 1
   _sendEvent: 0
   _latitudeLongitude:
-  - -0.21861, -78.50972
-  _heading: 112
+  - -0.389039, -78.510822
+  _heading: 143
 --- !u!1 &1188685945
 GameObject:
   m_ObjectHideFlags: 0
@@ -15290,7 +15286,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -5.0000153, y: -486.7}
+  m_AnchoredPosition: {x: -5.0000305, y: -486.7}
   m_SizeDelta: {x: 231, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1190305170
@@ -22756,7 +22752,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2.0000005, z: 2.0000007}
   m_Children:
-  - {fileID: 1743299463}
+  - {fileID: 25681918}
+  - {fileID: 1882485795}
   m_Father: {fileID: 600227922}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23016,8 +23013,8 @@ MonoBehaviour:
   rth: {fileID: 245887230}
   map: {fileID: 461735600}
   zoomMap: {fileID: 1647366746}
-  locationHome: {fileID: 1176362197}
-  locationAircraft: {fileID: 562825805}
+  locationHome: {fileID: 451468459}
+  locationAircraft: {fileID: 400751794}
   batteryNAircraft: {fileID: 1619811997}
   flighTime: {fileID: 224553529}
   hight: {fileID: 1831247065}
@@ -23279,10 +23276,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1743299462}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.2799997, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.79999995, z: 0.8}
+  m_LocalPosition: {x: 0, y: 4.2800007, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.80000013, z: 0.8000003}
   m_Children: []
-  m_Father: {fileID: 1698050152}
+  m_Father: {fileID: 2114956977}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1743299464
@@ -23917,7 +23914,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1831247065}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.72, y: 0.25, z: -0.004999995}
+  m_LocalPosition: {x: 3.51, y: 0.25, z: -0.004999995}
   m_LocalScale: {x: 0.15, y: 0.08, z: 65}
   m_Children: []
   m_Father: {fileID: 1921105452}
@@ -24423,11 +24420,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1882485794}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.4999986, z: 0}
+  m_LocalPosition: {x: 0, y: 1.4999982, z: 0}
   m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children: []
-  m_Father: {fileID: 2114956977}
-  m_RootOrder: 0
+  m_Father: {fileID: 1698050152}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1882485796
 MeshRenderer:
@@ -27381,7 +27378,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2054688833}
-  m_Text: SAR
+  m_Text: Time
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -28275,8 +28272,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
-  - {fileID: 1882485795}
-  - {fileID: 25681918}
+  - {fileID: 1743299463}
   m_Father: {fileID: 600227922}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

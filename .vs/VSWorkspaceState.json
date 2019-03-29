@@ -2,13 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\Assets",
-    "\\Assets\\Mapbox",
-    "\\Assets\\Mapbox\\Unity",
-    "\\Assets\\Mapbox\\Unity\\Location",
-    "\\Assets\\Scripts",
-    "\\Assets\\Scripts\\RemoteControl",
-    "\\Assets\\Scripts\\services"
+    "\\Assets\\Plugins",
+    "\\Assets\\Plugins\\Best HTTP (Pro)",
+    "\\Assets\\Plugins\\Best HTTP (Pro)\\BestHTTP",
+    "\\Assets\\Plugins\\Best HTTP (Pro)\\BestHTTP\\PlatformSupport",
+    "\\Assets\\Plugins\\Best HTTP (Pro)\\BestHTTP\\PlatformSupport\\TcpClient\\WinRT"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\services\\Observer.cs",
+  "SelectedNode": "\\Assets\\Plugins\\Best HTTP (Pro)\\BestHTTP\\PlatformSupport\\IO",
   "PreviewInSolutionExplorer": false
 }

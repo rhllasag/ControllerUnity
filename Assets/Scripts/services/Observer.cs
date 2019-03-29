@@ -29,21 +29,10 @@ namespace ObserverPattern
         GameObject locationAircraft;
         GameObject locationHome;
         GameObject statusPanel;
-        double latitudeDiference = 0;
-        double longitudeDiference = 0;
-        double latitudeAux = 0;
-        double longitudeAux = 0;
-        double latitudeBase = 0;
-        double longitudeBase = 0;
-        double latitudeMovement = 0;
-        double longitudeMovement = 0;
-        bool firstTime = true;
         //What will happen when this box gets an event
         MeshEvents messegsEvent;
         //JObject
         JObject json;
-        int count = 0;
-        int contsMov=200;
 
         // HandleTextFile handleText= new HandleTextFile();
         public MeshObject(GameObject boxObj, MeshEvents boxEvent)
@@ -162,57 +151,14 @@ namespace ObserverPattern
                 boxObj.GetComponent<TextMesh>().text = value;
                 map.GetComponent<AbstractMap>().SetCenterLatitudeLongitude(new Mapbox.Utils.Vector2d(double.Parse(GetJArrayValue(json, "latitude")), double.Parse(GetJArrayValue(json, "longitude"))));
                 zoomMap.GetComponent<ReloadMap>().OnUpdate(float.Parse(zoomMap.GetComponent<SliderGestureControl>().Label.text));
-                //map.GetComponent<AbstractMap>().SetZoom(float.Parse(zoomMap.GetComponent<SliderGestureControl>().Label.text));
-                //map.GetComponent<AbstractMap>().UpdateMap(float.Parse(zoomMap.GetComponent<SliderGestureControl>().Label.text));
-                if (locationHome != null) {
-                    locationHome.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude = new List<string>();
-                    locationHome.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude.Insert(count, "" + double.Parse(GetJArrayValue(json, "latitude")) + ", " + double.Parse(GetJArrayValue(json, "longitude")));
-                }
-                if (locationAircraft != null)
-                {
-                    locationAircraft.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude = new List<string>();
-                    locationAircraft.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude.Insert(count, "" + double.Parse(GetJArrayValue(json, "latitude")) + ", " + double.Parse(GetJArrayValue(json, "longitude")));
-                }
-                latitudeDiference = 0;
-                longitudeDiference = 0;
-                latitudeAux = double.Parse(GetJArrayValue(json, "latitude"));
-                longitudeAux = double.Parse(GetJArrayValue(json, "longitude"));
-                latitudeBase = 0;
-                longitudeBase = 0;
-                latitudeMovement = 0;
-                longitudeMovement = 0;
-                firstTime = true;
+                locationHome.GetComponent<LocationProviderFactory>().OnUpdate(new Vector2d(double.Parse(GetJArrayValue(json, "latitude")), double.Parse(GetJArrayValue(json, "longitude"))));
             }
             if (messegsEvent.Description().CompareTo("coordinates") == 0 && component.CompareTo("coordinatesChanged") == 0)
             {
                 json = JObject.Parse(data);
                 var value = "(" + GetJArrayValue(json, "latitude") + " : " + GetJArrayValue(json, "longitude") + ")";
                 boxObj.GetComponent<TextMesh>().text = value;
-                if (locationHome != null) {
-                    if (locationHome.GetComponent<LocationArrayEditorLocationProvider>()._heading >= 355)
-                        locationHome.GetComponent<LocationArrayEditorLocationProvider>()._heading = 0;
-                    locationHome.GetComponent<LocationArrayEditorLocationProvider>()._heading += 5;
-                }
-                count = 0;
-                latitudeDiference = double.Parse(GetJArrayValue(json, "latitude")) - latitudeAux;
-                longitudeDiference = double.Parse(GetJArrayValue(json, "longitude")) - longitudeAux;
-                if (firstTime)
-                {
-                    latitudeDiference = 0;
-                    longitudeDiference = 0;
-                    latitudeBase = double.Parse(GetJArrayValue(json, "latitude"));
-                    longitudeBase = double.Parse(GetJArrayValue(json, "longitude"));
-                    firstTime = false;
-                }
-                latitudeMovement += (latitudeDiference*contsMov);
-                longitudeMovement += (longitudeDiference * contsMov);
-                if (locationHome != null) {
-                    locationHome.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude = new List<string>();
-                    locationHome.GetComponent<LocationArrayEditorLocationProvider>()._latitudeLongitude.Insert(0, "" + (latitudeBase + latitudeMovement) + ", " + (longitudeBase + longitudeMovement));
-                }
-                Debug.Log("" + (latitudeBase+latitudeMovement) + ", " + (longitudeBase+longitudeMovement));
-                latitudeAux = double.Parse(GetJArrayValue(json, "latitude"));
-                longitudeAux = double.Parse(GetJArrayValue(json, "longitude"));
+                locationHome.GetComponent<LocationProviderFactory>().OnUpdate(new Vector2d(double.Parse(GetJArrayValue(json, "latitude")), double.Parse(GetJArrayValue(json, "longitude"))));
             }
             if (messegsEvent.Description().CompareTo("joystickPanel") == 0 && component.CompareTo("joystickPanelChanged") == 0)
             {

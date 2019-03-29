@@ -1,12 +1,16 @@
-#if !UNITY_EDITOR
-#define NOT_UNITY_EDITOR
+#if NETFX_CORE && !UNITY_EDITOR
+#define NETFX_CORE
 #endif
-
+#if BUILD_FOR_WP8 && !UNITY_EDITOR
+#define BUILD_FOR_WP8
+#endif
 namespace Mapbox.Unity.Location
 {
 	using UnityEngine;
 	using Mapbox.Unity.Map;
 	using System.Text.RegularExpressions;
+	using Mapbox.Unity.Utilities;
+	using Mapbox.Utils;
 
 	/// <summary>
 	/// Singleton factory to allow easy access to various LocationProviders.
@@ -62,13 +66,17 @@ namespace Mapbox.Unity.Location
 		/// <example>
 		/// Fetch location to set a transform's position:
 		/// <code>
-		/// void Update()
-		/// {
-		///     var locationProvider = LocationProviderFactory.Instance.DefaultLocationProvider;
-		///     transform.position = Conversions.GeoToWorldPosition(locationProvider.Location,
-		///                                                         MapController.ReferenceTileRect.Center,
-		///                                                         MapController.WorldScaleFactor).ToVector3xz();
-		/// }
+		///
+		float scalex=200, scalez=200;
+		public void OnUpdate(Vector2d location)
+		 {
+			Vector3 coordinates = Conversions.GeoToWorldPosition(location - mapManager.CenterLatitudeLongitude - new Vector2d(0.0007,0),
+														mapManager.CenterLatitudeLongitude,
+														mapManager.WorldRelativeScale).ToVector3xz();
+			coordinates.x /= scalex;
+			coordinates.z /= scalez;
+			GameObject.Find("Drone").transform.position = GameObject.Find("Sphere").transform.position+coordinates;
+		}
 		/// </code>
 		/// </example>
 		public ILocationProvider DefaultLocationProvider
@@ -121,6 +129,8 @@ namespace Mapbox.Unity.Location
 		/// </summary>
 		protected virtual void Awake()
 		{
+			Debug.Log(GameObject.Find("Drone").transform.position);
+
 			if (Instance != null)
 			{
 				//DestroyImmediate(gameObject);
@@ -135,6 +145,7 @@ namespace Mapbox.Unity.Location
 
 			InjectEditorLocationProvider();
 			InjectDeviceLocationProvider();
+			InjectDeviceLocationProviderWP8();
 		}
 
 		/// <summary>
@@ -152,35 +163,17 @@ namespace Mapbox.Unity.Location
 		/// Injects the device location provider.
 		/// Depending on the platform, this method and calls to it will be stripped during compile.
 		/// </summary>
-		[System.Diagnostics.Conditional("NOT_UNITY_EDITOR")]
+		[System.Diagnostics.Conditional("NETFX_CORE")]
 		void InjectDeviceLocationProvider()
 		{
-			int AndroidApiVersion = 0;
-			var regex = new Regex(@"(?<=API-)-?\d+");
-			Match match = regex.Match(SystemInfo.operatingSystem); // eg 'Android OS 8.1.0 / API-27 (OPM2.171019.029/4657601)'
-			if (match.Success) { int.TryParse(match.Groups[0].Value, out AndroidApiVersion); }
-			Debug.LogFormat("{0} => API version: {1}", SystemInfo.operatingSystem, AndroidApiVersion);
-
-			// only inject native provider if platform requirement is met
-			// and script itself as well as parent game object are active
-			if (Application.platform == RuntimePlatform.Android
-				&& null != _deviceLocationProviderAndroid
-				&& _deviceLocationProviderAndroid.enabled
-				&& _deviceLocationProviderAndroid.transform.gameObject.activeInHierarchy
-				// API version 24 => Android 7 (Nougat): we are using GnssStatus 'https://developer.android.com/reference/android/location/GnssStatus.html'
-				// in the native plugin.
-				// GnssStatus is not available with versions lower than 24
-				&& AndroidApiVersion >= 24
-			)
-			{
-				Debug.LogFormat("LocationProviderFactory: Injected native Android DEVICE Location Provider - {0}", _deviceLocationProviderAndroid.GetType());
-				DefaultLocationProvider = _deviceLocationProviderAndroid;
-			}
-			else
-			{
-				Debug.LogFormat("LocationProviderFactory: Injected DEVICE Location Provider - {0}", _deviceLocationProviderUnity.GetType());
-				DefaultLocationProvider = _deviceLocationProviderUnity;
-			}
+			Debug.LogFormat("LocationProviderFactory: Injected EDITOR Location Provider - {0}", _editorLocationProvider.GetType());
+			DefaultLocationProvider = _editorLocationProvider;
+		}
+		[System.Diagnostics.Conditional("BUILD_FOR_WP8")]
+		void InjectDeviceLocationProviderWP8()
+		{
+			Debug.LogFormat("LocationProviderFactory: Injected EDITOR Location Provider - {0}", _editorLocationProvider.GetType());
+			DefaultLocationProvider = _editorLocationProvider;
 		}
 	}
 }
