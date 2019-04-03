@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using Mapbox.Unity.Map;
 using Mapbox.Unity.Location;
+using HoloToolkit.Unity.InputModule;
+
 namespace ObserverPattern
 {
     public class PeriodicalInfoController : MonoBehaviour
@@ -32,8 +34,6 @@ namespace ObserverPattern
         public GameObject homeLocation;
         public GameObject coordinates;
 
-        //Video Streaming
-        //public VideoReciver videoReciver;
         public bool enableLog = false;
         //Panels
         public GameObject joystickPanel;
@@ -52,7 +52,7 @@ namespace ObserverPattern
             MeshObject homeLocationMesh = new MeshObject(homeLocation,map,zoomMap, locationHome, locationAircraft, new HomeLocation());
             MeshObject coodinatesMesh = new MeshObject(coordinates, map, zoomMap, locationHome, locationAircraft, new Coordinates());
             MeshObject joystickPanelMesh = new MeshObject(joystickPanel, new JoyStickPanel());
-            //videoReciver = new VideoReciver(enableLog);
+            MeshObject videoReconnect = new MeshObject(new VideoReconnection());
             //Add the MeshObject to the list of objects waiting for something to happen
             SocketConnection.getInstance().AddObserver(batteryLevelMesh);
             SocketConnection.getInstance().AddObserver(remoteControllerMesh);
@@ -63,24 +63,20 @@ namespace ObserverPattern
             SocketConnection.getInstance().AddObserver(batteryNAircraftMesh);
             SocketConnection.getInstance().AddObserver(flightTimeMesh);
             SocketConnection.getInstance().AddObserver(hightMesh);
-            //SocketConnection.getInstance().AddObserver(videoReciver);
             SocketConnection.getInstance().AddObserver(homeLocationMesh);
             SocketConnection.getInstance().AddObserver(coodinatesMesh);
             SocketConnection.getInstance().AddObserver(joystickPanelMesh);
-
+            SocketConnection.getInstance().AddObserver(videoReconnect);
         }
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.N))
-            {
-                //videoReciver.disconnect();
-                //videoReciver.connect();
-            }
+            
         }
         void OnApplicationQuit()
         {
-            //videoReciver.disconnect();
         }
+
+
     }
 
 }

@@ -94,4 +94,11 @@ namespace ObserverPattern
             return "joystickPanel";
         }
     }
+    public class VideoReconnection : MeshEvents
+    {
+        public override string Description()
+        {
+            return "videoReconnect";
+        }
+    }
 }

@@ -6,8 +6,11 @@ public class DataManager
 {
     /// <summary>Static reference to the instance of our DataManager</summary>
     public static DataManager instance;
-    private string videoStreamingServer= "192.168.1.12";
-    private string webSocketServer= "10.254.0.121";
+    private string videoStreamingServer= "192.168.137.101";
+    private string webSocketServer= "192.168.1.4";
+    private bool connectVideoStreaming = false;
+    private bool disconnectVideoStraming = false;
+    private int portVideoStreaming = 8080;
     private bool intelligentFLightModes;
     private bool beginnerMode;
     private bool distanceLimit;
@@ -142,6 +145,22 @@ public class DataManager
             maximumFlightDistance = value;
         }
     }
+
+    public int PortVideoStreaming
+    {
+        get
+        {
+            return portVideoStreaming;
+        }
+
+        set
+        {
+            portVideoStreaming = value;
+        }
+    }
+
+    public bool ConnectVideoStreaming { get => connectVideoStreaming; set => connectVideoStreaming = value; }
+    public bool DisconnectVideoStraming { get => disconnectVideoStraming; set => disconnectVideoStraming = value; }
 
     private DataManager() {
     }

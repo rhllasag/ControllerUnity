@@ -1117,6 +1117,7 @@
     <Compile Include="Assets\Scripts\services\SocketConnection.cs" />
     <Compile Include="Assets\Scripts\services\USStatusTextManager.cs" />
     <Compile Include="Assets\Scripts\services\VideoReciver.cs" />
+    <Compile Include="Assets\Scripts\services\VideoStreaming.cs" />
     <Compile Include="Assets\SendJsonTest.cs" />
     <None Include="Assets\Mapbox\Unity\Location\ExampleGpsTraces\LocationProviderAndroidNative.txt" />
     <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFConstant.cginc" />

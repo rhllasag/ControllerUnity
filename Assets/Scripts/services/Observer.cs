@@ -35,6 +35,10 @@ namespace ObserverPattern
         JObject json;
 
         // HandleTextFile handleText= new HandleTextFile();
+        public MeshObject( MeshEvents boxEvent)
+        {
+            this.messegsEvent = boxEvent;
+        }
         public MeshObject(GameObject boxObj, MeshEvents boxEvent)
         {
             this.boxObj = boxObj;
@@ -166,6 +170,14 @@ namespace ObserverPattern
                 {
                     boxObj.SetActive(!boxObj.activeSelf);
                 }
+            }
+            if (messegsEvent.Description().CompareTo("videoReconnect") == 0 && component.CompareTo("connectSocketChanged") == 0)
+            {
+                DataManager.getInstance().ConnectVideoStreaming = true;
+            }
+            if (messegsEvent.Description().CompareTo("videoReconnect") == 0 && component.CompareTo("disconnectSocketChanged") == 0)
+            {
+                DataManager.getInstance().DisconnectVideoStraming = true;
             }
         }
 

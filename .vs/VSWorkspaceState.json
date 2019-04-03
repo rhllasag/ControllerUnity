@@ -6,8 +6,11 @@
     "\\Assets\\Plugins\\Best HTTP (Pro)",
     "\\Assets\\Plugins\\Best HTTP (Pro)\\BestHTTP",
     "\\Assets\\Plugins\\Best HTTP (Pro)\\BestHTTP\\PlatformSupport",
-    "\\Assets\\Plugins\\Best HTTP (Pro)\\BestHTTP\\PlatformSupport\\TcpClient\\WinRT"
+    "\\Assets\\Scripts",
+    "\\Assets\\Scripts\\ManageScences",
+    "\\Assets\\Scripts\\RemoteControl",
+    "\\Assets\\Scripts\\ScreenActions"
   ],
-  "SelectedNode": "\\Assets\\Plugins\\Best HTTP (Pro)\\BestHTTP\\PlatformSupport\\IO",
+  "SelectedNode": "\\Logs",
   "PreviewInSolutionExplorer": false
 }
