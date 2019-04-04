@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 #if !UNITY_EDITOR
 using System.Threading.Tasks;
@@ -37,7 +38,7 @@ public class VideoStreaming : MonoBehaviour, IInputClickHandler
     private Task loadImage;
     private Task readImage;
     private Stream streamIn;
-    bool readyToReadAgain = false;
+    byte[] bytesImage;
 #endif
 
 #if UNITY_EDITOR
@@ -81,8 +82,8 @@ public class VideoStreaming : MonoBehaviour, IInputClickHandler
             streamIn = socket.InputStream.AsStreamForRead();
             successStatus = "Connected!";
             exchangeStopRequested = false;
-            await ReadImageSize();
-            //await LoadImageBytes();
+            StartCoroutine("DisplayImage");
+            
         }
         catch (Exception e)
         {
@@ -91,20 +92,61 @@ public class VideoStreaming : MonoBehaviour, IInputClickHandler
 #endif
     }
 
-    private Task LoadImageBytes()
+    private IEnumerator DisplayImage()
     {
-        readImage = Task.Run(() => this.ReadImage(byteLength));
+        while (!exchangeStopRequested)
+        {
+            try
+            {
+
+                bool disconnected = false;
+                byte[] bytes = new byte[SEND_RECEIVE_COUNT];
+                var numBytesRead = 0;
+                do
+                {
+                    if (streamIn.CanRead)
+                    {
+                        try
+                        {
+                            var read1 = streamIn.Read(bytes, numBytesRead, SEND_RECEIVE_COUNT - numBytesRead);
+                            if (read1 == 0)
+                            {
+                                disconnected = true;
+                                break;
+                            }
+                            numBytesRead += read1;
+                        }
+                        catch (Exception e)
+                        {
+                            System.Diagnostics.Debug.WriteLine("Reading Error:" + e);
+                            StopExchange();
+                            break;
+                        }
+                    }
+                } while (numBytesRead != SEND_RECEIVE_COUNT);
+                if (disconnected)
+                {
+                    byteLength = -1;
+                }
+                else
+                {
+                    byteLength = frameByteArrayToByteLength(bytes);
+                    ReadImageAsync(byteLength);
+                }
+
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine("Task Error:" + e);
+            }
+            yield return null;
+        }
+    }
+        private Task LoadImageBytes()
+    {
+        
         return readImage;
     }
-
-
-    private Task ReadImageSize()
-    {
-        exchangeTask = Task.Run(() => ExchangePackets());
-        exchangeTask.Wait();
-        return exchangeTask;
-    }
-
     private void ConnectUnity(string host, string port)
     {
 #if !UNITY_EDITOR
@@ -131,7 +173,6 @@ public class VideoStreaming : MonoBehaviour, IInputClickHandler
     public void RestartExchange()
     {
         StopExchange();
-        exchangeStopRequested = false;
         Connect(DataManager.getInstance().getVideoStreamingServer(), port + "");
     }
 
@@ -221,56 +262,10 @@ public class VideoStreaming : MonoBehaviour, IInputClickHandler
     }
 
 #if !UNITY_EDITOR
-    public void ExchangePackets()
-    {
-        try {
-            while (!exchangeStopRequested)
-            {
-                bool disconnected = false;
-                byte[] bytes = new byte[SEND_RECEIVE_COUNT];
-                var numBytesRead = 0;
-                do
-                {
-                    if (streamIn.CanRead)
-                    {
-                        try
-                        {
-                            var read1 = streamIn.Read(bytes, numBytesRead, SEND_RECEIVE_COUNT - numBytesRead);
-                            if (read1 == 0)
-                            {
-                                disconnected = true;
-                                break;
-                            }
-                            numBytesRead += read1;
-                        }
-                        catch (Exception e)
-                        {
-                            System.Diagnostics.Debug.WriteLine("Reading Error:" + e);
-                            StopExchange();
-                        }
-                    }
-                } while (numBytesRead != SEND_RECEIVE_COUNT);
-                if (disconnected)
-                {
-                    byteLength = -1;
-                }
-                else
-                {
-                    byteLength = frameByteArrayToByteLength(bytes);
-                    ReadImage(byteLength);
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            System.Diagnostics.Debug.WriteLine("Task Error:" + e);
-        }
-
-    }
-    private void ReadImage(int byteLength)
+    private void ReadImageAsync(int byteLength)
     {
         System.Diagnostics.Debug.WriteLine("Client recieved :" + byteLength);
-        byte[] bytesImage = new byte[byteLength];
+        bytesImage = new byte[byteLength];
         var imageSize = 0;
         do
         {
@@ -290,18 +285,13 @@ public class VideoStreaming : MonoBehaviour, IInputClickHandler
                 {
                     System.Diagnostics.Debug.WriteLine("Reading Image Error:" + e);
                     StopExchange();
+                    break;
                 }
             }
 
         } while (imageSize != byteLength);
         System.Diagnostics.Debug.WriteLine("Ready to render");
-        readyToReadAgain = false;
-        /** loadImage = new Task(() => this.displayReceivedImage(bytesImage));
-         loadImage.RunSynchronously();
-         while (!readyToReadAgain) {
-             loadImage.Wait(0);
-             readyToReadAgain = true;
-         }**/
+        displayReceivedImage(bytesImage);
     }
 #endif
 
@@ -420,11 +410,13 @@ public class VideoStreaming : MonoBehaviour, IInputClickHandler
 
     void displayReceivedImage(byte[] receivedImageBytes)
     {
-
         if (texture.LoadImage(receivedImageBytes))
         {
             image.texture = texture;
         }
+#if !UNITY_EDITOR
+        System.Diagnostics.Debug.WriteLine("Show image");
+#endif
     }
 
     public void OnInputClicked(InputClickedEventData eventData)
