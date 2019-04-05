@@ -39,6 +39,7 @@ public class VideoStreaming : MonoBehaviour, IInputClickHandler
     private Task readImage;
     private Stream streamIn;
     byte[] bytesImage;
+    private bool reconnect = false;
 #endif
 
 #if UNITY_EDITOR
@@ -131,21 +132,28 @@ public class VideoStreaming : MonoBehaviour, IInputClickHandler
                 else
                 {
                     byteLength = frameByteArrayToByteLength(bytes);
+                    if(byteLength<500000)
                     ReadImageAsync(byteLength);
+                    else
+                    {
+                        System.Diagnostics.Debug.WriteLine("Size Out of range ");
+                        reconnect = true;
+                        break;
+                    }
+                    
                 }
 
             }
             catch (Exception e)
             {
                 System.Diagnostics.Debug.WriteLine("Task Error:" + e);
+                exchangeStopRequested = true;
+                reconnect = true;
+                break;
             }
             yield return null;
         }
-    }
-        private Task LoadImageBytes()
-    {
-        
-        return readImage;
+        yield return null;
     }
     private void ConnectUnity(string host, string port)
     {
@@ -178,6 +186,10 @@ public class VideoStreaming : MonoBehaviour, IInputClickHandler
 
     void Update()
     {
+        if (reconnect) {
+            RestartExchange();
+            reconnect = false;
+        }
         if (Input.GetKeyDown(KeyCode.M))
         {
             RestartExchange();
