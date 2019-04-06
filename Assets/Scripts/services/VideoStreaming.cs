@@ -40,6 +40,7 @@ public class VideoStreaming : MonoBehaviour, IInputClickHandler
     private Stream streamIn;
     byte[] bytesImage;
     private bool reconnect = false;
+    Coroutine coroutine;
 #endif
 
 #if UNITY_EDITOR
@@ -83,7 +84,7 @@ public class VideoStreaming : MonoBehaviour, IInputClickHandler
             streamIn = socket.InputStream.AsStreamForRead();
             successStatus = "Connected!";
             exchangeStopRequested = false;
-            StartCoroutine("DisplayImage");
+            coroutine = StartCoroutine(DisplayImage());
             
         }
         catch (Exception e)
@@ -154,6 +155,7 @@ public class VideoStreaming : MonoBehaviour, IInputClickHandler
             yield return null;
         }
         yield return null;
+        StopCoroutine(coroutine);
     }
     private void ConnectUnity(string host, string port)
     {
@@ -241,7 +243,8 @@ public class VideoStreaming : MonoBehaviour, IInputClickHandler
     public void StopExchange()
     {
         exchangeStopRequested = true;
-
+        if(coroutine!=null)
+        StopCoroutine(coroutine);
 #if UNITY_EDITOR
         if (client != null)
         {
@@ -286,7 +289,7 @@ public class VideoStreaming : MonoBehaviour, IInputClickHandler
                 try
                 {
                     var read = streamIn.Read(bytesImage, imageSize, byteLength - imageSize);
-                    //System.Diagnostics.Debug.WriteLine("Client recieved bytes:" + imageSize);
+                    System.Diagnostics.Debug.WriteLine("Client recieved bytes:" + imageSize);
                     if (read == 0)
                     {
                         break;
