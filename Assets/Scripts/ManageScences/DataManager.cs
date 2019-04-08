@@ -10,6 +10,7 @@ public class DataManager
     private string webSocketServer= "192.168.1.4";
     private bool connectVideoStreaming = false;
     private bool disconnectVideoStraming = false;
+    private bool readingEnabled = false;
     private int portVideoStreaming = 8080;
     private bool intelligentFLightModes;
     private bool beginnerMode;
@@ -161,6 +162,7 @@ public class DataManager
 
     public bool ConnectVideoStreaming { get => connectVideoStreaming; set => connectVideoStreaming = value; }
     public bool DisconnectVideoStraming { get => disconnectVideoStraming; set => disconnectVideoStraming = value; }
+    public bool ReadingEnabled { get => readingEnabled; set => readingEnabled = value; }
 
     private DataManager() {
     }

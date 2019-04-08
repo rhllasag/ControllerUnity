@@ -46,8 +46,8 @@ namespace ObserverPattern
             manager.Socket.On("coordinatesChanged", OnCoordinatesChanged);
             manager.Socket.On("connectSocketChanged", OnConnectSocket);
             manager.Socket.On("disconnectSocketChanged", OnDisconnectSocket);
-            
-            
+            manager.Socket.On("readingEnabled", OnReadingEnabled);
+
             manager.Socket.On("joystickPanelChanged", OnJoystickPanelChanged);
             manager.Socket.On("smartRTHChanged", OnSmartRTHChanged);
             manager.Socket.On("anticollisionChanged", OnAnticollisionChanged);
@@ -180,6 +180,10 @@ namespace ObserverPattern
         void OnDisconnectSocket(Socket socket, Packet packet, params object[] args)
         {
             Notify(args[0].ToString(), "disconnectSocket");
+        }
+        void OnReadingEnabled(Socket socket, Packet packet, params object[] args)
+        {
+            Notify(args[0].ToString(), "readingEnabled");
         }
         void OnJoystickPanelChanged(Socket socket, Packet packet, params object[] args)
         {

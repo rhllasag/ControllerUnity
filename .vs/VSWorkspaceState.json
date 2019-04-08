@@ -1,7 +1,6 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Assets",
     "\\Assets\\Plugins",
     "\\Assets\\Plugins\\Best HTTP (Pro)",
     "\\Assets\\Plugins\\Best HTTP (Pro)\\BestHTTP",
@@ -11,6 +10,6 @@
     "\\Assets\\Scripts\\RemoteControl",
     "\\Assets\\Scripts\\ScreenActions"
   ],
-  "SelectedNode": "\\Logs",
+  "SelectedNode": "\\ControllerUnity.sln",
   "PreviewInSolutionExplorer": false
 }

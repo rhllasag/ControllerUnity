@@ -156,6 +156,7 @@ namespace ObserverPattern
                 map.GetComponent<AbstractMap>().SetCenterLatitudeLongitude(new Mapbox.Utils.Vector2d(double.Parse(GetJArrayValue(json, "latitude")), double.Parse(GetJArrayValue(json, "longitude"))));
                 zoomMap.GetComponent<ReloadMap>().OnUpdate(float.Parse(zoomMap.GetComponent<SliderGestureControl>().Label.text));
                 locationHome.GetComponent<LocationProviderFactory>().OnUpdate(new Vector2d(double.Parse(GetJArrayValue(json, "latitude")), double.Parse(GetJArrayValue(json, "longitude"))));
+                locationAircraft.GetComponent<LocationProviderFactory>().OnUpdate(new Vector2d(double.Parse(GetJArrayValue(json, "latitude")), double.Parse(GetJArrayValue(json, "longitude"))));
             }
             if (messegsEvent.Description().CompareTo("coordinates") == 0 && component.CompareTo("coordinatesChanged") == 0)
             {
@@ -171,13 +172,17 @@ namespace ObserverPattern
                     boxObj.SetActive(!boxObj.activeSelf);
                 }
             }
-            if (messegsEvent.Description().CompareTo("videoReconnect") == 0 && component.CompareTo("connectSocketChanged") == 0)
+            if (messegsEvent.Description().CompareTo("videoReconnect") == 0 && component.CompareTo("connectSocket") == 0)
             {
                 DataManager.getInstance().ConnectVideoStreaming = true;
             }
-            if (messegsEvent.Description().CompareTo("videoReconnect") == 0 && component.CompareTo("disconnectSocketChanged") == 0)
+            if (messegsEvent.Description().CompareTo("videoReconnect") == 0 && component.CompareTo("disconnectSocket") == 0)
             {
                 DataManager.getInstance().DisconnectVideoStraming = true;
+            }
+            if (messegsEvent.Description().CompareTo("videoReconnect") == 0 && component.CompareTo("readingEnabled") == 0)
+            {
+                DataManager.getInstance().ReadingEnabled = true;
             }
         }
 
