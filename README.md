@@ -24,5 +24,5 @@ Mapbox SDK <br />
 4. Build and Run > Local Machine
 5. Build Configuration > Master
 6. Select UnityC# Project and Development Build
-7. Build
-[![Audi R8](http://img.youtube.com/vi/KOxbO0EI4MA/0.jpg)](https://www.youtube.com/watch?v=KOxbO0EI4MA "Audi R8")
+7. Build <br />
+[![Flight mission](http://img.youtube.com/vi/DdBsxvL6oMw/0.jpg)](http://www.youtube.com/watch?v=DdBsxvL6oMw "Search And Rescue")
